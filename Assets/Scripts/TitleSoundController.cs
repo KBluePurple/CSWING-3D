@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Audio;
 
-public class SoundManager : MonoBehaviour
+public class TitleSoundController : MonoBehaviour
 {
     [SerializeField]
     private AudioMixer masterMixer;
@@ -17,7 +17,7 @@ public class SoundManager : MonoBehaviour
 
         if (sound == -40f)
         {
-            masterMixer.SetFloat("사운드 이름", 80);
+            masterMixer.SetFloat("사운드 이름", -80);
         }
         else
         {
