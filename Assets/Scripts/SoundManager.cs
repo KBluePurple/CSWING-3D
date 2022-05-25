@@ -1,18 +1,27 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using UnityEngine.Audio;
 
 public class SoundManager : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    [SerializeField]
+    private AudioMixer masterMixer;
+    [SerializeField]
+    private Slider audioSlider;
 
-    // Update is called once per frame
-    void Update()
+    public void AudioController()
     {
-        
+        float sound = audioSlider.value;
+
+        if (sound == -40f)
+        {
+            masterMixer.SetFloat("사운드 이름", 80);
+        }
+        else
+        {
+            masterMixer.SetFloat("사운드 이름", sound);
+        }
     }
 }
