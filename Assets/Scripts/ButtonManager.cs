@@ -2,9 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class ButtonManager : MonoBehaviour
 {
+    [SerializeField]
+    private GameObject Setting;
+
     //private void Start()
     //{
     //    GetComponent<Button>().onClick.AddListener(() => { });
@@ -12,6 +16,7 @@ public class ButtonManager : MonoBehaviour
     public void OnStart()
     {
         Debug.Log("StartGame");
+        SceneManager.LoadScene("GameScene");
     }
 
     public void BodySetting()
@@ -21,7 +26,13 @@ public class ButtonManager : MonoBehaviour
 
     public void OnSetting()
     {
-        Debug.Log("Setting");
+        Setting.SetActive(true);
+        //Debug.Log("Setting");
+    }
+
+    public void OffSetting()
+    {
+        Setting.SetActive(false);
     }
 
     public void OnQuit()
