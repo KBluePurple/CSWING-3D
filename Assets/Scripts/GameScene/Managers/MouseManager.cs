@@ -2,14 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MouseManager : MonoBehaviour
+public static class MouseManager
 {
-    public void MouseHideSetting(bool isHide)
+    public static void Show(bool isHide)
     {
         Cursor.visible = isHide;
     }
-
-    public void MouseLockSetting(bool isLock)
+    public static void Lock(bool isLock)
     {
         Cursor.lockState = isLock ? CursorLockMode.Locked : CursorLockMode.None;
     }
