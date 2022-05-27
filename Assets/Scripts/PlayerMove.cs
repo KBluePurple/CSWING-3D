@@ -24,11 +24,11 @@ public class PlayerMove : MonoBehaviour
         horizontal = Mathf.Clamp(horizontal, -1f, 1f);
         vertical = Mathf.Clamp(vertical, -1f, 1f);
 
-        Vector3 lerpVector = new Vector3(vertical, horizontal, 0).normalized * ((Mathf.Abs(horizontal) + Mathf.Abs(vertical)) / 2);
+        Vector3 lerpVector = new Vector3(vertical, -horizontal, 0).normalized * ((Mathf.Abs(horizontal) + Mathf.Abs(vertical)) / 2);
         lerpVector += new Vector3(0, 0, rotate);
         _rotate = Vector3.Lerp(_rotate, lerpVector, _smooth * Time.deltaTime);
-        transform.Rotate(_rotate * _rotateSpeed * _speedChange);
-        visual.rectTransform.anchoredPosition = new Vector2(_rotate.y, _rotate.x) * 100;
+        transform.Rotate(-_rotate * _rotateSpeed * _speedChange);
+        visual.rectTransform.anchoredPosition = new Vector2(-_rotate.y, _rotate.x) * 100;
 
         float speed = Input.GetAxis("Vertical");
 
