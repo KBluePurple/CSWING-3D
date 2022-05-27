@@ -10,25 +10,13 @@ public class PlayerMove : MonoBehaviour
     [SerializeField] float _speed = 1f;
     [SerializeField] float _rotateSpeed = 1f;
     [SerializeField] float _speedChange = 1f;
-    [SerializeField] float _angleSmooth= 3f;
+    [SerializeField] float _angleSmooth = 3f;
     [SerializeField] float _maxSpeed = 10f;
     [SerializeField] Image visual;
 
-    //ray
-    [SerializeField]
-    private float rayMaxDistance = 30f;
-    [SerializeField]
-    private Transform rayTransform;
-    private RaycastHit rayHit;
 
     private void Update()
     {
-        Debug.DrawRay(rayTransform.position, (rayTransform.position - transform.position) * rayMaxDistance, Color.red, 0.1f);
-        if(Physics.Raycast(rayTransform.position, (rayTransform.position - transform.position), out rayHit, rayMaxDistance))
-        {
-            Debug.Log("Àû °¨Áö");
-        }
-
         float horizontal = Input.GetAxis("Mouse X");
         float vertical = Input.GetAxis("Mouse Y");
         float rotate = Input.GetAxis("Horizontal");
@@ -41,8 +29,9 @@ public class PlayerMove : MonoBehaviour
         _rotate = Vector3.Lerp(_rotate, lerpVector, _angleSmooth * Time.deltaTime);
         transform.Rotate(_rotate * _rotateSpeed * _speedChange);
         visual.rectTransform.anchoredPosition = new Vector2(_rotate.y, _rotate.x) * 100;
- 
+
         _speed += Input.GetAxis("Vertical") * _speedChange * Time.deltaTime;
+        _speed = Mathf.Clamp(_speed, 0, _maxSpeed);
         transform.Translate(Vector3.forward * _speed * Time.deltaTime);
     }
 }
