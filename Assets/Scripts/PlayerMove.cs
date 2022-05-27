@@ -23,8 +23,8 @@ public class PlayerMove : MonoBehaviour
 
     private void Update()
     {
-        Debug.DrawRay(rayTransform.position, new Vector3(rayTransform.position.x, rayTransform.position.y, rayTransform.position.z) * rayMaxDistance, Color.red, 0.1f);
-        if(Physics.Raycast(rayTransform.position, Vector3.back, out rayHit, rayMaxDistance))
+        Debug.DrawRay(rayTransform.position, (rayTransform.position - transform.position) * rayMaxDistance, Color.red, 0.1f);
+        if(Physics.Raycast(rayTransform.position, (rayTransform.position - transform.position), out rayHit, rayMaxDistance))
         {
             Debug.Log("Àû °¨Áö");
         }
