@@ -31,7 +31,7 @@ public class PlayerMove : MonoBehaviour
         visual.rectTransform.anchoredPosition = new Vector2(_rotate.y, _rotate.x) * 100;
 
         _speed += Input.GetAxis("Vertical") * _speedChange * Time.deltaTime;
-        _speed = Mathf.Clamp(_speed, 0, _maxSpeed);
+        _speed = Mathf.Clamp(_speed, -(_maxSpeed / 2), _maxSpeed);
         transform.Translate(Vector3.forward * _speed * Time.deltaTime);
     }
 }
