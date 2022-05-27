@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 2176956120606732046}
   - component: {fileID: 2176956120603874998}
   - component: {fileID: 2176956120612404536}
+  - component: {fileID: 4800333466725704778}
   m_Layer: 0
   m_Name: PursuitBullet
   m_TagString: Bullet
@@ -63,6 +64,19 @@ CapsuleCollider:
   m_Height: 0.76
   m_Direction: 2
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &4800333466725704778
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2176956120607002648}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6ecd54e64801c3c43b8bf1b2cb66dec9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bulletSpeed: 5
 --- !u!1 &2176956120607006288
 GameObject:
   m_ObjectHideFlags: 0
