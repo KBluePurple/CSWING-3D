@@ -292,6 +292,7 @@ GameObject:
   m_Component:
   - component: {fileID: 822362886}
   - component: {fileID: 822362887}
+  - component: {fileID: 822362888}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -334,6 +335,18 @@ MonoBehaviour:
   _angleSmooth: 3
   _maxSpeed: 10
   visual: {fileID: 1995328209}
+--- !u!114 &822362888
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 822362885}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 46b0a5efa8b51b74ba90f2a6516b349f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
   rayMaxDistance: 30
   rayTransform: {fileID: 1855989032}
 --- !u!1 &926000021
