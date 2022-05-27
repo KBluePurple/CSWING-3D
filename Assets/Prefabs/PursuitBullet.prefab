@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 4800333466725704778}
   m_Layer: 0
   m_Name: PursuitBullet
-  m_TagString: Bullet
+  m_TagString: PursuitBullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

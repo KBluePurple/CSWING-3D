@@ -13,7 +13,7 @@ public class PlayerMove : MonoBehaviour
     [SerializeField] float _smooth = 3f;
     [SerializeField] float _maxSpeed = 10f;
     [SerializeField] Image visual;
-
+    [SerializeField] GameObject explosionEffect = null;
 
     private void Update()
     {
@@ -43,5 +43,21 @@ public class PlayerMove : MonoBehaviour
             _speed = Mathf.Clamp(_speed, -(_maxSpeed / 2), _maxSpeed);
         }
         transform.Translate(transform.forward * _speed * Time.deltaTime);
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.CompareTag("PursuitBullet"))
+        {
+            PlayerExplosion();
+        }
+    }
+
+    public void PlayerExplosion()
+    {
+        Instantiate(explosionEffect, transform.position, Quaternion.identity);
+
+        Debug.Log("플레이어 폭파");
+        //Destroy(gameObject);
     }
 }
