@@ -747,11 +747,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!4 &769925255 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 4392030041918626012, guid: af406d5f83860cb428d30a8e92cdd422, type: 3}
-  m_PrefabInstance: {fileID: 1692836330}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &790785074
 GameObject:
   m_ObjectHideFlags: 0
@@ -806,7 +801,7 @@ GameObject:
   - component: {fileID: 822362891}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -843,6 +838,7 @@ MonoBehaviour:
   _speed: 1
   _rotateSpeed: 1
   _speedChange: 1
+  _rotateZSpeed: 1
   _smooth: 3
   _maxSpeed: 10
   visual: {fileID: 1995328209}
@@ -1928,10 +1924,6 @@ PrefabInstance:
       propertyPath: target
       value: 
       objectReference: {fileID: 822362885}
-    - target: {fileID: 736852347838181702, guid: af406d5f83860cb428d30a8e92cdd422, type: 3}
-      propertyPath: bulletPos
-      value: 
-      objectReference: {fileID: 769925255}
     - target: {fileID: 768138431652014799, guid: af406d5f83860cb428d30a8e92cdd422, type: 3}
       propertyPath: m_Name
       value: Pursuit

@@ -8,7 +8,8 @@ public class PlayerMove : MonoBehaviour
     private Vector3 _rotate;
 
     [SerializeField] float _speed = 1f;
-    [SerializeField] float _rotateSpeed = 1f;
+    [SerializeField] float _xYRotateSpeed = 1f;
+    [SerializeField] float _zRotateSpeed = 1f;
     [SerializeField] float _speedChange = 1f;
     [SerializeField] float _smooth = 3f;
     [SerializeField] float _maxSpeed = 10f;
@@ -25,9 +26,8 @@ public class PlayerMove : MonoBehaviour
         vertical = Mathf.Clamp(vertical, -1f, 1f);
 
         Vector3 lerpVector = new Vector3(vertical, -horizontal, 0).normalized * ((Mathf.Abs(horizontal) + Mathf.Abs(vertical)) / 2);
-        lerpVector += new Vector3(0, 0, rotate);
         _rotate = Vector3.Lerp(_rotate, lerpVector, _smooth * Time.deltaTime);
-        transform.Rotate(-_rotate * _rotateSpeed * _speedChange);
+        transform.Rotate(((-_rotate * _xYRotateSpeed) + (new Vector3(0, 0, rotate) * _zRotateSpeed * -1)) * _speedChange);
         visual.rectTransform.anchoredPosition = new Vector2(-_rotate.y, _rotate.x) * 100;
 
         float speed = Input.GetAxis("Vertical");
