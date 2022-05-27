@@ -331,6 +331,8 @@ MonoBehaviour:
   _speed: 1
   _angleSmooth: 3
   visual: {fileID: 1995328209}
+  rayMaxDistance: 30
+  rayTransform: {fileID: 1855989032}
 --- !u!1 &963194225
 GameObject:
   m_ObjectHideFlags: 0

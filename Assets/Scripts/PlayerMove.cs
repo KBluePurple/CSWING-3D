@@ -14,8 +14,21 @@ public class PlayerMove : MonoBehaviour
     [SerializeField] float _maxSpeed = 10f;
     [SerializeField] Image visual;
 
+    //ray
+    [SerializeField]
+    private float rayMaxDistance = 30f;
+    [SerializeField]
+    private Transform rayTransform;
+    private RaycastHit rayHit;
+
     private void Update()
     {
+        Debug.DrawRay(rayTransform.position, new Vector3(rayTransform.position.x, rayTransform.position.y, rayTransform.position.z) * rayMaxDistance, Color.red, 0.1f);
+        if(Physics.Raycast(rayTransform.position, Vector3.back, out rayHit, rayMaxDistance))
+        {
+            Debug.Log("Àû °¨Áö");
+        }
+
         float horizontal = Input.GetAxis("Mouse X");
         float vertical = Input.GetAxis("Mouse Y");
         float rotate = Input.GetAxis("Horizontal");
