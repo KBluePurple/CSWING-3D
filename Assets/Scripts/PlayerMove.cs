@@ -8,7 +8,8 @@ public class PlayerMove : MonoBehaviour
     private Vector3 _rotate;
 
     [SerializeField] float _speed = 1f;
-    [SerializeField] float _xYRotateSpeed = 1f;
+    [SerializeField] float _xRotateSpeed = 1f;
+    [SerializeField] float _yRotateSpeed = 1f;
     [SerializeField] float _zRotateSpeed = 1f;
     [SerializeField] float _speedChange = 1f;
     [SerializeField] float _smooth = 3f;
@@ -25,9 +26,9 @@ public class PlayerMove : MonoBehaviour
         horizontal = Mathf.Clamp(horizontal, -1f, 1f);
         vertical = Mathf.Clamp(vertical, -1f, 1f);
 
-        Vector3 lerpVector = new Vector3(vertical, -horizontal, 0).normalized * ((Mathf.Abs(horizontal) + Mathf.Abs(vertical)) / 2);
+        Vector3 lerpVector = new Vector3(vertical * _xRotateSpeed, -horizontal * _yRotateSpeed, 0).normalized * ((Mathf.Abs(horizontal) + Mathf.Abs(vertical)) / 2);
         _rotate = Vector3.Lerp(_rotate, lerpVector, _smooth * Time.deltaTime);
-        transform.Rotate(((-_rotate * _xYRotateSpeed) + (new Vector3(0, 0, rotate) * _zRotateSpeed * -1)) * _speedChange);
+        transform.Rotate(((-_rotate) + (new Vector3(0, 0, rotate) * _zRotateSpeed * -1)) * _speedChange);
         visual.rectTransform.anchoredPosition = new Vector2(-_rotate.y, _rotate.x) * 100;
 
         float speed = Input.GetAxis("Vertical");
@@ -57,7 +58,7 @@ public class PlayerMove : MonoBehaviour
     {
         Instantiate(explosionEffect, transform.position, Quaternion.identity);
 
-        Debug.Log("ÇÃ·¹ÀÌ¾î ÆøÆÄ");
+        Debug.Log("ï¿½Ã·ï¿½ï¿½Ì¾ï¿½ ï¿½ï¿½ï¿½ï¿½");
         //Destroy(gameObject);
     }
 }
