@@ -58,7 +58,7 @@ public class PlayerMove : MonoBehaviour
     {
         Instantiate(explosionEffect, transform.position, Quaternion.identity);
 
-        Debug.Log("ï¿½Ã·ï¿½ï¿½Ì¾ï¿½ ï¿½ï¿½ï¿½ï¿½");
+        Debug.Log("ÇÃ·¹ÀÌ¾î ÆøÆÄ");
         //Destroy(gameObject);
     }
 }
