@@ -948,7 +948,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _speed: 1
-  _xYRotateSpeed: 1
+  _xRotateSpeed: 1
+  _yRotateSpeed: 1
   _zRotateSpeed: 1
   _speedChange: 1
   _smooth: 3
@@ -2033,10 +2034,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 736852347838181702, guid: af406d5f83860cb428d30a8e92cdd422, type: 3}
-      propertyPath: target
-      value: 
-      objectReference: {fileID: 822362885}
     - target: {fileID: 768138431652014799, guid: af406d5f83860cb428d30a8e92cdd422, type: 3}
       propertyPath: m_Name
       value: Pursuit
