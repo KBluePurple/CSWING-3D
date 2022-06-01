@@ -2117,6 +2117,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 38b03b1f7064d364d93da2da3e51d6a4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pursuitPre: {fileID: 768138431652014799, guid: af406d5f83860cb428d30a8e92cdd422, type: 3}
+  maxPursuitSpawnCount: 5
 --- !u!4 &1668481117
 Transform:
   m_ObjectHideFlags: 0

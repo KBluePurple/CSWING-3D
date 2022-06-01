@@ -43,5 +43,6 @@ public class PlayerAttack : MonoBehaviour
     void Fire()
     {
         GameObject bullet = Instantiate(bulletPre, bulletPos);
+        Destroy(bullet, 3f);
     }
 }
