@@ -45,7 +45,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pursuitBulletPrefab: {fileID: 2176956120607002648, guid: 7b731246f2790e149996a6e3051c1eae, type: 3}
-  bulletPos: {fileID: 4392030041918626012}
+  pursuitBulletPos: {fileID: 4392030041918626012}
 --- !u!1 &6531542699597188946
 GameObject:
   m_ObjectHideFlags: 0

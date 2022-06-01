@@ -8,7 +8,7 @@ public class PursuitController : MonoBehaviour
     [SerializeField]
     private GameObject pursuitBulletPrefab;
     [SerializeField]
-    private Transform bulletPos;
+    private Transform pursuitBulletPos;
 
     private float curTime = 0f;
     private float shotDelay = 2f;
@@ -47,6 +47,6 @@ public class PursuitController : MonoBehaviour
 
     void AttackTarget()
     {
-        GameObject bullet = Instantiate(pursuitBulletPrefab, bulletPos);
+        GameObject pursuitBullet = Instantiate(pursuitBulletPrefab, pursuitBulletPos);
     }
 }

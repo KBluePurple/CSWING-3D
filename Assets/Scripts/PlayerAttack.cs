@@ -10,12 +10,38 @@ public class PlayerAttack : MonoBehaviour
     private Transform rayTransform;
     private RaycastHit rayHit;
 
+
+    // Shot Bullet
+    [SerializeField]
+    private GameObject bulletPre;
+    [SerializeField]
+    private Transform bulletPos;
+
+    private float shotDelay = 0.1f;
+    private float curDelay = 0f;
+
     void Update()
     {
+        curDelay += Time.deltaTime;
+
         Debug.DrawRay(rayTransform.position, (rayTransform.position - transform.position) * rayMaxDistance, Color.red, 0.1f);
         if (Physics.Raycast(rayTransform.position, (rayTransform.position - transform.position), out rayHit, rayMaxDistance))
         {
             Debug.Log("적 감지");
         }
+
+        if (Input.GetMouseButton(0))
+        {
+            if(curDelay >= shotDelay)
+            {
+                Fire();
+                curDelay = 0f;
+            }
+        }
+    }
+
+    void Fire()
+    {
+        GameObject bullet = Instantiate(bulletPre, bulletPos);
     }
 }

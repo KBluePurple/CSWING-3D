@@ -396,6 +396,36 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 201299932}
   m_CullTransparentMesh: 1
+--- !u!1 &504114992
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 504114993}
+  m_Layer: 0
+  m_Name: BulletPosition
+  m_TagString: Untagged
+  m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &504114993
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 504114992}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 8.32}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 822362886}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &510754539
 GameObject:
   m_ObjectHideFlags: 0
@@ -1002,6 +1032,7 @@ Transform:
   - {fileID: 1840686449}
   - {fileID: 1855989032}
   - {fileID: 1800659505}
+  - {fileID: 504114993}
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1040,6 +1071,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rayMaxDistance: 30
   rayTransform: {fileID: 1855989032}
+  bulletPre: {fileID: 4848083708199283256, guid: 6c31c2c036529464695166638d205993, type: 3}
+  bulletPos: {fileID: 504114993}
 --- !u!114 &822362889
 MonoBehaviour:
   m_ObjectHideFlags: 0
