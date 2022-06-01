@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -16,6 +17,8 @@ public class PlayerMove : MonoBehaviour
     [SerializeField] float _maxSpeed = 10f;
     [SerializeField] Image visual;
     [SerializeField] GameObject explosionEffect = null;
+
+    private bool isSafeZone = false;
 
     private void Update()
     {
@@ -46,11 +49,31 @@ public class PlayerMove : MonoBehaviour
         transform.Translate(transform.forward * _speed * Time.deltaTime);
     }
 
+    public void ResetPosition()
+    {
+        transform.position = Vector3.zero;
+    }
+
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("PursuitBullet"))
         {
             PlayerExplosion();
+        }
+
+        if (other.gameObject.CompareTag("SafeZone"))
+        {
+            isSafeZone = true;
+            SafeZoneManager.Instance.OnEnterSafeZone();
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.gameObject.CompareTag("SafeZone"))
+        {
+            isSafeZone = false;
+            SafeZoneManager.Instance.OnExitSafeZone();
         }
     }
 

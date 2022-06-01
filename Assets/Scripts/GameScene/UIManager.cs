@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 
-public class UIManager : MonoBehaviour
+public class UIManager : MonoSingleton<UIManager>
 {
     [Header("PlayerUI")]
     [SerializeField]
@@ -25,5 +25,22 @@ public class UIManager : MonoBehaviour
     private GameObject skill1;
     [SerializeField]
     private GameObject skill2;
+
+    [SerializeField] Text _warningCountDownText = null;
+
+    private void Start()
+    {
+        SafeZoneManager.Instance.OnSafeZoneCountDown += OnSafeZoneCounterUpdate;
+    }
+
+    public void OnSafeZoneCounterUpdate(int count)
+    {
+        if (count == 0)
+        {
+            _warningCountDownText.text = "";
+            return;
+        }
+        _warningCountDownText.text = count.ToString();
+    }
 }
 
