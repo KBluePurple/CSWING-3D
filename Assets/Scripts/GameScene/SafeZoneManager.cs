@@ -25,7 +25,7 @@ public class SafeZoneManager : MonoSingleton<SafeZoneManager>
 
     private IEnumerator SafeZoneCountDown()
     {
-        float time = 3f;
+        float time = 10f;
         while (time > 0)
         {
             OnSafeZoneCountDown?.Invoke((int)time);

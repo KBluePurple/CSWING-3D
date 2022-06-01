@@ -58,7 +58,7 @@ public class PlayerMove : MonoBehaviour
     {
         if (other.gameObject.CompareTag("PursuitBullet"))
         {
-            PlayerExplosion();
+            StartCoroutine(PlayerExplosion());
         }
 
         if (other.gameObject.CompareTag("SafeZone"))
@@ -77,11 +77,13 @@ public class PlayerMove : MonoBehaviour
         }
     }
 
-    public void PlayerExplosion()
+    public IEnumerator PlayerExplosion()
     {
-        Instantiate(explosionEffect, transform.position, Quaternion.identity);
-
+        GameObject effect = Instantiate(explosionEffect, transform.position, Quaternion.identity);
         Debug.Log("플레이어 폭파");
+        yield return new WaitForSeconds(2f);
+        Destroy(effect);
+        // TODO : 이곳 풀매니저 적용 필요
         //Destroy(gameObject);
     }
 }
