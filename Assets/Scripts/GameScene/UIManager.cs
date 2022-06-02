@@ -13,6 +13,8 @@ public class UIManager : MonoSingleton<UIManager>
     private Image hp;
     [SerializeField]
     private Image energy;
+    [SerializeField]
+    private Image speed;
 
     [Header("PlayerAttackUI")]
     [SerializeField]
@@ -28,9 +30,17 @@ public class UIManager : MonoSingleton<UIManager>
 
     [SerializeField] Text _warningCountDownText = null;
 
+    private PlayerMove playerMove;
+
     private void Start()
     {
         SafeZoneManager.Instance.OnSafeZoneCountDown += OnSafeZoneCounterUpdate;
+        playerMove = FindObjectOfType<PlayerMove>();
+    }
+
+    private void Update()
+    {
+        speed.fillAmount = playerMove._speed / 10;
     }
 
     public void OnSafeZoneCounterUpdate(int count)

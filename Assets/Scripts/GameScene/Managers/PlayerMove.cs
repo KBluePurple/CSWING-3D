@@ -8,7 +8,8 @@ public class PlayerMove : MonoBehaviour
 {
     private Vector3 _rotate;
 
-    [SerializeField] float _speed = 1f;
+    //[SerializeField] float _speed = 1f;
+    public float _speed = 1f;
     [SerializeField] float _xRotateSpeed = 1f;
     [SerializeField] float _yRotateSpeed = 1f;
     [SerializeField] float _zRotateSpeed = 1f;

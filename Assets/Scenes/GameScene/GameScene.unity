@@ -314,6 +314,7 @@ MonoBehaviour:
   shield: {fileID: 1629163419}
   hp: {fileID: 1139474056}
   energy: {fileID: 1289584227}
+  speed: {fileID: 1915473133}
   boost: {fileID: 1047751472}
   weapon1: {fileID: 536806409}
   weapon2: {fileID: 1700866113}
@@ -408,7 +409,7 @@ GameObject:
   - component: {fileID: 474815096}
   - component: {fileID: 474815095}
   m_Layer: 5
-  m_Name: Text
+  m_Name: SpeedText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2952,7 +2953,7 @@ MonoBehaviour:
   m_FillCenter: 1
   m_FillMethod: 4
   m_FillAmount: 1
-  m_FillClockwise: 1
+  m_FillClockwise: 0
   m_FillOrigin: 2
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
