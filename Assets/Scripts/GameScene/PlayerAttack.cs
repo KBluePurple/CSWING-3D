@@ -24,7 +24,7 @@ public class PlayerAttack : MonoBehaviour
     {
         curDelay += Time.deltaTime;
 
-        Debug.DrawRay(rayTransform.position, (rayTransform.position - transform.position) * rayMaxDistance, Color.red, 0.1f);
+        Debug.DrawRay(rayTransform.position, (rayTransform.position - transform.position) * rayMaxDistance, Color.red);
         if (Physics.Raycast(rayTransform.position, (rayTransform.position - transform.position), out rayHit, rayMaxDistance))
         {
             Debug.Log("적 감지");

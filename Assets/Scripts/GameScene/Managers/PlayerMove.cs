@@ -47,7 +47,10 @@ public class PlayerMove : MonoBehaviour
             _speed += speed * _speedChange * Time.deltaTime;
             _speed = Mathf.Clamp(_speed, -(_maxSpeed / 2), _maxSpeed);
         }
-        transform.Translate(transform.forward * _speed * Time.deltaTime);
+        
+        Debug.DrawRay(transform.position, transform.forward * 100, Color.red);
+        // transform.Translate(transform.forward * _speed * Time.deltaTime);
+        transform.position += transform.forward * _speed * Time.deltaTime;
     }
 
     public void ResetPosition()

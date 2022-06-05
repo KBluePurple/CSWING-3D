@@ -10,8 +10,10 @@ public class DebugGUI : MonoBehaviour
         style.fontSize = 50;
         style.normal.textColor = Color.white;
 
+        GUILayout.BeginVertical();
         GUILayout.TextArea($"Pos x : {transform.position.x}", style);
         GUILayout.TextArea($"Pos y : {transform.position.y}", style);
         GUILayout.TextArea($"Pos z : {transform.position.z}", style);
+        GUILayout.EndVertical();
     }
 }

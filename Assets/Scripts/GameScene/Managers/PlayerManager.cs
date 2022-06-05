@@ -6,12 +6,8 @@ namespace GameScene
 {
     public class PlayerManager : MonoBehaviour
     {
-        //체력
-        private float playerHp;
-        //실드
-        private float playerShield;
-        //에너지
-        private float playerEnergy;
+        //스탯
+        private PlayerStat playerStat;
         //무기1, 무기2
         private GameObject playerWeapon1;
         private GameObject playerWeapon2;
