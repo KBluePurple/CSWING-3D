@@ -7,13 +7,24 @@ using UnityEngine.SceneManagement;
 public class ButtonManager : MonoBehaviour
 {
     [SerializeField]
-    private GameObject Setting;
+    private GameObject setting;
+    [SerializeField]
+    private GameObject selectGameMode;
+    [SerializeField]
+    private GameObject title;
 
     //private void Start()
     //{
     //    GetComponent<Button>().onClick.AddListener(() => { });
     //}
+
     public void OnStart()
+    {
+        selectGameMode.SetActive(true);
+        title.SetActive(false);
+    }
+
+    public void OnStartSurvival()
     {
         Debug.Log("StartGame");
         SceneManager.LoadScene("GameScene");
@@ -26,13 +37,13 @@ public class ButtonManager : MonoBehaviour
 
     public void OnSetting()
     {
-        Setting.SetActive(true);
+        setting.SetActive(true);
         //Debug.Log("Setting");
     }
 
     public void OffSetting()
     {
-        Setting.SetActive(false);
+        setting.SetActive(false);
     }
 
     public void OnQuit()
