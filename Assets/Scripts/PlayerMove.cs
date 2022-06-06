@@ -44,6 +44,18 @@ public class PlayerMove : MonoBehaviour
             _speed = Mathf.Clamp(_speed, -(_maxSpeed / 2), _maxSpeed);
         }
         transform.Translate(transform.forward * _speed * Time.deltaTime);
+
+        if (Input.GetAxisRaw("Horizontal") != 0)
+        {
+            if (Input.GetAxisRaw("Horizontal") > 0)
+            {
+                StartCoroutine(RightDash());
+            }
+            else
+            {
+                StartCoroutine(LeftDash());
+            }
+        }
     }
 
     private void OnTriggerEnter(Collider other)
@@ -58,7 +70,37 @@ public class PlayerMove : MonoBehaviour
     {
         Instantiate(explosionEffect, transform.position, Quaternion.identity);
 
-        Debug.Log("ï¿½Ã·ï¿½ï¿½Ì¾ï¿½ ï¿½ï¿½ï¿½ï¿½");
+        Debug.Log("?¡À???? ????");
         //Destroy(gameObject);
+    }
+
+    bool isLeftPushed = false;
+    IEnumerator LeftDash()
+    {
+        if (isLeftPushed)
+        {
+            // ´ë½¬
+        }
+        else
+        {
+            isLeftPushed = true;
+            yield return new WaitForSeconds(0.2f);
+            isLeftPushed = false;
+        }
+    }
+
+    bool isRightPushed = false;
+    IEnumerator RightDash()
+    {
+        if (isRightPushed)
+        {
+            // ´ë½¬
+        }
+        else
+        {
+            isRightPushed = true;
+            yield return new WaitForSeconds(0.2f);
+            isRightPushed = false;
+        }
     }
 }
