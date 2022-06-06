@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Bullet
   - PursuitBullet
+  - Enemy
+  - SafeZone
   layers:
   - Default
   - TransparentFX
