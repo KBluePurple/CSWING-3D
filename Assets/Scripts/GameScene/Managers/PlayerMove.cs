@@ -48,6 +48,7 @@ public class PlayerMove : MonoBehaviour
             _speed = Mathf.Clamp(_speed, -(_maxSpeed / 2), _maxSpeed);
         }
         transform.Translate(transform.forward * _speed * Time.deltaTime);
+<<<<<<< HEAD:Assets/Scripts/GameScene/Managers/PlayerMove.cs
 
         if (Input.GetAxisRaw("Horizontal") != 0)
         {
@@ -69,6 +70,8 @@ public class PlayerMove : MonoBehaviour
     public void ResetPosition()
     {
         transform.position = Vector3.zero;
+=======
+>>>>>>> parent of 56f6579 (ëŒ€ì‰¬ì˜ í‹€ë§Œ ì™„ì„±):Assets/Scripts/PlayerMove.cs
     }
 
     private void OnTriggerEnter(Collider other)
@@ -101,36 +104,9 @@ public class PlayerMove : MonoBehaviour
         yield return new WaitForSeconds(2f);
         Destroy(effect);
         // TODO : ÀÌ°÷ Ç®¸Å´ÏÀú Àû¿ë ÇÊ¿ä
+        Instantiate(explosionEffect, transform.position, Quaternion.identity);
+
+        Debug.Log("ï¿½Ã·ï¿½ï¿½Ì¾ï¿½ ï¿½ï¿½ï¿½ï¿½");
         //Destroy(gameObject);
-    }
-
-    bool isLeftPushed = false;
-    IEnumerator LeftDash()
-    {
-        if (isLeftPushed)
-        {
-            // ´ë½¬
-        }
-        else
-        {
-            isLeftPushed = true;
-            yield return new WaitForSeconds(0.2f);
-            isLeftPushed = false;
-        }
-    }
-
-    bool isRightPushed = false;
-    IEnumerator RightDash()
-    {
-        if (isRightPushed)
-        {
-            // ´ë½¬
-        }
-        else
-        {
-            isRightPushed = true;
-            yield return new WaitForSeconds(0.2f);
-            isRightPushed = false;
-        }
     }
 }
