@@ -311,15 +311,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c47b483aec1a6c94b8452620f8d27b96, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shield: {fileID: 1629163419}
-  hp: {fileID: 1139474056}
-  energy: {fileID: 1289584227}
-  speed: {fileID: 1915473133}
-  boost: {fileID: 1047751472}
-  weapon1: {fileID: 536806409}
-  weapon2: {fileID: 1700866113}
-  skill1: {fileID: 201299932}
-  skill2: {fileID: 134885926}
+  Shield: {fileID: 1629163419}
+  Hp: {fileID: 1139474056}
+  Energy: {fileID: 1289584227}
+  Speed: {fileID: 1915473133}
+  Boost: {fileID: 1047751472}
+  Weapon1: {fileID: 536806409}
+  Weapon2: {fileID: 1700866113}
+  Skill1: {fileID: 201299932}
+  Skill2: {fileID: 134885926}
   _warningCountDownText: {fileID: 1232024213}
 --- !u!1 &201299932
 GameObject:
@@ -1137,6 +1137,7 @@ MonoBehaviour:
   _speedChange: 1
   _smooth: 3
   _maxSpeed: 10
+  _dashSpeed: 10
   visual: {fileID: 1995328209}
   explosionEffect: {fileID: 142012, guid: 5534fe87bdddbbb44ab4dd43c16c1a1e, type: 3}
 --- !u!114 &822362888
