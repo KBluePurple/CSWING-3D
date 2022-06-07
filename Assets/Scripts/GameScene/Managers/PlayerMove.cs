@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using DG.Tweening;
 
 public class PlayerMove : MonoBehaviour
 {
@@ -16,6 +17,7 @@ public class PlayerMove : MonoBehaviour
     [SerializeField] float _speedChange = 1f;
     [SerializeField] float _smooth = 3f;
     [SerializeField] float _maxSpeed = 10f;
+    [SerializeField] float _dashSpeed = 10f;
     [SerializeField] Image visual;
     [SerializeField] GameObject explosionEffect = null;
 
@@ -48,18 +50,14 @@ public class PlayerMove : MonoBehaviour
             _speed = Mathf.Clamp(_speed, -(_maxSpeed / 2), _maxSpeed);
         }
         transform.Translate(transform.forward * _speed * Time.deltaTime);
-<<<<<<< HEAD:Assets/Scripts/GameScene/Managers/PlayerMove.cs
 
-        if (Input.GetAxisRaw("Horizontal") != 0)
+        if (Input.GetKeyDown(KeyCode.A))
         {
-            if (Input.GetAxisRaw("Horizontal") > 0)
-            {
-                StartCoroutine(RightDash());
-            }
-            else
-            {
-                StartCoroutine(LeftDash());
-            }
+            StartCoroutine(LeftDash());
+        }
+        if (Input.GetKeyDown(KeyCode.D))
+        {
+            StartCoroutine(RightDash());
         }
         
         Debug.DrawRay(transform.position, transform.forward * 100, Color.red);
@@ -67,11 +65,43 @@ public class PlayerMove : MonoBehaviour
         transform.position += transform.forward * _speed * Time.deltaTime;
     }
 
+    bool isPushedLeft = false;
+    IEnumerator LeftDash()
+    {
+        if (isPushedLeft)
+        {
+            Debug.Log("LeftDash");
+            transform.DOMove(transform.position + -transform.right * _dashSpeed, 1f);
+            transform.DORotate(new Vector3(0, 0, 360), 1f, RotateMode.LocalAxisAdd);
+        }
+        else
+        {
+            isPushedLeft = true;
+            yield return new WaitForSeconds(0.2f);
+            isPushedLeft = false;
+        }
+    }
+
+    bool isPushedRight = false;
+    IEnumerator RightDash()
+    {
+        if (isPushedRight)
+        {
+            Debug.Log("RightDash");
+            transform.DOMove(transform.position + transform.right * _dashSpeed, 1f);
+            transform.DORotate(new Vector3(0, 0, -360), 1f, RotateMode.LocalAxisAdd);
+        }
+        else
+        {
+            isPushedRight = true;
+            yield return new WaitForSeconds(0.2f);
+            isPushedRight = false;
+        }
+    }
+
     public void ResetPosition()
     {
         transform.position = Vector3.zero;
-=======
->>>>>>> parent of 56f6579 (ëŒ€ì‰¬ì˜ í‹€ë§Œ ì™„ì„±):Assets/Scripts/PlayerMove.cs
     }
 
     private void OnTriggerEnter(Collider other)
@@ -100,10 +130,10 @@ public class PlayerMove : MonoBehaviour
     public IEnumerator PlayerExplosion()
     {
         GameObject effect = Instantiate(explosionEffect, transform.position, Quaternion.identity);
-        Debug.Log("ÇÃ·¹ÀÌ¾î ÆøÆÄ");
+        Debug.Log("ï¿½Ã·ï¿½ï¿½Ì¾ï¿½ ï¿½ï¿½ï¿½ï¿½");
         yield return new WaitForSeconds(2f);
         Destroy(effect);
-        // TODO : ÀÌ°÷ Ç®¸Å´ÏÀú Àû¿ë ÇÊ¿ä
+        // TODO : ï¿½Ì°ï¿½ Ç®ï¿½Å´ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ê¿ï¿½
         Instantiate(explosionEffect, transform.position, Quaternion.identity);
 
         Debug.Log("ï¿½Ã·ï¿½ï¿½Ì¾ï¿½ ï¿½ï¿½ï¿½ï¿½");
