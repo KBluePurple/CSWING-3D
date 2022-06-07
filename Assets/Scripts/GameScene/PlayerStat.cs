@@ -1,68 +1,78 @@
+using System.Reflection;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerStat
+namespace GameScene
 {
-    private int _maxHp = 100;
-    private int _maxShield = 200;
-    private int _maxEnergy = 100;
-    public int _hp
+    public class PlayerStat
     {
-        get
+        private int _maxHp = 100;
+        private int _maxShield = 200;
+        private int _maxEnergy = 100;
+        private int _hp = 100;
+        private int _shield = 200;
+        private int _energy = 100;
+        public int Hp
         {
-            return _hp;
-        }
-        set
-        {
-            _hp = value;
-            if (_hp > _maxHp)
+            get
             {
-                _hp = _maxHp;
+                return _hp;
             }
-            else if (_hp < 0)
+            set
             {
-                _hp = 0;
+                _hp = value;
+                if (_hp > _maxHp)
+                {
+                    _hp = _maxHp;
+                }
+                else if (_hp < 0)
+                {
+                    _hp = 0;
+                }
+                UIManager.Instance.Hp.fillAmount = _hp / (float)_maxHp;
             }
         }
-    }
 
-    public int _shield
-    {
-        get
+        public int Shield
         {
-            return _shield;
-        }
-        set
-        {
-            _shield = value;
-            if (_shield > _maxShield)
+            get
             {
-                _shield = _maxShield;
+                return _shield;
             }
-            else if (_shield < 0)
+            set
             {
-                _shield = 0;
+                _shield = value;
+                if (_shield > _maxShield)
+                {
+                    _shield = _maxShield;
+                }
+                else if (_shield < 0)
+                {
+                    _shield = 0;
+                }
+                UIManager.Instance.Shield.fillAmount = _shield / (float)_maxShield;
             }
         }
-    }
 
-    public int _energy
-    {
-        get
+        public int Energy
         {
-            return _energy;
-        }
-        set
-        {
-            _energy = value;
-            if (_energy > _maxEnergy)
+            get
             {
-                _energy = _maxEnergy;
+                return _energy;
             }
-            else if (_energy < 0)
+            set
             {
-                _energy = 0;
+                _energy = value;
+                if (_energy > _maxEnergy)
+                {
+                    _energy = _maxEnergy;
+                }
+                else if (_energy < 0)
+                {
+                    _energy = 0;
+                }
+                UIManager.Instance.Energy.fillAmount = _energy / (float)_maxEnergy;
             }
         }
     }

@@ -3,36 +3,39 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SafeZoneManager : MonoSingleton<SafeZoneManager>
+namespace GameScene
 {
-    [SerializeField] PlayerMove playerMove = null;
-    Coroutine _safeZoneCountDownCoroutine;
-
-    public Action<int> OnSafeZoneCountDown;
-
-    public void OnEnterSafeZone()
+    public class SafeZoneManager : MonoSingleton<SafeZoneManager>
     {
-        if (_safeZoneCountDownCoroutine != null)
+        [SerializeField] PlayerMove playerMove = null;
+        Coroutine _safeZoneCountDownCoroutine;
+
+        public Action<int> OnSafeZoneCountDown;
+
+        public void OnEnterSafeZone()
         {
-            StopCoroutine(_safeZoneCountDownCoroutine);
+            if (_safeZoneCountDownCoroutine != null)
+            {
+                StopCoroutine(_safeZoneCountDownCoroutine);
+            }
         }
-    }
 
-    public void OnExitSafeZone()
-    {
-        _safeZoneCountDownCoroutine = StartCoroutine(SafeZoneCountDown());
-    }
-
-    private IEnumerator SafeZoneCountDown()
-    {
-        float time = 10f;
-        while (time > 0)
+        public void OnExitSafeZone()
         {
-            OnSafeZoneCountDown?.Invoke((int)time);
-            time -= 1;
-            yield return new WaitForSeconds(1);
+            _safeZoneCountDownCoroutine = StartCoroutine(SafeZoneCountDown());
         }
-        playerMove.ResetPosition();
-        OnSafeZoneCountDown?.Invoke(0);
+
+        private IEnumerator SafeZoneCountDown()
+        {
+            float time = 10f;
+            while (time > 0)
+            {
+                OnSafeZoneCountDown?.Invoke((int)time);
+                time -= 1;
+                yield return new WaitForSeconds(1);
+            }
+            playerMove.ResetPosition();
+            OnSafeZoneCountDown?.Invoke(0);
+        }
     }
 }

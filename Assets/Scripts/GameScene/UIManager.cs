@@ -4,53 +4,55 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 
-public class UIManager : MonoSingleton<UIManager>
+namespace GameScene
 {
-    [Header("PlayerUI")]
-    [SerializeField]
-    private Image shield;
-    [SerializeField]
-    private Image hp;
-    [SerializeField]
-    private Image energy;
-    [SerializeField]
-    private Image speed;
-
-    [Header("PlayerAttackUI")]
-    [SerializeField]
-    private GameObject boost;
-    [SerializeField]
-    private GameObject weapon1;
-    [SerializeField]
-    private GameObject weapon2;
-    [SerializeField]
-    private GameObject skill1;
-    [SerializeField]
-    private GameObject skill2;
-
-    [SerializeField] Text _warningCountDownText = null;
-
-    private PlayerMove playerMove;
-
-    private void Start()
+    public class UIManager : MonoSingleton<UIManager>
     {
-        SafeZoneManager.Instance.OnSafeZoneCountDown += OnSafeZoneCounterUpdate;
-        playerMove = FindObjectOfType<PlayerMove>();
-    }
+        [Header("PlayerUI")]
+        [SerializeField]
+        public Image Shield;
+        [SerializeField]
+        public Image Hp;
+        [SerializeField]
+        public Image Energy;
+        [SerializeField]
+        public Image Speed;
 
-    private void Update()
-    {
-        speed.fillAmount = playerMove._speed / 10;
-    }
+        [Header("PlayerAttackUI")]
+        [SerializeField]
+        public GameObject Boost;
+        [SerializeField]
+        public GameObject Weapon1;
+        [SerializeField]
+        public GameObject Weapon2;
+        [SerializeField]
+        public GameObject Skill1;
+        [SerializeField]
+        public GameObject Skill2;
 
-    public void OnSafeZoneCounterUpdate(int count)
-    {
-        if (count == 0)
+        [SerializeField] Text _warningCountDownText = null;
+
+        private PlayerMove playerMove;
+
+        private void Start()
         {
-            _warningCountDownText.text = "";
-            return;
+            SafeZoneManager.Instance.OnSafeZoneCountDown += OnSafeZoneCounterUpdate;
+            playerMove = FindObjectOfType<PlayerMove>();
         }
-        _warningCountDownText.text = count.ToString();
+
+        private void Update()
+        {
+            Speed.fillAmount = playerMove._speed / 10;
+        }
+
+        public void OnSafeZoneCounterUpdate(int count)
+        {
+            if (count == 0)
+            {
+                _warningCountDownText.text = "";
+                return;
+            }
+            _warningCountDownText.text = count.ToString();
+        }
     }
 }
-

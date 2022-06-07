@@ -5,138 +5,142 @@ using UnityEngine;
 using UnityEngine.UI;
 using DG.Tweening;
 
-public class PlayerMove : MonoBehaviour
+namespace GameScene
 {
-    private Vector3 _rotate;
-
-    //[SerializeField] float _speed = 1f;
-    public float _speed = 1f;
-    [SerializeField] float _xRotateSpeed = 1f;
-    [SerializeField] float _yRotateSpeed = 1f;
-    [SerializeField] float _zRotateSpeed = 1f;
-    [SerializeField] float _speedChange = 1f;
-    [SerializeField] float _smooth = 3f;
-    [SerializeField] float _maxSpeed = 10f;
-    [SerializeField] float _dashSpeed = 10f;
-    [SerializeField] Image visual;
-    [SerializeField] GameObject explosionEffect = null;
-
-    private bool isSafeZone = false;
-
-    private void Update()
+    public class PlayerMove : MonoBehaviour
     {
-        float horizontal = Input.GetAxis("Mouse X");
-        float vertical = Input.GetAxis("Mouse Y");
-        float rotate = Input.GetAxis("Horizontal");
+        private Vector3 _rotate;
 
-        horizontal = Mathf.Clamp(horizontal, -1f, 1f);
-        vertical = Mathf.Clamp(vertical, -1f, 1f);
+        //[SerializeField] float _speed = 1f;
+        public float _speed = 1f;
+        [SerializeField] float _xRotateSpeed = 1f;
+        [SerializeField] float _yRotateSpeed = 1f;
+        [SerializeField] float _zRotateSpeed = 1f;
+        [SerializeField] float _speedChange = 1f;
+        [SerializeField] float _smooth = 3f;
+        [SerializeField] float _maxSpeed = 10f;
+        [SerializeField] float _dashSpeed = 10f;
+        [SerializeField] Image visual;
+        [SerializeField] GameObject explosionEffect = null;
 
-        Vector3 lerpVector = new Vector3(vertical * _xRotateSpeed, -horizontal * _yRotateSpeed, 0).normalized * ((Mathf.Abs(horizontal) + Mathf.Abs(vertical)) / 2);
-        _rotate = Vector3.Lerp(_rotate, lerpVector, _smooth * Time.deltaTime);
-        transform.Rotate(((-_rotate) + (new Vector3(0, 0, rotate) * _zRotateSpeed * -1)) * _speedChange);
-        visual.rectTransform.anchoredPosition = new Vector2(-_rotate.y, _rotate.x) * 100;
+        private bool isSafeZone = false;
 
-        float speed = Input.GetAxis("Vertical");
+        private void Update()
+        {
+            float horizontal = Input.GetAxis("Mouse X");
+            float vertical = Input.GetAxis("Mouse Y");
+            float rotate = Input.GetAxis("Horizontal");
 
-        if (speed < 0 && Input.GetKey(KeyCode.Space))
-        {
-            _speed = Mathf.Lerp(_speed, 0f, Time.deltaTime * (1 / _speedChange));
-            speed = 0;
-        }
-        else
-        {
-            _speed += speed * _speedChange * Time.deltaTime;
-            _speed = Mathf.Clamp(_speed, -(_maxSpeed / 2), _maxSpeed);
-        }
-        transform.Translate(transform.forward * _speed * Time.deltaTime);
+            horizontal = Mathf.Clamp(horizontal, -1f, 1f);
+            vertical = Mathf.Clamp(vertical, -1f, 1f);
 
-        if (Input.GetKeyDown(KeyCode.A))
-        {
-            StartCoroutine(LeftDash());
-        }
-        if (Input.GetKeyDown(KeyCode.D))
-        {
-            StartCoroutine(RightDash());
-        }
-        
-        Debug.DrawRay(transform.position, transform.forward * 100, Color.red);
-        // transform.Translate(transform.forward * _speed * Time.deltaTime);
-        transform.position += transform.forward * _speed * Time.deltaTime;
-    }
+            Vector3 lerpVector = new Vector3(vertical * _xRotateSpeed, -horizontal * _yRotateSpeed, 0).normalized * ((Mathf.Abs(horizontal) + Mathf.Abs(vertical)) / 2);
+            _rotate = Vector3.Lerp(_rotate, lerpVector, _smooth * Time.deltaTime);
+            transform.Rotate(((-_rotate) + (new Vector3(0, 0, rotate) * _zRotateSpeed * -1)) * _speedChange);
+            visual.rectTransform.anchoredPosition = new Vector2(-_rotate.y, _rotate.x) * 100;
 
-    bool isPushedLeft = false;
-    IEnumerator LeftDash()
-    {
-        if (isPushedLeft)
-        {
-            Debug.Log("LeftDash");
-            transform.DOMove(transform.position + -transform.right * _dashSpeed, 1f);
-            transform.DORotate(new Vector3(0, 0, 360), 1f, RotateMode.LocalAxisAdd);
-        }
-        else
-        {
-            isPushedLeft = true;
-            yield return new WaitForSeconds(0.2f);
-            isPushedLeft = false;
-        }
-    }
+            float speed = Input.GetAxis("Vertical");
 
-    bool isPushedRight = false;
-    IEnumerator RightDash()
-    {
-        if (isPushedRight)
-        {
-            Debug.Log("RightDash");
-            transform.DOMove(transform.position + transform.right * _dashSpeed, 1f);
-            transform.DORotate(new Vector3(0, 0, -360), 1f, RotateMode.LocalAxisAdd);
-        }
-        else
-        {
-            isPushedRight = true;
-            yield return new WaitForSeconds(0.2f);
-            isPushedRight = false;
-        }
-    }
+            if (speed < 0 && Input.GetKey(KeyCode.Space))
+            {
+                _speed = Mathf.Lerp(_speed, 0f, Time.deltaTime * (1 / _speedChange));
+                speed = 0;
+            }
+            else
+            {
+                _speed += speed * _speedChange * Time.deltaTime;
+                _speed = Mathf.Clamp(_speed, -(_maxSpeed / 2), _maxSpeed);
+            }
+            transform.Translate(transform.forward * _speed * Time.deltaTime);
 
-    public void ResetPosition()
-    {
-        transform.position = Vector3.zero;
-    }
+            if (Input.GetKeyDown(KeyCode.A))
+            {
+                StartCoroutine(LeftDash());
+            }
+            if (Input.GetKeyDown(KeyCode.D))
+            {
+                StartCoroutine(RightDash());
+            }
 
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.gameObject.CompareTag("PursuitBullet"))
-        {
-            StartCoroutine(PlayerExplosion());
+            Debug.DrawRay(transform.position, transform.forward * 100, Color.red);
+            // transform.Translate(transform.forward * _speed * Time.deltaTime);
+            transform.position += transform.forward * _speed * Time.deltaTime;
         }
 
-        if (other.gameObject.CompareTag("SafeZone"))
+        bool isPushedLeft = false;
+        IEnumerator LeftDash()
         {
-            isSafeZone = true;
-            SafeZoneManager.Instance.OnEnterSafeZone();
+            if (isPushedLeft)
+            {
+                Debug.Log("LeftDash");
+                transform.DOMove(transform.position + -transform.right * _dashSpeed, 1f);
+                transform.DORotate(new Vector3(0, 0, 360), 1f, RotateMode.LocalAxisAdd);
+            }
+            else
+            {
+                isPushedLeft = true;
+                yield return new WaitForSeconds(0.2f);
+                isPushedLeft = false;
+            }
         }
-    }
 
-    private void OnTriggerExit(Collider other)
-    {
-        if (other.gameObject.CompareTag("SafeZone"))
+        bool isPushedRight = false;
+        IEnumerator RightDash()
         {
-            isSafeZone = false;
-            SafeZoneManager.Instance.OnExitSafeZone();
+            if (isPushedRight)
+            {
+                Debug.Log("RightDash");
+                transform.DOMove(transform.position + transform.right * _dashSpeed, 1f);
+                transform.DORotate(new Vector3(0, 0, -360), 1f, RotateMode.LocalAxisAdd);
+            }
+            else
+            {
+                isPushedRight = true;
+                yield return new WaitForSeconds(0.2f);
+                isPushedRight = false;
+            }
         }
-    }
-    
-    public IEnumerator PlayerExplosion()
-    {
-        GameObject effect = Instantiate(explosionEffect, transform.position, Quaternion.identity);
-        Debug.Log("�÷��̾� ����");
-        yield return new WaitForSeconds(2f);
-        Destroy(effect);
-        // TODO : �̰� Ǯ�Ŵ��� ���� �ʿ�
-        Instantiate(explosionEffect, transform.position, Quaternion.identity);
 
-        Debug.Log("�÷��̾� ����");
-        //Destroy(gameObject);
+        public void ResetPosition()
+        {
+            transform.position = Vector3.zero;
+        }
+
+        private void OnTriggerEnter(Collider other)
+        {
+            if (other.gameObject.CompareTag("PursuitBullet"))
+            {
+                StartCoroutine(PlayerExplosion());
+            }
+
+            if (other.gameObject.CompareTag("SafeZone"))
+            {
+                isSafeZone = true;
+                SafeZoneManager.Instance.OnEnterSafeZone();
+            }
+        }
+
+        private void OnTriggerExit(Collider other)
+        {
+            if (other.gameObject.CompareTag("SafeZone"))
+            {
+                isSafeZone = false;
+                SafeZoneManager.Instance.OnExitSafeZone();
+            }
+        }
+
+        public IEnumerator PlayerExplosion()
+        {
+            GameObject effect = Instantiate(explosionEffect, transform.position, Quaternion.identity);
+            Debug.Log("�÷��̾� ����");
+            yield return new WaitForSeconds(2f);
+            Destroy(effect);
+            // TODO : �̰� Ǯ�Ŵ��� ���� �ʿ�
+            Instantiate(explosionEffect, transform.position, Quaternion.identity);
+
+            Debug.Log("�÷��̾� ����");
+            PlayerManager.Instance.Stat.Hp -= 10;
+            //Destroy(gameObject);
+        }
     }
 }

@@ -4,10 +4,10 @@ using UnityEngine;
 
 namespace GameScene
 {
-    public class PlayerManager : MonoBehaviour
+    public class PlayerManager : MonoSingleton<PlayerManager>
     {
         //스탯
-        private PlayerStat playerStat;
+        public PlayerStat Stat;
         //무기1, 무기2
         private GameObject playerWeapon1;
         private GameObject playerWeapon2;
