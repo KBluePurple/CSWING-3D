@@ -64,7 +64,6 @@ namespace GameScene
             }
 
             Debug.DrawRay(transform.position, transform.forward * 100, Color.red);
-            // transform.Translate(transform.forward * _speed * Time.deltaTime);
             transform.position += transform.forward * _speed * Time.deltaTime;
 
         }
@@ -146,13 +145,10 @@ namespace GameScene
         public IEnumerator PlayerExplosion()
         {
             GameObject effect = Instantiate(explosionEffect, transform.position, Quaternion.identity);
-            Debug.Log("�÷��̾� ����");
             yield return new WaitForSeconds(2f);
             Destroy(effect);
             // TODO : �̰� Ǯ�Ŵ��� ���� �ʿ�
             Instantiate(explosionEffect, transform.position, Quaternion.identity);
-
-            Debug.Log("�÷��̾� ����");
             PlayerManager.Instance.Stat.Hp -= 10;
             //Destroy(gameObject);
         }
