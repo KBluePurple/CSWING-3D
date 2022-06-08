@@ -7,7 +7,6 @@ public class PursuitController : MonoBehaviour
     private GameObject target;
     [SerializeField]
     private GameObject pursuitBulletPrefab;
-    [SerializeField]
     private Transform pursuitBulletPos;
 
     private float curTime = 0f;
@@ -16,6 +15,7 @@ public class PursuitController : MonoBehaviour
     private void Awake()
     {
         target = GameObject.Find("Player");
+        pursuitBulletPos = transform.GetChild(0);
     }
 
     void Update()
