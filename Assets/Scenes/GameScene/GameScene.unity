@@ -1153,6 +1153,8 @@ MonoBehaviour:
   _dashSpeed: 10
   visual: {fileID: 1995328209}
   explosionEffect: {fileID: 142012, guid: 5534fe87bdddbbb44ab4dd43c16c1a1e, type: 3}
+  camera: {fileID: 963194227}
+  cameraPos: {fileID: 1800659504}
 --- !u!114 &822362888
 MonoBehaviour:
   m_ObjectHideFlags: 0

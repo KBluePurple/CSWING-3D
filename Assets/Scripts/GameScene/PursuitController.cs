@@ -48,5 +48,6 @@ public class PursuitController : MonoBehaviour
     void AttackTarget()
     {
         GameObject pursuitBullet = Instantiate(pursuitBulletPrefab, pursuitBulletPos);
+        pursuitBullet.transform.SetParent(null);
     }
 }
