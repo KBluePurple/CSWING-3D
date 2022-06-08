@@ -8,6 +8,7 @@ TagManager:
   - PursuitBullet
   - Enemy
   - SafeZone
+  - Pursuit
   layers:
   - Default
   - TransparentFX
