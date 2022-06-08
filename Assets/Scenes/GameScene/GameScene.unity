@@ -315,25 +315,11 @@ MonoBehaviour:
   Hp: {fileID: 1139474056}
   Energy: {fileID: 1289584227}
   Speed: {fileID: 1915473133}
-<<<<<<< Updated upstream
-=======
-<<<<<<< HEAD
-  Boost: {fileID: 0}
-  Weapon1: {fileID: 0}
-  Weapon2: {fileID: 0}
-  Skill1: {fileID: 0}
-  Skill2: {fileID: 0}
-=======
->>>>>>> Stashed changes
   Boost: {fileID: 1047751472}
   Weapon1: {fileID: 536806409}
   Weapon2: {fileID: 1700866113}
   Skill1: {fileID: 201299932}
   Skill2: {fileID: 134885926}
-<<<<<<< Updated upstream
-=======
->>>>>>> 8a83c0ab97a86c03c78b058f163e4229997ef7ee
->>>>>>> Stashed changes
   _warningCountDownText: {fileID: 1232024213}
 --- !u!1 &201299932
 GameObject:
@@ -1167,7 +1153,6 @@ MonoBehaviour:
   _dashSpeed: 10
   visual: {fileID: 1995328209}
   explosionEffect: {fileID: 142012, guid: 5534fe87bdddbbb44ab4dd43c16c1a1e, type: 3}
-  mainCamera: {fileID: 963194227}
 --- !u!114 &822362888
 MonoBehaviour:
   m_ObjectHideFlags: 0
