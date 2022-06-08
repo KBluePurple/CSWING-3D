@@ -35,7 +35,16 @@ namespace GameScene
             Stat.Hp = 100;
             Stat.Shield = 200;
             Stat.Energy = 100;
+        }
 
+        public void Damaged(int damage)
+        {
+            Stat.Shield -= damage;
+            if (Stat.Shield < 0)
+            {
+                Stat.Hp += Stat.Shield;
+                Stat.Shield = 0;
+            }
         }
     }
 }

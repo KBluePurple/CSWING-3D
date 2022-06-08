@@ -149,7 +149,7 @@ namespace GameScene
             Destroy(effect);
             // TODO : �̰� Ǯ�Ŵ��� ���� �ʿ�
             Instantiate(explosionEffect, transform.position, Quaternion.identity);
-            PlayerManager.Instance.Stat.Hp -= 10;
+            PlayerManager.Instance.Damaged(10);
             //Destroy(gameObject);
         }
     }
