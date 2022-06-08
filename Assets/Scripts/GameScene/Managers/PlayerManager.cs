@@ -28,5 +28,14 @@ namespace GameScene
         //몸체 회전속도, 감도
         private float rotationSpeed;
         //감도? 는 어케? 쓰?지?
+
+        private void Start()
+        {
+            Stat = new PlayerStat();
+            Stat.Hp = 100;
+            Stat.Shield = 200;
+            Stat.Energy = 100;
+
+        }
     }
 }

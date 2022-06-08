@@ -25,11 +25,11 @@ namespace GameScene
         {
             curDelay += Time.deltaTime;
 
-            if(curDelay >= spawnDelay && curPursuitSpawnCount < maxPursuitSpawnCount)
+            if (curDelay >= spawnDelay && curPursuitSpawnCount < maxPursuitSpawnCount)
             {
                 SpawnPursuit();
                 curDelay = 0f;
-                Debug.Log("¼ÒÈ¯");
+                Debug.Log("ï¿½ï¿½È¯");
                 curPursuitSpawnCount++;
             }
         }
