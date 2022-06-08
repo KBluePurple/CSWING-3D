@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using GameScene;
+
 
 public class PursuitController : MonoBehaviour
 {
@@ -9,12 +11,19 @@ public class PursuitController : MonoBehaviour
     private GameObject pursuitBulletPrefab;
     private Transform pursuitBulletPos;
 
+    private int pursuitLife = 10;
+
     private float curTime = 0f;
     private float shotDelay = 2f;
+
+    private GameManager gameManager = null;
+    private PlayerAttack playerAttack = null;
 
     private void Awake()
     {
         target = GameObject.Find("Player");
+        gameManager = FindObjectOfType<GameManager>();
+        playerAttack = FindObjectOfType<PlayerAttack>();
         pursuitBulletPos = transform.GetChild(0);
     }
 
@@ -49,5 +58,24 @@ public class PursuitController : MonoBehaviour
     {
         GameObject pursuitBullet = Instantiate(pursuitBulletPrefab, pursuitBulletPos);
         pursuitBullet.transform.SetParent(null);
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.CompareTag("Bullet"))
+        {
+            pursuitLife -= playerAttack.bulletDamaged;
+            Debug.Log("Pursuit 데미지입음");
+            if (pursuitLife <= 0)
+            {
+                PursuitDead();
+            }
+        }
+    }
+
+    public void PursuitDead()
+    {
+        Destroy(gameObject);
+        Debug.Log("Pursuit 사망");
     }
 }

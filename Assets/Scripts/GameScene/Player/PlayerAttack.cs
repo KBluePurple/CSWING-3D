@@ -16,6 +16,8 @@ public class PlayerAttack : MonoBehaviour
     private GameObject bulletPre;
     [SerializeField]
     private Transform bulletPos;
+    [SerializeField]
+    public int bulletDamaged { get; private set; } = 1;
 
     private float shotDelay = 0.1f;
     private float curDelay = 0f;
