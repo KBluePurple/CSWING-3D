@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 736852347838181702}
   m_Layer: 0
   m_Name: Pursuit
-  m_TagString: Untagged
+  m_TagString: Pursuit
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
