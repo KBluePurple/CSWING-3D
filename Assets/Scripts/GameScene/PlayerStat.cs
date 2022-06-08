@@ -7,6 +7,14 @@ namespace GameScene
 {
     public class PlayerStat
     {
+        public PlayerStat(int hp, int shield, int energy)
+        {
+
+            _maxHp = _hp = hp;
+            _maxShield = _shield = shield;
+            _maxEnergy = _energy = energy;
+        }
+
         private int _maxHp = 100;
         private int _maxShield = 200;
         private int _maxEnergy = 100;

@@ -31,10 +31,7 @@ namespace GameScene
 
         private void Start()
         {
-            Stat = new PlayerStat();
-            Stat.Hp = 100;
-            Stat.Shield = 200;
-            Stat.Energy = 100;
+            Stat = new PlayerStat(100, 200, 100);
         }
 
         public void Damaged(int damage)
