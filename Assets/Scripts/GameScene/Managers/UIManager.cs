@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using TMPro;
 
@@ -30,6 +31,8 @@ namespace GameScene
         [SerializeField]
         public GameObject Skill2;
 
+        [SerializeField]
+        private GameObject gameOverPanel;
         [SerializeField] Text _warningCountDownText = null;
 
         private PlayerMove playerMove;
@@ -53,6 +56,15 @@ namespace GameScene
                 return;
             }
             _warningCountDownText.text = count.ToString();
+        }
+
+        public void Dead()
+        {
+            gameOverPanel.SetActive(true);
+        }
+        public void BackToMainMenu()
+        {
+            SceneManager.LoadScene("TitleScene");
         }
     }
 }

@@ -29,9 +29,12 @@ namespace GameScene
         private float rotationSpeed;
         //감도? 는 어케? 쓰?지?
 
+        private UIManager uiManager;
+
         private void Start()
         {
             Stat = new PlayerStat(100, 200, 100);
+            uiManager = FindObjectOfType<UIManager>();
         }
 
         public void Damaged(int damage)
@@ -41,6 +44,11 @@ namespace GameScene
             {
                 Stat.Hp += Stat.Shield;
                 Stat.Shield = 0;
+            }
+
+            if(Stat.Hp <= 0)
+            {
+                uiManager.Dead();
             }
         }
     }
