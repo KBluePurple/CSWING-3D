@@ -2171,6 +2171,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pursuitPre: {fileID: 768138431652014799, guid: af406d5f83860cb428d30a8e92cdd422, type: 3}
   maxPursuitSpawnCount: 5
+  player: {fileID: 822362885}
 --- !u!4 &1668481117
 Transform:
   m_ObjectHideFlags: 0
