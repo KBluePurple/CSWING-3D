@@ -21,12 +21,23 @@ public class RepairMode : MonoBehaviour
     [SerializeField]
     private PartType type;
 
-    private bool _isActive = false;
+    private RepairMode[] _otherParts;
+    private bool _isActive;
+    public bool IsActive
+    {
+        get { return _isActive; }
+        set { _isActive = value; }
+    }
     private Image _toggleImage;
+    public Color SetImageColor
+    {
+        set { _toggleImage.color = value; }
+    }
     private Button _button;
     private PartsSetting _partsSetting;
     void Start()
     {
+        _otherParts = transform.parent.GetComponentsInChildren<RepairMode>();
         _button = GetComponent<Button>();
         _button.onClick.AddListener(ChangePart);
         _toggleImage = transform.Find("Active").GetComponent<Image>();
@@ -44,6 +55,11 @@ public class RepairMode : MonoBehaviour
         }
         else
         {
+            foreach (RepairMode repair in _otherParts)
+            {
+                repair.IsActive = false;
+                repair.SetImageColor = Color.gray;
+            }
             _isActive = true;
             Debug.Log($"{_part} ¿Â∫Ò ¡ﬂ!");
             _toggleImage.color = Color.yellow;
