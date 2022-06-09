@@ -18,12 +18,14 @@ public class PursuitController : MonoBehaviour
 
     private GameManager gameManager = null;
     private PlayerAttack playerAttack = null;
+    private SurvivorModeManager survivorModeManager = null;
 
     private void Awake()
     {
         target = GameObject.Find("Player");
         gameManager = FindObjectOfType<GameManager>();
         playerAttack = FindObjectOfType<PlayerAttack>();
+        survivorModeManager = FindObjectOfType<SurvivorModeManager>();
         pursuitBulletPos = transform.GetChild(0);
     }
 
@@ -76,6 +78,7 @@ public class PursuitController : MonoBehaviour
     public void PursuitDead()
     {
         Destroy(gameObject);
+        survivorModeManager.curPursuitSpawnCount--;
         Debug.Log("Pursuit »ç¸Á");
     }
 }
