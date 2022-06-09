@@ -35,6 +35,7 @@ public class RepairMode : MonoBehaviour
     }
     private Button _button;
     private PartsSetting _partsSetting;
+    private Image _spriteImage;
     void Start()
     {
         _otherParts = transform.parent.GetComponentsInChildren<RepairMode>();
@@ -42,6 +43,7 @@ public class RepairMode : MonoBehaviour
         _button.onClick.AddListener(ChangePart);
         _toggleImage = transform.Find("Active").GetComponent<Image>();
         _partsSetting = GameObject.Find("Preview").GetComponent<PartsSetting>();
+        _spriteImage = transform.Find("Image").GetComponent<Image>();
     }
 
     private void ChangePart()
@@ -51,7 +53,7 @@ public class RepairMode : MonoBehaviour
             _isActive = false;
             Debug.Log($"{_part} 장비 해제!");
             _toggleImage.color = Color.gray;
-            _partsSetting.GetPart("null", type);
+            _partsSetting.RemovePart(type);
         }
         else
         {
@@ -63,7 +65,7 @@ public class RepairMode : MonoBehaviour
             _isActive = true;
             Debug.Log($"{_part} 장비 중!");
             _toggleImage.color = Color.yellow;
-            _partsSetting.GetPart(_part, type);
+            _partsSetting.GetPart(_spriteImage, type);
         }
     }
 }
