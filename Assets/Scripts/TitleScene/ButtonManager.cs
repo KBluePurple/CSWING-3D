@@ -23,6 +23,7 @@ public class ButtonManager : MonoBehaviour
     [SerializeField]
     private GameObject powerScroll;
 
+
     //private void Start()
     //{
     //    GetComponent<Button>().onClick.AddListener(() => { });
@@ -92,4 +93,5 @@ public class ButtonManager : MonoBehaviour
         Debug.Log("Quit");
         Application.Quit();
     }
+
 }
