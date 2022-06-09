@@ -2,11 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CoreBase : MonoBehaviour
+public abstract class CoreBase : MonoBehaviour
 {
-    protected int _shield;
-    protected virtual void Passive()
-    {
-
-    }
+    public int _shield;
+    public abstract void Passive();
 }
