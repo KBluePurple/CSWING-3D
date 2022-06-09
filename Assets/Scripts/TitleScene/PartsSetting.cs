@@ -1,70 +1,79 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using TMPro;
 
 public class PartsSetting : MonoBehaviour
 {
-    private string _pCore = "null";
-    private string _pBooster = "null";
-    private string _pBody = "null";
-    private string _pWeapon1 = "null";
-    private string _pWeapon2 = "null";
-    private string _pSweapon1 = "null";
-    private string _pSweapon2 = "null";
+    [SerializeField]
+    private Image _pCore;
+    [SerializeField]
+    private Image _pBooster;
+    [SerializeField]
+    private Image _pBody;
+    [SerializeField]
+    private Image _pWeapon1;
+    [SerializeField]
+    private Image _pWeapon2;
+    [SerializeField]
+    private Image _pSweapon1;
+    [SerializeField]
+    private Image _pSweapon2;
 
-    [SerializeField]
-    private TextMeshProUGUI _tCore;
-    [SerializeField]
-    private TextMeshProUGUI _tBooster;
-    [SerializeField]
-    private TextMeshProUGUI _tBody;
-    [SerializeField]
-    private TextMeshProUGUI _tWeapon1;
-    [SerializeField]
-    private TextMeshProUGUI _tWeapon2;
-    [SerializeField]
-    private TextMeshProUGUI _tSweapon1;
-    [SerializeField]
-    private TextMeshProUGUI _tSweapon2;
-
-    public void GetPart(string partName, PartType type)
+    public void GetPart(Image image, PartType type)
     {
         switch(type)
         {
             case PartType.Core :
-                _pCore = partName;
+                _pCore.sprite = image.sprite;
                 break;
             case PartType.Booster:
-                _pBooster = partName;
+                _pBooster.sprite = image.sprite;
                 break;
             case PartType.Body:
-                _pBody = partName;
+                _pBody.sprite = image.sprite;
                 break;
             case PartType.Weapon1:
-                _pWeapon1 = partName;
+                _pWeapon1.sprite = image.sprite;
                 break;
             case PartType.Weapon2:
-                _pWeapon2 = partName;
+                _pWeapon2.sprite = image.sprite;
                 break;
             case PartType.SWeapon1:
-                _pSweapon1 = partName;
+                _pSweapon1.sprite = image.sprite;
                 break;
             case PartType.SWeapon2:
-                _pSweapon2 = partName;
+                _pSweapon2.sprite = image.sprite;
                 break;
         }
-        TextFormat();
     }
 
-    private void TextFormat()
+    public void RemovePart(PartType type)
     {
-        _tCore.text = _pCore;
-        _tBooster.text = _pBooster;
-        _tBody.text = _pBody;
-        _tWeapon1.text = _pWeapon1;
-        _tWeapon2.text = _pWeapon2;
-        _tSweapon1.text = _pSweapon1;
-        _tSweapon2.text = _pSweapon2;
+        switch (type)
+        {
+            case PartType.Core:
+                _pCore.sprite = null;
+                break;
+            case PartType.Booster:
+                _pBooster.sprite = null;
+                break;
+            case PartType.Body:
+                _pBody.sprite = null;
+                break;
+            case PartType.Weapon1:
+                _pWeapon1.sprite = null;
+                break;
+            case PartType.Weapon2:
+                _pWeapon2.sprite = null;
+                break;
+            case PartType.SWeapon1:
+                _pSweapon1.sprite = null;
+                break;
+            case PartType.SWeapon2:
+                _pSweapon2.sprite = null;
+                break;
+        }
     }
 }
