@@ -18,8 +18,7 @@ public class SurvivorModeManager : MonoBehaviour
     protected int curFixedPursuitSpawnCount = 0;
     protected int curMovedPursuitSpawnCount = 0;
 
-    [SerializeField]
-    private GameObject player;
+    public GameObject player;
 
     protected virtual void Update()
     {
@@ -33,19 +32,20 @@ public class SurvivorModeManager : MonoBehaviour
     {
         if (curPursuitSpawnCount == 0 || curDelay >= spawnDelay)
         {
-            if(curFixedPursuitSpawnCount < FixedPursuitSpawnCount)
+            if (curFixedPursuitSpawnCount < FixedPursuitSpawnCount)
             {
                 SpawnFixedPursuit();
                 curPursuitSpawnCount++;
                 curDelay = 0;
-                Debug.Log("°íÁ¤ Àû »ý¼º");
+                Debug.Log("ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½");
             }
 
-            if(curMovedPursuitSpawnCount <= MovedPursuitSpawnCount && curFixedPursuitSpawnCount >= FixedPursuitSpawnCount) {
+            if (curMovedPursuitSpawnCount <= MovedPursuitSpawnCount && curFixedPursuitSpawnCount >= FixedPursuitSpawnCount)
+            {
                 SpawnMovedPursuit();
                 curPursuitSpawnCount++;
                 curDelay = 0f;
-                Debug.Log("¿òÁ÷ÀÌ´Â Àû »ý¼º");
+                Debug.Log("ï¿½ï¿½ï¿½ï¿½ï¿½Ì´ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½");
             }
         }
     }
