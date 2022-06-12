@@ -311,15 +311,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c47b483aec1a6c94b8452620f8d27b96, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shield: {fileID: 1629163419}
-  hp: {fileID: 1139474056}
-  energy: {fileID: 1289584227}
-  speed: {fileID: 1915473133}
-  boost: {fileID: 1047751472}
-  weapon1: {fileID: 536806409}
-  weapon2: {fileID: 1700866113}
-  skill1: {fileID: 201299932}
-  skill2: {fileID: 134885926}
+  Shield: {fileID: 0}
+  Hp: {fileID: 0}
+  Energy: {fileID: 0}
+  Speed: {fileID: 0}
+  Boost: {fileID: 0}
+  Weapon1: {fileID: 0}
+  Weapon2: {fileID: 0}
+  Skill1: {fileID: 0}
+  Skill2: {fileID: 0}
+  gameOverPanel: {fileID: 0}
   _warningCountDownText: {fileID: 1232024213}
 --- !u!1 &201299932
 GameObject:
@@ -2327,9 +2328,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 38b03b1f7064d364d93da2da3e51d6a4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pursuitPre: {fileID: 768138431652014799, guid: af406d5f83860cb428d30a8e92cdd422, type: 3}
-  maxPursuitSpawnCount: 5
-  Player: {fileID: 822362885}
 --- !u!4 &1668481117
 Transform:
   m_ObjectHideFlags: 0
@@ -3263,7 +3261,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2084347323}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 2
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
