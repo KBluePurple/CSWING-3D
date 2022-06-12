@@ -61,7 +61,10 @@ namespace GameScene
         public void Dead()
         {
             gameOverPanel.SetActive(true);
+            MouseManager.Show(true);
+            MouseManager.Lock(false);
         }
+
         public void BackToMainMenu()
         {
             SceneManager.LoadScene("TitleScene");
