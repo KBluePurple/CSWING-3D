@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using GameScene;
+using DG.Tweening;
 
 public class PlayerMove : MonoBehaviour
 {
@@ -17,6 +18,7 @@ public class PlayerMove : MonoBehaviour
     [SerializeField] float _speedChange = 1f;
     [SerializeField] float _smooth = 3f;
     [SerializeField] float _maxSpeed = 10f;
+    [SerializeField] float _dashSpeed = 10f;
     [SerializeField] Image visual;
     [SerializeField] GameObject explosionEffect = null;
 
@@ -49,9 +51,53 @@ public class PlayerMove : MonoBehaviour
             _speed = Mathf.Clamp(_speed, -(_maxSpeed / 2), _maxSpeed);
         }
 
+
+        if (Input.GetKeyDown(KeyCode.A))
+        {
+            StartCoroutine(LeftDash());
+        }
+        if (Input.GetKeyDown(KeyCode.D))
+        {
+            StartCoroutine(RightDash());
+        }
+
         Debug.DrawRay(transform.position, transform.forward * 100, Color.red);
         // transform.Translate(transform.forward * _speed * Time.deltaTime);
         transform.position += transform.forward * _speed * Time.deltaTime;
+    }
+
+    bool isPushedLeft = false;
+    IEnumerator LeftDash()
+    {
+        if (isPushedLeft)
+        {
+            Debug.Log("LeftDash");
+            transform.DOMove(transform.position + -transform.right * _dashSpeed, 1f);
+            transform.DORotate(new Vector3(0, 0, 360), 1f, RotateMode.LocalAxisAdd);
+        }
+        else
+        {
+            isPushedLeft = true;
+            yield return new WaitForSeconds(0.2f);
+            isPushedLeft = false;
+        }
+    }
+
+    bool isPushedRight = false;
+    IEnumerator RightDash()
+    {
+        if (isPushedRight)
+        {
+            Debug.Log("RightDash");
+            transform.DOMove(transform.position + transform.right * _dashSpeed, 1f);
+            transform.DORotate(new Vector3(0, 0, -360), 1f, RotateMode.LocalAxisAdd);
+        }
+        else
+        {
+            isPushedRight = true;
+            yield return new WaitForSeconds(0.2f);
+            isPushedRight = false;
+        }
     }
 
     public void ResetPosition()
