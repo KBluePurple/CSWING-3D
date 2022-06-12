@@ -8,10 +8,8 @@ public enum PartType
     Core,
     Booster,
     Body,
-    Weapon1,
-    Weapon2,
-    SWeapon1,
-    SWeapon2,
+    Weapon,
+    SWeapon,
 }
 
 public class RepairMode : MonoBehaviour
