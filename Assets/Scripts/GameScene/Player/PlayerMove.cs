@@ -121,7 +121,7 @@ namespace GameScene
 
         private void OnTriggerEnter(Collider other)
         {
-            if (other.gameObject.CompareTag("PursuitBullet"))
+            if (other.gameObject.CompareTag("PursuitBullet") || other.gameObject.CompareTag("Enemy"))
             {
                 StartCoroutine(PlayerExplosion());
             }
