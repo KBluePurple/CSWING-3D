@@ -75,7 +75,11 @@ public class PlayerMove : MonoBehaviour
             Debug.Log("LeftDash");
             transform.DOMove(transform.position + -transform.right * _dashSpeed, 1f);
             transform.DORotate(new Vector3(0, 0, 360), 1f, RotateMode.LocalAxisAdd);
-            CameraRotatePin();
+            // 이부분 바꾸고 싶은데
+            cameraPos.transform.SetParent(null);
+            yield return new WaitForSeconds(1f);
+            cameraPos.transform.SetParent(transform);
+            cameraPos.transform.localPosition = new Vector3(0, 6.5f, -15);
         }
         else
         {
@@ -93,7 +97,11 @@ public class PlayerMove : MonoBehaviour
             Debug.Log("RightDash");
             transform.DOMove(transform.position + transform.right * _dashSpeed, 1f);
             transform.DORotate(new Vector3(0, 0, -360), 1f, RotateMode.LocalAxisAdd);
-            CameraRotatePin();
+
+            cameraPos.transform.SetParent(null);
+            yield return new WaitForSeconds(1f);
+            cameraPos.transform.SetParent(transform);
+            cameraPos.transform.localPosition = new Vector3(0, 6.5f, -15);
         }
         else
         {
@@ -103,11 +111,12 @@ public class PlayerMove : MonoBehaviour
         }
     }
 
-    private void CameraRotatePin()
-    {
-        cameraPos.transform.SetParent(null);
-        cameraPos.transform.DOMove(transform.position + -transform.right * _dashSpeed, 1f);
-    }
+    // 함수 사용 일단 보류
+    // private void CameraRotatePin(int dir = 1)
+    // {
+    //     cameraPos.transform.DORotate(new Vector3(0, 0, 360 * dir), 1f, RotateMode.LocalAxisAdd);
+    //     //cameraPos.transform.DOMove(transform.position + -transform.right * _dashSpeed, 1f);
+    // }
 
     public void ResetPosition()
     {
