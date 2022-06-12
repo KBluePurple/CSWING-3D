@@ -24,13 +24,14 @@ public class ButtonManager : MonoBehaviour
     private GameObject powerScroll;
 
 
-    //private void Start()
-    //{
-    //    GetComponent<Button>().onClick.AddListener(() => { });
-    //}
+    private void Start()
+    {
+        SoundManager.Instance.PlaySound("Epic Backing Track", SoundType.BGM);
+    }
 
     public void Back()
     {
+        SoundManager.Instance.PlaySound("UI_Click");
         selectGameMode.SetActive(false);
         repair.SetActive(false);
         setting.SetActive(false);
@@ -39,13 +40,16 @@ public class ButtonManager : MonoBehaviour
 
     public void OnStart()
     {
+        SoundManager.Instance.PlaySound("UI_Click");
         Debug.Log("SelectGameMode");
+        SoundManager.Instance.PlaySound("button");
         selectGameMode.SetActive(true);
         title.SetActive(false);
     }
 
     public void OnRepair()
     {
+        SoundManager.Instance.PlaySound("UI_Click");
         Debug.Log("Repair");
         repair.SetActive(true);
         title.SetActive(false);
@@ -53,12 +57,14 @@ public class ButtonManager : MonoBehaviour
 
     public void OnStartSurvival()
     {
+        SoundManager.Instance.PlaySound("UI_Click");
         Debug.Log("StartGame");
         SceneManager.LoadScene("GameScene");
     }
 
     public void DisalbleAllScroll()
     {
+        SoundManager.Instance.PlaySound("UI_Click");
         remodelScroll.SetActive(false);
         spaceshipScroll.SetActive(false);
         powerScroll.SetActive(false);
