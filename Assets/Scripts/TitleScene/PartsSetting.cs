@@ -6,28 +6,37 @@ using TMPro;
 
 public enum CorePart
 {
-
+    CORE_01,
+    CORE_02,
+    CORE_03,
 }
 
 public enum EnginePart
 {
-
+    BU_01,
+    BU_02,
+    BU_03,
 }
 
 public enum BodyPart
 {
-
+    CS_01,
+    CS_02,
+    CS_03,
 }
 
 public enum WeaponPart
 {
-
+    G_01,
+    L_01,
+    M_01,
 }
 
-public enum WeaponType
+public enum SpesialWeaponPart
 {
-    Main,
-    Sub
+    GA_00,
+    LO_VE,
+    BU_03,
 }
 
 public class PartsSetting : MonoBehaviour
@@ -36,7 +45,7 @@ public class PartsSetting : MonoBehaviour
     public static EnginePart Engine;
     public static BodyPart Body;
     public static WeaponPart Weapon;
-    public static WeaponPart SubWeapon;
+    public static SpesialWeaponPart SpesialWeapon;
 
     [SerializeField]
     private Image _pCore;
@@ -89,18 +98,16 @@ public class PartsSetting : MonoBehaviour
         Body = body;
     }
 
-    public void SetPart(Image image, WeaponPart weapon, WeaponType type)
+    public void SetPart(Image image, WeaponPart weapon)
     {
-        if(type == WeaponType.Main)
-        {
-            _pWeapon.sprite = image.sprite;
-            Weapon = weapon;
-        }
-        else
-        {
-            _pSweapon.sprite = image.sprite;
-            SubWeapon = weapon;
-        }
+        _pWeapon.sprite = image.sprite;
+        Weapon = weapon;
+    }
+
+    public void SetPart(Image image, SpesialWeaponPart spesialWeapon)
+    {
+        _pSweapon.sprite = image.sprite;
+        SpesialWeapon = spesialWeapon;
     }
 
     public void RemovePart(PartType type)
