@@ -27,6 +27,9 @@ public class SurvivorModeManager : MonoBehaviour
         SpawnPurusit();
     }
 
+    /// <summary>
+    /// 소환 규칙 : 단계만큼 고정 적 추가소환, 단계가 짝수일 때 이동가능한 적 + 1
+    /// </summary>
 
     protected virtual void SpawnPurusit()
     {
@@ -37,7 +40,7 @@ public class SurvivorModeManager : MonoBehaviour
                 SpawnFixedPursuit();
                 curPursuitSpawnCount++;
                 curDelay = 0;
-                Debug.Log("���� �� ����");
+                Debug.Log("Spawn FixedPursuit");
             }
 
             if (curMovedPursuitSpawnCount <= MovedPursuitSpawnCount && curFixedPursuitSpawnCount >= FixedPursuitSpawnCount)
@@ -45,7 +48,7 @@ public class SurvivorModeManager : MonoBehaviour
                 SpawnMovedPursuit();
                 curPursuitSpawnCount++;
                 curDelay = 0f;
-                Debug.Log("�����̴� �� ����");
+                Debug.Log("Spawn MovedPursuit");
             }
         }
     }
