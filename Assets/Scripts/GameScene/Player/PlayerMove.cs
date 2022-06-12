@@ -21,6 +21,7 @@ public class PlayerMove : MonoBehaviour
     [SerializeField] float _dashSpeed = 10f;
     [SerializeField] Image visual;
     [SerializeField] GameObject explosionEffect = null;
+    [SerializeField] GameObject cameraPos = null;
 
     private bool isSafeZone = false;
 
@@ -74,6 +75,7 @@ public class PlayerMove : MonoBehaviour
             Debug.Log("LeftDash");
             transform.DOMove(transform.position + -transform.right * _dashSpeed, 1f);
             transform.DORotate(new Vector3(0, 0, 360), 1f, RotateMode.LocalAxisAdd);
+            CameraRotatePin();
         }
         else
         {
@@ -91,6 +93,7 @@ public class PlayerMove : MonoBehaviour
             Debug.Log("RightDash");
             transform.DOMove(transform.position + transform.right * _dashSpeed, 1f);
             transform.DORotate(new Vector3(0, 0, -360), 1f, RotateMode.LocalAxisAdd);
+            CameraRotatePin();
         }
         else
         {
@@ -98,6 +101,12 @@ public class PlayerMove : MonoBehaviour
             yield return new WaitForSeconds(0.2f);
             isPushedRight = false;
         }
+    }
+
+    private void CameraRotatePin()
+    {
+        cameraPos.transform.SetParent(null);
+        cameraPos.transform.DOMove(transform.position + -transform.right * _dashSpeed, 1f);
     }
 
     public void ResetPosition()
