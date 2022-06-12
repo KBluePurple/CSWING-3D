@@ -42,7 +42,6 @@ public class ButtonManager : MonoBehaviour
     {
         SoundManager.Instance.PlaySound("UI_Click");
         Debug.Log("SelectGameMode");
-        SoundManager.Instance.PlaySound("button");
         selectGameMode.SetActive(true);
         title.SetActive(false);
     }
