@@ -16,6 +16,7 @@ public class PursuitController : MonoBehaviour
     private float curTime = 0f;
     private float shotDelay = 2f;
 
+    private LineRenderer lineRenderer = null;
     private GameManager gameManager = null;
     private PlayerAttack playerAttack = null;
     private SurvivorModeManager survivorModeManager = null;
@@ -27,6 +28,11 @@ public class PursuitController : MonoBehaviour
         playerAttack = FindObjectOfType<PlayerAttack>();
         survivorModeManager = FindObjectOfType<SurvivorModeManager>();
         pursuitBulletPos = transform.GetChild(0);
+
+        lineRenderer = GetComponent<LineRenderer>();
+        lineRenderer.startWidth = 0.1f;
+        lineRenderer.endWidth = 0.1f;
+        lineRenderer.material.color = Color.white;
     }
 
     void Update()
@@ -35,6 +41,8 @@ public class PursuitController : MonoBehaviour
         {
             if (Vector3.Distance(target.transform.position, transform.position) <= 30f)
             {
+                lineRenderer.enabled = true;
+
                 curTime += Time.deltaTime;
 
                 Vector3 dir = target.transform.position - transform.position;
@@ -43,14 +51,24 @@ public class PursuitController : MonoBehaviour
 
                 transform.rotation = rot;
 
+                lineRenderer.SetPosition(0, transform.position);
+                lineRenderer.SetPosition(1, target.transform.position);
+
+                if (curTime >= shotDelay - 0.2f)
+                {
+                    lineRenderer.material.color = Color.red;
+                }
+
                 if (curTime >= shotDelay)
                 {
                     AttackTarget();
                     curTime = 0f;
+                    lineRenderer.material.color = Color.white;
                 }
             }
             else
             {
+                lineRenderer.enabled = false;
                 target = GameObject.Find("Player");
             }
         }
