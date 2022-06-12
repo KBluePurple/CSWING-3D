@@ -46,7 +46,7 @@ namespace GameScene
                 Stat.Shield = 0;
             }
 
-            if(Stat.Hp <= 0)
+            if (Stat.Hp <= 0)
             {
                 uiManager.Dead();
             }
