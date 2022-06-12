@@ -2,8 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Enemy : MonoBehaviour
+public abstract class Enemy : MonoBehaviour
 {
+    [Header("Parameters")]
     [SerializeField] protected Transform target;
     [SerializeField] protected Vector3 reconnaissancePosition;
     [SerializeField] protected float speed = 10f;
@@ -12,7 +13,8 @@ public class Enemy : MonoBehaviour
     [SerializeField] protected float reconnaissanceRange = 10f;
     [SerializeField] protected float detectionRange = 10f;
 
-    private Vector3 targetPosition = Vector3.zero;
+    protected Vector3 targetPosition = Vector3.zero;
+    protected bool isDetected = false;
     private bool reconnaissanceCoolingDown = false;
 
     protected virtual void OnDrawGizmosSelected()
@@ -32,7 +34,7 @@ public class Enemy : MonoBehaviour
         }
     }
 
-    protected virtual void Start()
+    protected virtual void Awake()
     {
         reconnaissancePosition = transform.position;
     }
@@ -42,14 +44,22 @@ public class Enemy : MonoBehaviour
         float distance = Vector3.Distance(transform.position, target.position);
         if (distance < detectionRange && distance > 0.1f)
         {
-            targetPosition = target.position;
+            OnDetected();
         }
         else
         {
-            StartCoroutine(SetRandomReconnaissancePosition());
+            OnUnDetected();
         }
         transform.position = Vector3.MoveTowards(transform.position, targetPosition, speed * Time.deltaTime);
         transform.LookAt(targetPosition);
+    }
+
+    protected virtual void OnDetected()
+    {
+    }
+
+    protected virtual void OnUnDetected()
+    {
     }
 
     protected virtual IEnumerator SetRandomReconnaissancePosition()
