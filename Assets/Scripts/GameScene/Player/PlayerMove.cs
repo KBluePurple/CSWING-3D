@@ -108,7 +108,7 @@ namespace GameScene
 
         private void OnTriggerEnter(Collider other)
         {
-            if (other.gameObject.CompareTag("PursuitBullet"))
+            if (other.gameObject.CompareTag("PursuitBullet") || other.gameObject.CompareTag("Enemy"))
             {
                 StartCoroutine(PlayerExplosion());
             }
@@ -132,13 +132,13 @@ namespace GameScene
         public IEnumerator PlayerExplosion()
         {
             GameObject effect = Instantiate(explosionEffect, transform.position, Quaternion.identity);
-            Debug.Log("�÷��̾� ����");
+            //Debug.Log("�÷��̾� ����");
             yield return new WaitForSeconds(2f);
             Destroy(effect);
             // TODO : �̰� Ǯ�Ŵ��� ���� �ʿ�
             Instantiate(explosionEffect, transform.position, Quaternion.identity);
 
-            Debug.Log("�÷��̾� ����");
+            //Debug.Log("�÷��̾� ����");
             //Destroy(gameObject);
         }
     }
