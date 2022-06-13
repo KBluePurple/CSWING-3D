@@ -89,6 +89,7 @@ public class ButtonManager : MonoBehaviour
     public void OnSetting()
     {
         setting.SetActive(true);
+        title.SetActive(false);
         //Debug.Log("Setting");
     }
 
