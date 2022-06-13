@@ -4,8 +4,10 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 
+#region Enum
 public enum CorePart
 {
+    NONE,
     CORE_01,
     CORE_02,
     CORE_03,
@@ -13,6 +15,7 @@ public enum CorePart
 
 public enum EnginePart
 {
+    NONE,
     BU_01,
     BU_02,
     BU_03,
@@ -20,6 +23,7 @@ public enum EnginePart
 
 public enum BodyPart
 {
+    NONE,
     CS_01,
     CS_02,
     CS_03,
@@ -27,6 +31,7 @@ public enum BodyPart
 
 public enum WeaponPart
 {
+    NONE,
     G_01,
     L_01,
     M_01,
@@ -34,12 +39,14 @@ public enum WeaponPart
 
 public enum SpesialWeaponPart
 {
+    NONE,
     GA_00,
     LO_VE,
     BU_03,
 }
+#endregion
 
-public class PartsSetting : MonoBehaviour
+public class PartsSetting : MonoSingleton<PartsSetting>
 {
     public static CorePart Core;
     public static EnginePart Engine;
@@ -115,18 +122,23 @@ public class PartsSetting : MonoBehaviour
         switch (type)
         {
             case PartType.Core:
+                Core = CorePart.NONE;
                 _pCore.sprite = null;
                 break;
             case PartType.Booster:
+                Engine = EnginePart.NONE;
                 _pBooster.sprite = null;
                 break;
             case PartType.Body:
+                Body = BodyPart.NONE;
                 _pBody.sprite = null;
                 break;
             case PartType.Weapon:
+                Weapon = WeaponPart.NONE;
                 _pWeapon.sprite = null;
                 break;
             case PartType.SWeapon:
+                SpesialWeapon = SpesialWeaponPart.NONE;
                 _pSweapon.sprite = null;
                 break;
         }
