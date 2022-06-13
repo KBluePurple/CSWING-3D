@@ -23,14 +23,6 @@ public class ButtonManager : MonoBehaviour
     [SerializeField]
     private GameObject powerScroll;
 
-<<<<<<< Updated upstream
-    private void Start()
-    {
-        SoundManager.Instance.PlaySound("Epic Backing Track", SoundType.BGM);
-    }
-
-=======
->>>>>>> Stashed changes
     public void Back()
     {
         SoundManager.Instance.PlaySound("UI_Click");
