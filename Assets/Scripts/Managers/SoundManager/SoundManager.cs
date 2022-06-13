@@ -12,7 +12,7 @@ public class SoundManager : MonoSingleton<SoundManager>
 
     private Dictionary<string, AudioClip> soundList = null;
 
-    void Start()
+    void Awake()
     {
         audioSource = GetComponent<AudioSource>();
         soundList = new Dictionary<string, AudioClip>();
