@@ -26,4 +26,9 @@ public class RepairUIManager : MonoSingleton<RepairUIManager>
             _backButton.SetActive(true);
         }
     }
+
+    public void PlayUIClickSound()
+    {
+        SoundManager.Instance.PlaySound("UI_Click", SoundType.SE);
+    }
 }
