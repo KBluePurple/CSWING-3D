@@ -5,18 +5,17 @@ using UnityEngine;
 public class SurvivorModeManager : MonoBehaviour
 {
     [SerializeField]
-    private GameObject pursuitPre;
+    private GameObject fixedPursuitPre;
     [SerializeField]
-    private int maxPursuitSpawnCount = 5;
-    private int wave = 1;
-    private float spawnDelay = 90f;
+    private GameObject movedPursuitPre;
+
+    private float spawnDelay = 5f;
     private float curDelay = 0f;
 
     public int curPursuitSpawnCount = 0;
     protected int FixedPursuitSpawnCount = 0;
     protected int MovedPursuitSpawnCount = 0;
-    protected int curFixedPursuitSpawnCount = 0;
-    protected int curMovedPursuitSpawnCount = 0;
+    protected int pursuitSpawnCount = 0;
 
     public GameObject player;
 
@@ -33,20 +32,25 @@ public class SurvivorModeManager : MonoBehaviour
 
     protected virtual void SpawnPurusit()
     {
-        if (curPursuitSpawnCount == 0 || curDelay >= spawnDelay)
+        for(int i = 0; i < FixedPursuitSpawnCount; i++)
         {
-            if (curFixedPursuitSpawnCount < FixedPursuitSpawnCount)
+            if(curDelay >= spawnDelay)
             {
                 SpawnFixedPursuit();
                 curPursuitSpawnCount++;
+                pursuitSpawnCount++;
                 curDelay = 0;
                 Debug.Log("Spawn FixedPursuit");
             }
+        }
 
-            if (curMovedPursuitSpawnCount <= MovedPursuitSpawnCount && curFixedPursuitSpawnCount >= FixedPursuitSpawnCount)
+        for (int i = 0; i < MovedPursuitSpawnCount; i++)
+        {
+            if (curDelay >= spawnDelay)
             {
                 SpawnMovedPursuit();
                 curPursuitSpawnCount++;
+                                pursuitSpawnCount++;
                 curDelay = 0f;
                 Debug.Log("Spawn MovedPursuit");
             }
@@ -61,7 +65,7 @@ public class SurvivorModeManager : MonoBehaviour
 
         Vector3 spawnPos = new Vector3(spawnPosX, spawnPosY, spawnPosZ);
 
-        Instantiate(pursuitPre, spawnPos, Quaternion.identity);
+        Instantiate(fixedPursuitPre, spawnPos, Quaternion.identity);
     }
 
     protected virtual void SpawnMovedPursuit()
@@ -72,6 +76,14 @@ public class SurvivorModeManager : MonoBehaviour
 
         Vector3 spawnPos = new Vector3(spawnPosX, spawnPosY, spawnPosZ);
 
-        Instantiate(pursuitPre, spawnPos, Quaternion.identity);
+        Instantiate(movedPursuitPre, spawnPos, Quaternion.identity);
+    }
+
+    protected virtual void goNextLevel()
+    {
+        if(pursuitSpawnCount >= FixedPursuitSpawnCount + MovedPursuitSpawnCount && curPursuitSpawnCount <= 0)
+        {
+            LevelManager.FindObjectOfType<LevelManager>().nextLevel();
+        }
     }
 }
