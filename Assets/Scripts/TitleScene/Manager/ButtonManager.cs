@@ -23,11 +23,14 @@ public class ButtonManager : MonoBehaviour
     [SerializeField]
     private GameObject powerScroll;
 
+<<<<<<< Updated upstream
     private void Start()
     {
         SoundManager.Instance.PlaySound("Epic Backing Track", SoundType.BGM);
     }
 
+=======
+>>>>>>> Stashed changes
     public void Back()
     {
         SoundManager.Instance.PlaySound("UI_Click");
@@ -70,24 +73,28 @@ public class ButtonManager : MonoBehaviour
 
     public void ActiveRemodelScroll()
     {
+        SoundManager.Instance.PlaySound("UI_Click");
         DisalbleAllScroll();
         remodelScroll.SetActive(true);
     }
 
     public void ActiveSpaceShipScroll()
     {
+        SoundManager.Instance.PlaySound("UI_Click");
         DisalbleAllScroll();
         spaceshipScroll.SetActive(true);
     }
 
     public void ActivePowerScroll()
     {
+        SoundManager.Instance.PlaySound("UI_Click");
         DisalbleAllScroll();
         powerScroll.SetActive(true);
     }
 
     public void OnSetting()
     {
+        SoundManager.Instance.PlaySound("UI_Click");
         setting.SetActive(true);
         title.SetActive(false);
         //Debug.Log("Setting");
@@ -95,6 +102,7 @@ public class ButtonManager : MonoBehaviour
 
     public void OnQuit()
     {
+        SoundManager.Instance.PlaySound("UI_Click");
         Debug.Log("Quit");
         Application.Quit();
     }
