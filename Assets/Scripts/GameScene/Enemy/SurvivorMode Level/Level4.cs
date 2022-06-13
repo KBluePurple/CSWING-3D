@@ -8,8 +8,6 @@ public class Level4 : SurvivorModeManager
     {
         FixedPursuitSpawnCount = 10;
         MovedPursuitSpawnCount = 4;
-        curFixedPursuitSpawnCount = 0;
-        curMovedPursuitSpawnCount = 0;
     }
 
     protected override void Update()
@@ -25,5 +23,10 @@ public class Level4 : SurvivorModeManager
     protected override void SpawnMovedPursuit()
     {
         base.SpawnMovedPursuit();
+    }
+
+    protected override void goNextLevel()
+    {
+        base.goNextLevel();
     }
 }
