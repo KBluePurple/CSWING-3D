@@ -72,4 +72,18 @@ public abstract class Enemy : MonoBehaviour
             reconnaissanceCoolingDown = false;
         }
     }
+
+    protected virtual void OnCTriggerEnter(Collision other)
+    {
+        if (other.gameObject.CompareTag("Bullet"))
+        {
+            health -= PlayerAttack.FindObjectOfType<PlayerAttack>().bulletDamaged;
+            Debug.Log("Enemy 데미지입음");
+            if(health <= 0)
+            {
+                Destroy(gameObject);
+                Debug.Log("Enemy 사망");
+            }
+        }
+    }
 }
