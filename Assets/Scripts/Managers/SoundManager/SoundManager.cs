@@ -2,19 +2,23 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[RequireComponent(typeof(AudioSource))]
 public class SoundManager : MonoSingleton<SoundManager>
 {
+    [Header("오디오 소스")]
+    [SerializeField]
+    private AudioSource BMGAudioSource = null;
+    [SerializeField]
+    private AudioSource SEAudioSource = null;
+
+
     [SerializeField]
     private List<AudioClip> audioClips = new List<AudioClip>();
 
-    private AudioSource audioSource = null;
 
     private Dictionary<string, AudioClip> soundList = null;
 
     void Awake()
     {
-        audioSource = GetComponent<AudioSource>();
         soundList = new Dictionary<string, AudioClip>();
         foreach (AudioClip audioClip in audioClips)
         {
@@ -28,13 +32,17 @@ public class SoundManager : MonoSingleton<SoundManager>
         {
             if (soundType == SoundType.SE)
             {
-                audioSource.PlayOneShot(soundList[soundName]);
+                SEAudioSource.PlayOneShot(soundList[soundName]);
             }
             else if (soundType == SoundType.BGM)
             {
-                audioSource.clip = soundList[soundName];
-                audioSource.loop = true;
-                audioSource.Play();
+                if (BMGAudioSource.isPlaying)
+                {
+                    BMGAudioSource.Stop();
+                }
+                BMGAudioSource.clip = soundList[soundName];
+                BMGAudioSource.loop = true;
+                BMGAudioSource.Play();
             }
         }
     }

@@ -22,6 +22,7 @@ public class TitleSoundController : MonoBehaviour
         else
         {
             masterMixer.SetFloat(mixerName, sound);
+            Debug.Log(sound);
         }
     }
 }
