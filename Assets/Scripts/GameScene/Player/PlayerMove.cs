@@ -22,6 +22,7 @@ namespace GameScene
         [SerializeField] float _dashSpeed = 10f;
         [SerializeField] Image visual;
         [SerializeField] GameObject explosionEffect = null;
+        [SerializeField] GameObject cameraPos = null;
 
         private bool isSafeZone = false;
 
@@ -75,6 +76,10 @@ namespace GameScene
                 Debug.Log("LeftDash");
                 transform.DOMove(transform.position + -transform.right * _dashSpeed, 1f);
                 transform.DORotate(new Vector3(0, 0, 360), 1f, RotateMode.LocalAxisAdd);
+                cameraPos.transform.SetParent(null);
+                yield return new WaitForSeconds(1f);
+                cameraPos.transform.SetParent(transform);
+                cameraPos.transform.localPosition = new Vector3(0, 6.5f, -15);
             }
             else
             {
@@ -92,6 +97,10 @@ namespace GameScene
                 Debug.Log("RightDash");
                 transform.DOMove(transform.position + transform.right * _dashSpeed, 1f);
                 transform.DORotate(new Vector3(0, 0, -360), 1f, RotateMode.LocalAxisAdd);
+                cameraPos.transform.SetParent(null);
+                yield return new WaitForSeconds(1f);
+                cameraPos.transform.SetParent(transform);
+                cameraPos.transform.localPosition = new Vector3(0, 6.5f, -15);
             }
             else
             {

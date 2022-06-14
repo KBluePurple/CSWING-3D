@@ -61,9 +61,9 @@ public class PartsSetting : MonoSingleton<PartsSetting>
     [SerializeField]
     private Image _pBody;
     [SerializeField]
-    private Image _pWeapon;
+    private Image[] _pWeapon;
     [SerializeField]
-    private Image _pSweapon;
+    private Image[] _pSweapon;
 
     public void GetPart(Image image, PartType type)
     {
@@ -79,10 +79,12 @@ public class PartsSetting : MonoSingleton<PartsSetting>
                 _pBody.sprite = image.sprite;
                 break;
             case PartType.Weapon:
-                _pWeapon.sprite = image.sprite;
+                _pWeapon[0].sprite = image.sprite;
+                _pWeapon[1].sprite = image.sprite;
                 break;
             case PartType.SWeapon:
-                _pSweapon.sprite = image.sprite;
+                _pSweapon[0].sprite = image.sprite;
+                _pSweapon[1].sprite = image.sprite;
                 break;
         }
     }
@@ -107,13 +109,15 @@ public class PartsSetting : MonoSingleton<PartsSetting>
 
     public void SetPart(Image image, WeaponPart weapon)
     {
-        _pWeapon.sprite = image.sprite;
+        _pWeapon[0].sprite = image.sprite;
+        _pWeapon[1].sprite = image.sprite;
         Weapon = weapon;
     }
 
     public void SetPart(Image image, SpesialWeaponPart spesialWeapon)
     {
-        _pSweapon.sprite = image.sprite;
+        _pSweapon[0].sprite = image.sprite;
+        _pSweapon[1].sprite = image.sprite;
         SpesialWeapon = spesialWeapon;
     }
 
@@ -135,11 +139,13 @@ public class PartsSetting : MonoSingleton<PartsSetting>
                 break;
             case PartType.Weapon:
                 Weapon = WeaponPart.NONE;
-                _pWeapon.sprite = null;
+                _pWeapon[0].sprite = null;
+                _pWeapon[1].sprite = null;
                 break;
             case PartType.SWeapon:
                 SpesialWeapon = SpesialWeaponPart.NONE;
-                _pSweapon.sprite = null;
+                _pSweapon[0].sprite = null;
+                _pSweapon[1].sprite = null;
                 break;
         }
     }

@@ -18,6 +18,8 @@ namespace GameScene
         public Image Energy;
         [SerializeField]
         public Image Speed;
+        [SerializeField]
+        public Image BackSpeed;
 
         [Header("PlayerAttackUI")]
         [SerializeField]
@@ -46,6 +48,7 @@ namespace GameScene
         private void Update()
         {
             Speed.fillAmount = playerMove._speed / 10;
+            BackSpeed.fillAmount = - playerMove._speed / 5;
         }
 
         public void OnSafeZoneCounterUpdate(int count)
