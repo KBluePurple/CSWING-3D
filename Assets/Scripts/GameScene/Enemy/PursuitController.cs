@@ -96,7 +96,8 @@ public class PursuitController : MonoBehaviour
     public void PursuitDead()
     {
         Destroy(gameObject);
-        survivorModeManager.curPursuitSpawnCount--;
+        // survivorModeManager.curPursuitSpawnCount--;
+        ItemManager.Instance.SpawnItem(ItemType.CORE, transform.position);
         Debug.Log("Pursuit »ç¸Á");
     }
 }

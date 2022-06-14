@@ -13270,7 +13270,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _part: 2
   _image: {fileID: 209366628}
-  _adress: 
+  _bundleAdress: 
 --- !u!114 &1533933765
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13822,7 +13822,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _part: 3
   _image: {fileID: 638056263}
-  _adress: 
+  _bundleAdress: 
 --- !u!114 &1667169182
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14317,7 +14317,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _part: 1
   _image: {fileID: 639807132}
-  _adress: 
+  _bundleAdress: 
 --- !u!1 &1752266940
 GameObject:
   m_ObjectHideFlags: 0
@@ -15887,7 +15887,7 @@ Canvas:
   serializedVersion: 3
   m_RenderMode: 1
   m_Camera: {fileID: 132180423}
-  m_PlaneDistance: 100
+  m_PlaneDistance: 10
   m_PixelPerfect: 0
   m_ReceivesEvents: 1
   m_OverrideSorting: 0

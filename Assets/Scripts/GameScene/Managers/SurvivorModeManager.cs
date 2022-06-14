@@ -65,7 +65,7 @@ public class SurvivorModeManager : MonoBehaviour
 
         Vector3 spawnPos = new Vector3(spawnPosX, spawnPosY, spawnPosZ);
 
-        Instantiate(fixedPursuitPre, spawnPos, Quaternion.identity);
+        // Instantiate(fixedPursuitPre, spawnPos, Quaternion.identity);
     }
 
     protected virtual void SpawnMovedPursuit()
