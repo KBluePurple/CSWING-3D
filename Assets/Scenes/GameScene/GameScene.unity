@@ -1217,7 +1217,7 @@ MonoBehaviour:
   _dashSpeed: 10
   visual: {fileID: 1995328209}
   explosionEffect: {fileID: 142012, guid: 5534fe87bdddbbb44ab4dd43c16c1a1e, type: 3}
-  cameraPos: {fileID: 0}
+  cameraPos: {fileID: 1800659504}
 --- !u!114 &822362888
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1232,7 +1232,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rayMaxDistance: 30
   rayTransform: {fileID: 1855989032}
-  bulletPre: {fileID: 4848083708199283256, guid: 6c31c2c036529464695166638d205993, type: 3}
+  G_01_bulletPre: {fileID: 0}
+  L_01_bulletPre: {fileID: 0}
+  M_01_bulletPre: {fileID: 0}
   bulletPos: {fileID: 504114993}
 --- !u!114 &822362889
 MonoBehaviour:

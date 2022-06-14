@@ -10,10 +10,14 @@ public class PlayerAttack : MonoBehaviour
     private Transform rayTransform;
     private RaycastHit rayHit;
 
-
     // Shot Bullet
-    [SerializeField]
     private GameObject bulletPre;
+    [SerializeField]
+    private GameObject G_01_bulletPre;
+    [SerializeField]
+    private GameObject L_01_bulletPre;
+    [SerializeField]
+    private GameObject M_01_bulletPre;
     [SerializeField]
     private Transform bulletPos;
     [SerializeField]
@@ -32,6 +36,8 @@ public class PlayerAttack : MonoBehaviour
             Debug.Log("적 감지");
         }
 
+        WeaponSet();
+
         if (Input.GetMouseButton(0))
         {
             if(curDelay >= shotDelay)
@@ -39,6 +45,24 @@ public class PlayerAttack : MonoBehaviour
                 Fire();
                 curDelay = 0f;
             }
+        }
+    }
+
+    void WeaponSet()
+    {
+        switch (SaveManager.Instance.Parts.Weapon)
+        {
+            case WeaponPart.NONE:
+                break;
+            case WeaponPart.G_01:
+                bulletPre = G_01_bulletPre;
+                break;
+            case WeaponPart.L_01:
+                bulletPre = L_01_bulletPre;
+                break;
+            case WeaponPart.M_01:
+                bulletPre = M_01_bulletPre;
+                break;
         }
     }
 
