@@ -39,13 +39,13 @@ public class PursuitController : MonoBehaviour
     {
         if (target != null)
         {
-            if (Vector3.Distance(target.transform.position, transform.position) <= 10f)
+            if (Vector3.Distance(target.transform.position, transform.position) <= Enemy.FindObjectOfType<Enemy>().detectionRange)
             {
                 lineRenderer.enabled = true;
 
                 curTime += Time.deltaTime;
 
-                // transform.LookAt(target.transform);
+                transform.LookAt(target.transform);
 
                 lineRenderer.SetPosition(0, transform.position);
                 lineRenderer.SetPosition(1, target.transform.position);

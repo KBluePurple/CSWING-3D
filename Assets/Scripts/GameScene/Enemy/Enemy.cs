@@ -11,7 +11,7 @@ public abstract class Enemy : MonoBehaviour
     [SerializeField] protected float health = 100f;
     [SerializeField] protected float damage = 10f;
     [SerializeField] protected float reconnaissanceRange = 10f;
-    [SerializeField] protected float detectionRange = 10f;
+    [SerializeField] public float detectionRange = 10f;
 
     protected Vector3 targetPosition = Vector3.zero;
     protected bool isDetected = false;
@@ -51,7 +51,7 @@ public abstract class Enemy : MonoBehaviour
             OnUnDetected();
         }
         transform.position = Vector3.MoveTowards(transform.position, targetPosition, speed * Time.deltaTime);
-        transform.LookAt(targetPosition);
+        //transform.LookAt(targetPosition);
     }
 
     protected virtual void OnDetected()

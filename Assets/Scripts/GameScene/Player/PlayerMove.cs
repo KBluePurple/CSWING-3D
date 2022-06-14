@@ -146,6 +146,7 @@ namespace GameScene
             Destroy(effect);
             // TODO : �̰� Ǯ�Ŵ��� ���� �ʿ�
             Instantiate(explosionEffect, transform.position, Quaternion.identity);
+            PlayerManager.Instance.Damaged(10);
 
             //Debug.Log("�÷��̾� ����");
             //Destroy(gameObject);

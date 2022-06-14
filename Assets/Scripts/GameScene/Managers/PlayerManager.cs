@@ -29,6 +29,11 @@ namespace GameScene
         private float rotationSpeed;
         //감도? 는 어케? 쓰?지?
 
+        // 쉴드 자동충전 쿨타임
+        private float shieldRecoveryDelay = 5f;
+        private float curShieldRecoverydelay = 0f;
+        private float delay = 0f;
+
         private UIManager uiManager;
 
         private void Start()
@@ -37,8 +42,25 @@ namespace GameScene
             uiManager = FindObjectOfType<UIManager>();
         }
 
+        private void Update()
+        {
+            curShieldRecoverydelay += Time.deltaTime;
+            delay += Time.deltaTime;
+
+            if(curShieldRecoverydelay >= shieldRecoveryDelay)
+            {
+                if(delay >= 1f)
+                {
+                    Stat.Shield += 10;
+                    delay = 0;
+                }
+            }
+
+        }
+
         public void Damaged(int damage)
         {
+            curShieldRecoverydelay = 0f;
             Stat.Shield -= damage;
             if (Stat.Shield < 0)
             {
