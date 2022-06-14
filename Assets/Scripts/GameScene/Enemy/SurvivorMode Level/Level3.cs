@@ -24,4 +24,9 @@ public class Level3 : SurvivorModeManager
     {
         base.SpawnMovedPursuit();
     }
+
+    protected override void goNextLevel()
+    {
+        base.goNextLevel();
+    }
 }
