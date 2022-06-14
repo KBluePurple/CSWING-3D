@@ -9,20 +9,17 @@ public class TitleSoundController : MonoBehaviour
     [SerializeField]
     private AudioMixer masterMixer;
     [SerializeField]
-    private Slider audioSlider;
+    private Slider bgmSlider;
+    [SerializeField]
+    private Slider seSlider;
 
-    public void AudioController(string mixerName)
+    public void BGMVolumeChange()
     {
-        float sound = audioSlider.value;
+        masterMixer.SetFloat("BGM", bgmSlider.value);
+    }
 
-        if (sound == -40f)
-        {
-            masterMixer.SetFloat(mixerName, -80);
-        }
-        else
-        {
-            masterMixer.SetFloat(mixerName, sound);
-            Debug.Log(sound);
-        }
+    public void SEVolumeChange()
+    {
+        masterMixer.SetFloat("SE", seSlider.value);
     }
 }
