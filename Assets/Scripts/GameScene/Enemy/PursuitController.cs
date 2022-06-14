@@ -39,17 +39,13 @@ public class PursuitController : MonoBehaviour
     {
         if (target != null)
         {
-            if (Vector3.Distance(target.transform.position, transform.position) <= 30f)
+            if (Vector3.Distance(target.transform.position, transform.position) <= 10f)
             {
                 lineRenderer.enabled = true;
 
                 curTime += Time.deltaTime;
 
-                Vector3 dir = target.transform.position - transform.position;
-
-                Quaternion rot = Quaternion.LookRotation(dir.normalized);
-
-                transform.rotation = rot;
+                // transform.LookAt(target.transform);
 
                 lineRenderer.SetPosition(0, transform.position);
                 lineRenderer.SetPosition(1, target.transform.position);
