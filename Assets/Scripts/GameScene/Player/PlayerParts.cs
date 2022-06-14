@@ -2,9 +2,13 @@
 public class PlayerParts
 {
     public CorePart Core;
+    public string CoreSprite;
     public EnginePart Engine;
+    public string EngineSprite;
     public BodyPart Body;
+    public string BodySprite;
     public WeaponPart Weapon;
-    public string WeaponAdress;
+    public string WeaponSprite;
     public SpesialWeaponPart SpesialWeapon;
+    public string SpesialWeaponSprite;
 }

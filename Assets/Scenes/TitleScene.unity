@@ -11339,11 +11339,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   parts:
     Core: 0
+    CoreSprite: 
     Engine: 0
+    EngineSprite: 
     Body: 0
+    BodySprite: 
     Weapon: 0
-    WeaponAdress: 
+    WeaponSprite: 
     SpesialWeapon: 0
+    SpesialWeaponSprite: 
 --- !u!1 &1455873170
 GameObject:
   m_ObjectHideFlags: 0
@@ -13810,7 +13814,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _part: 1
   _image: {fileID: 639807132}
-  _bundleAdress: 
+  _bundleAdress: image.sprite;
 --- !u!1 &1752266940
 GameObject:
   m_ObjectHideFlags: 0

@@ -60,9 +60,16 @@ public class PartsSetting : MonoSingleton<PartsSetting>
     [SerializeField]
     private Image[] _pSweapon;
 
+    private void Start()
+    {
+        LoadAllParts();
+    }
 
-
-
+    private void LoadAllParts()
+    {
+        _pWeapon[0].sprite = BundleLoader.Instance.FindAsset(SaveManager.Instance.Parts.WeaponSprite);
+        _pWeapon[1].sprite = BundleLoader.Instance.FindAsset(SaveManager.Instance.Parts.WeaponSprite);
+    }
 
     public void GetPart(Image image, PartType type)
     {
@@ -108,10 +115,10 @@ public class PartsSetting : MonoSingleton<PartsSetting>
 
     public void SetPart(Image image, WeaponPart weapon, string adress)
     {
-        _pWeapon[0].sprite = Resources.Load<Sprite>(adress);
-        _pWeapon[1].sprite = Resources.Load<Sprite>(adress);
+        _pWeapon[0].sprite = image.sprite;
+        _pWeapon[1].sprite = image.sprite;
+        SaveManager.Instance.Parts.WeaponSprite = adress;
         SaveManager.Instance.Parts.Weapon = weapon;
-        SaveManager.Instance.Parts.WeaponAdress = adress;
     }
 
     public void SetPart(Image image, SpesialWeaponPart spesialWeapon)

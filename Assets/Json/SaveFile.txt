@@ -1,7 +1,12 @@
 ﻿{
     "Core": 2,
+    "CoreSprite": "",
     "Engine": 1,
+    "EngineSprite": "",
     "Body": 2,
+    "BodySprite": "",
     "Weapon": 1,
-    "SpesialWeapon": 3
+    "WeaponSprite": "WeaponVectorImage",
+    "SpesialWeapon": 3,
+    "SpesialWeaponSprite": ""
 }

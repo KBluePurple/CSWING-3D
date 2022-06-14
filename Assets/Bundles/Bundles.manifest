@@ -1,7 +1,7 @@
 ManifestFileVersion: 0
-CRC: 828990377
+CRC: 2894225064
 AssetBundleManifest:
   AssetBundleInfos:
     Info_0:
-      Name: sprites
+      Name: sprites.weapons
       Dependencies: {}
