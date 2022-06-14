@@ -1242,13 +1242,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 42b4b1886638de944b8eea44c67eee0c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _speed: 1
+  _speed: 10
   _xRotateSpeed: 1
   _yRotateSpeed: 1
   _zRotateSpeed: 1
-  _speedChange: 1
+  _speedChange: 10
   _smooth: 3
-  _maxSpeed: 10
+  _maxSpeed: 100
   _dashSpeed: 10
   visual: {fileID: 1995328209}
   explosionEffect: {fileID: 142012, guid: 5534fe87bdddbbb44ab4dd43c16c1a1e, type: 3}
@@ -2323,7 +2323,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1407935856}
   m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
-  m_LocalPosition: {x: 4.02, y: 0, z: -3.5}
+  m_LocalPosition: {x: 4.974, y: -0.996, z: -1.942}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 822362886}
@@ -2647,7 +2647,7 @@ ParticleSystem:
     startSize:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0.2
+      scalar: 0
       minScalar: 1
       maxCurve:
         serializedVersion: 2
@@ -3345,13 +3345,13 @@ ParticleSystem:
         m_Curve:
         - serializedVersion: 3
           time: 0
-          value: 0
-          inSlope: 3.8153148
-          outSlope: 3.8153148
+          value: 0.16214752
+          inSlope: 3.3501437
+          outSlope: 3.3501437
           tangentMode: 0
           weightedMode: 0
           inWeight: 0.33333334
-          outWeight: 0.09917355
+          outWeight: 0.11326021
         - serializedVersion: 3
           time: 1
           value: 0
@@ -3666,8 +3666,8 @@ ParticleSystem:
       maxColor: {r: 1, g: 1, b: 1, a: 1}
       maxGradient:
         serializedVersion: 2
-        key0: {r: 0.3773585, g: 0.3773585, b: 0.3773585, a: 1}
-        key1: {r: 0.8207547, g: 0.76527864, b: 0.70848167, a: 1}
+        key0: {r: 0.8705883, g: 0.50980395, b: 0.21568629, a: 1}
+        key1: {r: 0.43529415, g: 0.14117648, b: 0.039215688, a: 1}
         key2: {r: 0, g: 0, b: 0, a: 0}
         key3: {r: 0, g: 0, b: 0, a: 0}
         key4: {r: 0, g: 0, b: 0, a: 0}
@@ -7224,7 +7224,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1468482640}
   m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
-  m_LocalPosition: {x: -3.99, y: 0, z: -3.5}
+  m_LocalPosition: {x: -5.011, y: -0.881, z: -2.086}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 822362886}
@@ -7548,7 +7548,7 @@ ParticleSystem:
     startSize:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0.2
+      scalar: 0
       minScalar: 1
       maxCurve:
         serializedVersion: 2
@@ -8246,13 +8246,13 @@ ParticleSystem:
         m_Curve:
         - serializedVersion: 3
           time: 0
-          value: 0
-          inSlope: 3.8153148
-          outSlope: 3.8153148
+          value: 0.16214752
+          inSlope: 3.3501437
+          outSlope: 3.3501437
           tangentMode: 0
           weightedMode: 0
           inWeight: 0.33333334
-          outWeight: 0.09917355
+          outWeight: 0.11326021
         - serializedVersion: 3
           time: 1
           value: 0
@@ -8567,8 +8567,8 @@ ParticleSystem:
       maxColor: {r: 1, g: 1, b: 1, a: 1}
       maxGradient:
         serializedVersion: 2
-        key0: {r: 0.3773585, g: 0.3773585, b: 0.3773585, a: 1}
-        key1: {r: 0.8207547, g: 0.76527864, b: 0.70848167, a: 1}
+        key0: {r: 0.8705883, g: 0.50980395, b: 0.21568629, a: 1}
+        key1: {r: 0.43529415, g: 0.14117648, b: 0.039215688, a: 1}
         key2: {r: 0, g: 0, b: 0, a: 0}
         key3: {r: 0, g: 0, b: 0, a: 0}
         key4: {r: 0, g: 0, b: 0, a: 0}
