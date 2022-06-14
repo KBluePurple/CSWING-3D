@@ -11,7 +11,7 @@ public class PlayerAttack : MonoBehaviour
     private RaycastHit rayHit;
 
     // Shot Bullet
-    private GameObject bulletPre;
+    public GameObject bulletPre { private set; get; }
     [SerializeField]
     private GameObject G_01_bulletPre;
     [SerializeField]

@@ -5,7 +5,6 @@ using GameScene;
 
 public class PlayerSkills : MonoBehaviour
 {
-    [SerializeField] GameObject bulletPre = null;
     [SerializeField] GameObject bulletPos = null;
 
     private bool isSkill = false;
@@ -96,8 +95,9 @@ public class PlayerSkills : MonoBehaviour
             Debug.Log("에너지 부족");
         }
 
-        bulletPre.transform.localScale = new Vector3(10f, 10f, 10f);
-        Instantiate(bulletPre, bulletPos.transform);
+        GameObject bullet = GetComponent<PlayerAttack>().bulletPre;
+        bullet.transform.localScale = new Vector3(10f, 10f, 10f);
+        Instantiate(bullet, bulletPos.transform);
 
         if(curdelay >= skillDelay)
         {
