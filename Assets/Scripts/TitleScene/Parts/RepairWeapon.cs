@@ -7,6 +7,7 @@ public class RepairWeapon : MonoBehaviour
 {
     [SerializeField] WeaponPart _part;
     [SerializeField] Image _image;
+    [SerializeField] string _bundleAdress;
 
     private Button _button;
     private void Start()
@@ -15,7 +16,7 @@ public class RepairWeapon : MonoBehaviour
         _button.onClick.AddListener(() =>
         {
             Debug.Log($"{_part} 장비 설정!");
-            PartsSetting.Instance.SetPart(_image, _part);
+            PartsSetting.Instance.SetPart(_image, _part, _bundleAdress);
         });
     }
 }

@@ -1,0 +1,7 @@
+﻿{
+    "Core": 2,
+    "Engine": 1,
+    "Body": 2,
+    "Weapon": 1,
+    "SpesialWeapon": 3
+}

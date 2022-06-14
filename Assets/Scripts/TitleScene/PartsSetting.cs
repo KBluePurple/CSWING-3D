@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+
 using TMPro;
 
 #region Enum
@@ -48,12 +49,6 @@ public enum SpesialWeaponPart
 
 public class PartsSetting : MonoSingleton<PartsSetting>
 {
-    public static CorePart Core;
-    public static EnginePart Engine;
-    public static BodyPart Body;
-    public static WeaponPart Weapon;
-    public static SpesialWeaponPart SpesialWeapon;
-
     [SerializeField]
     private Image _pCore;
     [SerializeField]
@@ -64,6 +59,10 @@ public class PartsSetting : MonoSingleton<PartsSetting>
     private Image[] _pWeapon;
     [SerializeField]
     private Image[] _pSweapon;
+
+
+
+
 
     public void GetPart(Image image, PartType type)
     {
@@ -92,33 +91,34 @@ public class PartsSetting : MonoSingleton<PartsSetting>
     public void SetPart(Image image, CorePart core)
     {
         _pCore.sprite = image.sprite;
-        Core = core;
+        SaveManager.Instance.Parts.Core = core;
     }
 
     public void SetPart(Image image, EnginePart engine)
     {
         _pBooster.sprite = image.sprite;
-        Engine = engine;
+        SaveManager.Instance.Parts.Engine = engine;
     }
 
     public void SetPart(Image image, BodyPart body)
     {
         _pBody.sprite = image.sprite;
-        Body = body;
+        SaveManager.Instance.Parts.Body = body;
     }
 
-    public void SetPart(Image image, WeaponPart weapon)
+    public void SetPart(Image image, WeaponPart weapon, string adress)
     {
-        _pWeapon[0].sprite = image.sprite;
-        _pWeapon[1].sprite = image.sprite;
-        Weapon = weapon;
+        _pWeapon[0].sprite = Resources.Load<Sprite>(adress);
+        _pWeapon[1].sprite = Resources.Load<Sprite>(adress);
+        SaveManager.Instance.Parts.Weapon = weapon;
+        SaveManager.Instance.Parts.WeaponAdress = adress;
     }
 
     public void SetPart(Image image, SpesialWeaponPart spesialWeapon)
     {
         _pSweapon[0].sprite = image.sprite;
         _pSweapon[1].sprite = image.sprite;
-        SpesialWeapon = spesialWeapon;
+        SaveManager.Instance.Parts.SpesialWeapon = spesialWeapon;
     }
 
     public void RemovePart(PartType type)
@@ -126,24 +126,24 @@ public class PartsSetting : MonoSingleton<PartsSetting>
         switch (type)
         {
             case PartType.Core:
-                Core = CorePart.NONE;
+                SaveManager.Instance.Parts.Core = CorePart.NONE;
                 _pCore.sprite = null;
                 break;
             case PartType.Booster:
-                Engine = EnginePart.NONE;
+                SaveManager.Instance.Parts.Engine = EnginePart.NONE;
                 _pBooster.sprite = null;
                 break;
             case PartType.Body:
-                Body = BodyPart.NONE;
+                SaveManager.Instance.Parts.Body = BodyPart.NONE;
                 _pBody.sprite = null;
                 break;
             case PartType.Weapon:
-                Weapon = WeaponPart.NONE;
+                SaveManager.Instance.Parts.Weapon = WeaponPart.NONE;
                 _pWeapon[0].sprite = null;
                 _pWeapon[1].sprite = null;
                 break;
             case PartType.SWeapon:
-                SpesialWeapon = SpesialWeaponPart.NONE;
+                SaveManager.Instance.Parts.SpesialWeapon = SpesialWeaponPart.NONE;
                 _pSweapon[0].sprite = null;
                 _pSweapon[1].sprite = null;
                 break;
