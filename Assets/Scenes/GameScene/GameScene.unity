@@ -1170,6 +1170,7 @@ GameObject:
   - component: {fileID: 822362890}
   - component: {fileID: 822362891}
   - component: {fileID: 822362892}
+  - component: {fileID: 822362893}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -1292,6 +1293,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pursuit: {fileID: 58690064}
   shortestDistance: 0
+--- !u!114 &822362893
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 822362885}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 50316d00ce97c8942a397fc2905dcbb7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bulletPre: {fileID: 0}
+  bulletPos: {fileID: 504114992}
 --- !u!1 &859408633
 GameObject:
   m_ObjectHideFlags: 0
