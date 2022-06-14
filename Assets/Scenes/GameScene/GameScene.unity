@@ -166,8 +166,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c63f698528a6db3428f0ff096bbad187, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pursuitPre: {fileID: 768138431652014799, guid: af406d5f83860cb428d30a8e92cdd422, type: 3}
-  maxPursuitSpawnCount: 5
+  fixedPursuitPre: {fileID: 0}
+  movedPursuitPre: {fileID: 0}
   curPursuitSpawnCount: 0
   player: {fileID: 822362885}
 --- !u!1 &55800971
@@ -1217,6 +1217,7 @@ MonoBehaviour:
   _dashSpeed: 10
   visual: {fileID: 1995328209}
   explosionEffect: {fileID: 142012, guid: 5534fe87bdddbbb44ab4dd43c16c1a1e, type: 3}
+  cameraPos: {fileID: 0}
 --- !u!114 &822362888
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1996,8 +1997,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 620e47f858a3dde4eadc33d6d2e5c658, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pursuitPre: {fileID: 768138431652014799, guid: af406d5f83860cb428d30a8e92cdd422, type: 3}
-  maxPursuitSpawnCount: 5
+  fixedPursuitPre: {fileID: 0}
+  movedPursuitPre: {fileID: 0}
   curPursuitSpawnCount: 0
   player: {fileID: 822362885}
 --- !u!1 &1277943360
@@ -2217,6 +2218,54 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!1 &1434881765
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1434881766}
+  - component: {fileID: 1434881767}
+  m_Layer: 0
+  m_Name: ItemManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1434881766
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1434881765}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1668481117}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1434881767
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1434881765}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8070bc5bcd958c8419fbfe97e4e0aa2c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _corePrefab: {fileID: 2860326457502350668, guid: 0766eb553123fcb4c8d8f559c555292b, type: 3}
+  _enginePrefab: {fileID: 2860326457502350668, guid: 0766eb553123fcb4c8d8f559c555292b, type: 3}
+  _bodyPrefab: {fileID: 2860326457502350668, guid: 0766eb553123fcb4c8d8f559c555292b, type: 3}
+  _weaponPrefab: {fileID: 2860326457502350668, guid: 0766eb553123fcb4c8d8f559c555292b, type: 3}
+  _spesialWeaponPrefab: {fileID: 2860326457502350668, guid: 0766eb553123fcb4c8d8f559c555292b, type: 3}
 --- !u!1 &1452218165
 GameObject:
   m_ObjectHideFlags: 0
@@ -2770,6 +2819,7 @@ Transform:
   - {fileID: 2060915802}
   - {fileID: 887044493}
   - {fileID: 1452218166}
+  - {fileID: 1434881766}
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -3029,8 +3079,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 83e0cff6937ec9a4d8e50e2de93865ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pursuitPre: {fileID: 768138431652014799, guid: af406d5f83860cb428d30a8e92cdd422, type: 3}
-  maxPursuitSpawnCount: 5
+  fixedPursuitPre: {fileID: 0}
+  movedPursuitPre: {fileID: 0}
   curPursuitSpawnCount: 0
   player: {fileID: 822362885}
 --- !u!1 &1800659504
@@ -3847,8 +3897,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 14719c0c17ae3f046857956bb0606c7c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pursuitPre: {fileID: 768138431652014799, guid: af406d5f83860cb428d30a8e92cdd422, type: 3}
-  maxPursuitSpawnCount: 5
+  fixedPursuitPre: {fileID: 0}
+  movedPursuitPre: {fileID: 0}
   curPursuitSpawnCount: 0
   player: {fileID: 822362885}
 --- !u!1 &2060915801
