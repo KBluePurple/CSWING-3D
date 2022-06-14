@@ -59,7 +59,10 @@ namespace GameScene
                 _speed += speed * _speedChange * Time.deltaTime;
                 _speed = Mathf.Clamp(_speed, -(_maxSpeed / 2), _maxSpeed);
             }
-            transform.Translate(transform.forward * _speed * Time.deltaTime);
+
+            Debug.DrawRay(transform.position, transform.forward * 100, Color.red);
+            // transform.Translate(transform.forward * _speed * Time.deltaTime);
+            transform.position += transform.forward * _speed * Time.deltaTime;
 
             if (Input.GetKeyDown(KeyCode.A))
             {
@@ -69,10 +72,6 @@ namespace GameScene
             {
                 StartCoroutine(RightDash());
             }
-
-            Debug.DrawRay(transform.position, transform.forward * 100, Color.red);
-            // transform.Translate(transform.forward * _speed * Time.deltaTime);
-            transform.position += transform.forward * _speed * Time.deltaTime;
 
             virtualCamera.m_Lens.FieldOfView = 50 + Mathf.Abs(_speed) / _maxSpeed * 50;
         }
