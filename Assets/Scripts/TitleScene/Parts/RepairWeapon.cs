@@ -15,6 +15,7 @@ public class RepairWeapon : MonoBehaviour
         _button = GetComponent<Button>();
         _button.onClick.AddListener(() =>
         {
+            SoundManager.Instance.PlaySound("Dock", SoundType.SE);
             Debug.Log($"{_part} 장비 설정!");
             PartsSetting.Instance.SetPart(_image, _part, _bundleAdress);
         });

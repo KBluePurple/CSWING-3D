@@ -15,6 +15,7 @@ public class RepairBody : MonoBehaviour
         _button.onClick.AddListener(() =>
         {
             Debug.Log($"{_part} 장비 설정!");
+            SoundManager.Instance.PlaySound("Dock", SoundType.SE);
             PartsSetting.Instance.SetPart(_image, _part);
         });
     }

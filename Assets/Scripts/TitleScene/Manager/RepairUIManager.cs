@@ -27,8 +27,8 @@ public class RepairUIManager : MonoSingleton<RepairUIManager>
         }
     }
 
-    public void PlayUIClickSound()
+    public void PlayUIClickSound(string soundName)
     {
-        SoundManager.Instance.PlaySound("UI_Click", SoundType.SE);
+        SoundManager.Instance.PlaySound(soundName, SoundType.SE);
     }
 }
