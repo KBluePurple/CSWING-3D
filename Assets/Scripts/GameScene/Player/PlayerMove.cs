@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using DG.Tweening;
+using Cinemachine;
 
 namespace GameScene
 {
@@ -23,8 +24,14 @@ namespace GameScene
         [SerializeField] Image visual;
         [SerializeField] GameObject explosionEffect = null;
         [SerializeField] GameObject cameraPos = null;
+        [SerializeField] CinemachineVirtualCamera virtualCamera;
 
         private bool isSafeZone = false;
+
+        private void Start()
+        {
+            virtualCamera.m_Lens.FieldOfView = 50;
+        }
 
         private void Update()
         {
@@ -52,7 +59,10 @@ namespace GameScene
                 _speed += speed * _speedChange * Time.deltaTime;
                 _speed = Mathf.Clamp(_speed, -(_maxSpeed / 2), _maxSpeed);
             }
-            transform.Translate(transform.forward * _speed * Time.deltaTime);
+
+            Debug.DrawRay(transform.position, transform.forward * 100, Color.red);
+            // transform.Translate(transform.forward * _speed * Time.deltaTime);
+            transform.position += transform.forward * _speed * Time.deltaTime;
 
             if (Input.GetKeyDown(KeyCode.A))
             {
@@ -63,9 +73,7 @@ namespace GameScene
                 StartCoroutine(RightDash());
             }
 
-            Debug.DrawRay(transform.position, transform.forward * 100, Color.red);
-            // transform.Translate(transform.forward * _speed * Time.deltaTime);
-            transform.position += transform.forward * _speed * Time.deltaTime;
+            virtualCamera.m_Lens.FieldOfView = 50 + Mathf.Abs(_speed) / _maxSpeed * 50;
         }
 
         bool isPushedLeft = false;
