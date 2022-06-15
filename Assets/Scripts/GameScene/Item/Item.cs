@@ -8,4 +8,9 @@ public class Item : MonoBehaviour
     {
         Type = type;
     }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        // TODO : 먹는거 만들어줄 사람 구함
+    }
 }
