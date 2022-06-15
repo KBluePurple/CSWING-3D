@@ -35,7 +35,7 @@ namespace GameScene
 
         [SerializeField]
         private GameObject gameOverPanel;
-        [SerializeField] Text _warningCountDownText = null;
+        [SerializeField] TextMeshProUGUI _warningCountDownText = null;
 
         private PlayerMove playerMove;
 
