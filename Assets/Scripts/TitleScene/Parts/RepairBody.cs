@@ -3,20 +3,23 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class RepairBody : MonoBehaviour
+public class RepairBody : RepairBase
 {
     [SerializeField] BodyPart _part;
-    [SerializeField] Image _image;
 
-    private Button _button;
     private void Start()
     {
-        _button = GetComponent<Button>();
-        _button.onClick.AddListener(() =>
-        {
-            Debug.Log($"{_part} 장비 설정!");
-            SoundManager.Instance.PlaySound("Dock", SoundType.SE);
-            PartsSetting.Instance.SetPart(_image, _part);
-        });
+        ChildrenStart();
+    }
+
+    protected override void PartsSet()
+    {
+        Debug.Log($"{_part} 장비 설정!");
+        PartsSetting.Instance.SetPart(_image, _part, _bundleAdress);
+    }
+
+    protected override void UseSet()
+    {
+        _canUse = SaveManager.Instance.Parts.BODY[_number];
     }
 }

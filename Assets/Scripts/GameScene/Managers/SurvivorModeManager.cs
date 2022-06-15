@@ -8,13 +8,25 @@ public class SurvivorModeManager : MonoBehaviour
     private GameObject fixedPursuitPre;
     [SerializeField]
     private GameObject movedPursuitPre;
+    [SerializeField]
+    private GameObject smallPursuitPre;
+    [SerializeField]
+    private GameObject middlePursuitPre;
+    [SerializeField]
+    private GameObject bigPursuitPre;
 
     private float spawnDelay = 5f;
     private float curDelay = 0f;
 
     public int curPursuitSpawnCount = 0;
+    public int curSmallPursuitSpawnCount = 0;
+    public int curMiddlePursuitSpawnCount = 0;
+    public int curBigPursuitSpawnCount = 0;
     protected int FixedPursuitSpawnCount = 0;
     protected int MovedPursuitSpawnCount = 0;
+    protected int smallPursuitSpawnCount = 0;
+    protected int middlePursuitSpawnCount = 0;
+    protected int bigPursuitSpawnCount = 0;
     protected int pursuitSpawnCount = 0;
 
     public GameObject player;
@@ -50,7 +62,43 @@ public class SurvivorModeManager : MonoBehaviour
             {
                 SpawnMovedPursuit();
                 curPursuitSpawnCount++;
-                                pursuitSpawnCount++;
+                pursuitSpawnCount++;
+                curDelay = 0f;
+                Debug.Log("Spawn MovedPursuit");
+            }
+        }
+
+        for (int i = 0; i < smallPursuitSpawnCount; i++)
+        {
+            if (curDelay >= spawnDelay)
+            {
+                SpawnSmallPursuit();
+                curSmallPursuitSpawnCount++;
+                pursuitSpawnCount++;
+                curDelay = 0f;
+                Debug.Log("Spawn MovedPursuit");
+            }
+        }
+
+        for (int i = 0; i < middlePursuitSpawnCount; i++)
+        {
+            if (curDelay >= spawnDelay)
+            {
+                SpawnMiddlePursuit();
+                curMiddlePursuitSpawnCount++;
+                pursuitSpawnCount++;
+                curDelay = 0f;
+                Debug.Log("Spawn MovedPursuit");
+            }
+        }
+
+        for (int i = 0; i < bigPursuitSpawnCount; i++)
+        {
+            if (curDelay >= spawnDelay)
+            {
+                SpawnBigPursuit();
+                curBigPursuitSpawnCount++;
+                pursuitSpawnCount++;
                 curDelay = 0f;
                 Debug.Log("Spawn MovedPursuit");
             }
@@ -79,11 +127,47 @@ public class SurvivorModeManager : MonoBehaviour
         Instantiate(movedPursuitPre, spawnPos, Quaternion.identity);
     }
 
+    protected virtual void SpawnSmallPursuit()
+    {
+        float spawnPosX = Random.Range(player.transform.position.x - 50f, player.transform.position.x + 50f);
+        float spawnPosY = Random.Range(player.transform.position.y - 50f, player.transform.position.y + 450f);
+        float spawnPosZ = Random.Range(player.transform.position.z - 50f, player.transform.position.z + 450f);
+
+        Vector3 spawnPos = new Vector3(spawnPosX, spawnPosY, spawnPosZ);
+
+        Instantiate(smallPursuitPre, spawnPos, Quaternion.identity);
+    }
+
+    protected virtual void SpawnMiddlePursuit()
+    {
+        float spawnPosX = Random.Range(player.transform.position.x - 50f, player.transform.position.x + 50f);
+        float spawnPosY = Random.Range(player.transform.position.y - 50f, player.transform.position.y + 450f);
+        float spawnPosZ = Random.Range(player.transform.position.z - 50f, player.transform.position.z + 450f);
+
+        Vector3 spawnPos = new Vector3(spawnPosX, spawnPosY, spawnPosZ);
+
+        Instantiate(middlePursuitPre, spawnPos, Quaternion.identity);
+    }
+
+    protected virtual void SpawnBigPursuit()
+    {
+        float spawnPosX = Random.Range(player.transform.position.x - 50f, player.transform.position.x + 50f);
+        float spawnPosY = Random.Range(player.transform.position.y - 50f, player.transform.position.y + 450f);
+        float spawnPosZ = Random.Range(player.transform.position.z - 50f, player.transform.position.z + 450f);
+
+        Vector3 spawnPos = new Vector3(spawnPosX, spawnPosY, spawnPosZ);
+
+        Instantiate(bigPursuitPre, spawnPos, Quaternion.identity);
+    }
+
     protected virtual void goNextLevel()
     {
         if(pursuitSpawnCount >= FixedPursuitSpawnCount + MovedPursuitSpawnCount && curPursuitSpawnCount <= 0)
         {
             LevelManager.FindObjectOfType<LevelManager>().nextLevel();
+            pursuitSpawnCount = 0;
         }
     }
+
+
 }
