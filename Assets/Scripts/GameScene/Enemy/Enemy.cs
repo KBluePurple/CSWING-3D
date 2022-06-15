@@ -51,7 +51,7 @@ public abstract class Enemy : MonoBehaviour
             OnUnDetected();
         }
         transform.position = Vector3.MoveTowards(transform.position, targetPosition, speed * Time.deltaTime);
-        //transform.LookAt(targetPosition);
+        transform.LookAt(targetPosition);
     }
 
     protected virtual void OnDetected()
