@@ -94,19 +94,19 @@ public class PartsSetting : MonoSingleton<PartsSetting>
         }
     }
 
-    public void SetPart(Image image, CorePart core)
+    public void SetPart(Image image, CorePart core, string adress)
     {
         _pCore.sprite = image.sprite;
         SaveManager.Instance.Parts.Core = core;
     }
 
-    public void SetPart(Image image, EnginePart engine)
+    public void SetPart(Image image, EnginePart engine, string adress)
     {
         _pBooster.sprite = image.sprite;
         SaveManager.Instance.Parts.Engine = engine;
     }
 
-    public void SetPart(Image image, BodyPart body)
+    public void SetPart(Image image, BodyPart body, string adress)
     {
         _pBody.sprite = image.sprite;
         SaveManager.Instance.Parts.Body = body;
@@ -120,7 +120,7 @@ public class PartsSetting : MonoSingleton<PartsSetting>
         SaveManager.Instance.Parts.Weapon = weapon;
     }
 
-    public void SetPart(Image image, SpesialWeaponPart spesialWeapon)
+    public void SetPart(Image image, SpesialWeaponPart spesialWeapon, string adress)
     {
         _pSweapon[0].sprite = image.sprite;
         _pSweapon[1].sprite = image.sprite;

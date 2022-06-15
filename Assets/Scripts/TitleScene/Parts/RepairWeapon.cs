@@ -3,22 +3,18 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class RepairWeapon : MonoBehaviour
+public class RepairWeapon : RepairBase
 {
     [SerializeField] WeaponPart _part;
-    [SerializeField] Image _image;
-    [SerializeField] string _bundleAdress;
 
-    private Button _button;
     private void Start()
     {
-        _image.sprite = BundleLoader.Instance.FindAsset(_bundleAdress);
-        _button = GetComponent<Button>();
-        _button.onClick.AddListener(() =>
-        {
-            SoundManager.Instance.PlaySound("Dock", SoundType.SE);
-            Debug.Log($"{_part} 장비 설정!");
-            PartsSetting.Instance.SetPart(_image, _part, _bundleAdress);
-        });
+        ChildrenStart();
+    }
+
+    protected override void PartsSet()
+    {
+        Debug.Log($"{_part} 장비 설정!");
+        PartsSetting.Instance.SetPart(_image, _part, _bundleAdress);
     }
 }
