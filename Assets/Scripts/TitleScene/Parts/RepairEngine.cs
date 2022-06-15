@@ -17,4 +17,9 @@ public class RepairEngine : RepairBase
         Debug.Log($"{_part} 장비 설정!");
         PartsSetting.Instance.SetPart(_image, _part, _bundleAdress);
     }
+
+    protected override void UseSet()
+    {
+        _canUse = SaveManager.Instance.Parts.ENGINE[_number];
+    }
 }
