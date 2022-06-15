@@ -12,6 +12,7 @@ public class RepairWeapon : MonoBehaviour
     private Button _button;
     private void Start()
     {
+        _image.sprite = BundleLoader.Instance.FindAsset(_bundleAdress);
         _button = GetComponent<Button>();
         _button.onClick.AddListener(() =>
         {

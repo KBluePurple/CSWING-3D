@@ -15,10 +15,11 @@ public class BundleLoader : MonoSingleton<BundleLoader>
 
     private IEnumerator LoadBundle()
     {
-        _bundleAdress = "file:///" + Application.dataPath + "/Bundles/" + "sprites";
+        _bundleAdress = "file:///" + Application.dataPath + "/Bundles/sprites";
         _bundleRequest = UnityWebRequestAssetBundle.GetAssetBundle(_bundleAdress, 0);
         yield return _bundleRequest.SendWebRequest();
         _bundle = DownloadHandlerAssetBundle.GetContent(_bundleRequest);
+        Debug.Log("번들 로딩 완료!");
     }
 
     public Sprite FindAsset(string assetName)

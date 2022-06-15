@@ -4749,7 +4749,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 700938842}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cafb8d84b7df78c41ac16c1a1de9c72e, type: 3}
+  m_Script: {fileID: 11500000, guid: 039c8338b12704047bf763caffb0fd2d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &701344362
@@ -12803,7 +12803,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _part: 2
   _image: {fileID: 209366628}
-  _bundleAdress: 
+  _bundleAdress: weapon4
 --- !u!114 &1533933765
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13343,7 +13343,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _part: 3
   _image: {fileID: 638056263}
-  _bundleAdress: 
+  _bundleAdress: w
 --- !u!114 &1667169182
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13814,7 +13814,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _part: 1
   _image: {fileID: 639807132}
-  _bundleAdress: image.sprite;
+  _bundleAdress: weapon2
 --- !u!1 &1752266940
 GameObject:
   m_ObjectHideFlags: 0

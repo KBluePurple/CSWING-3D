@@ -5,8 +5,8 @@
     "EngineSprite": "",
     "Body": 2,
     "BodySprite": "",
-    "Weapon": 1,
-    "WeaponSprite": "WeaponVectorImage",
+    "Weapon": 2,
+    "WeaponSprite": "weapon4",
     "SpesialWeapon": 3,
     "SpesialWeaponSprite": ""
 }
