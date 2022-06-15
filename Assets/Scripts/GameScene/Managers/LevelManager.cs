@@ -32,6 +32,9 @@ public class LevelManager : MonoBehaviour
         curDelay = 0f;
         ++curLevel;
 
-        Level[curLevel].SetActive(true);
+        if(curLevel != 5)
+        {
+            Level[curLevel].SetActive(true);
+        }
     }
 }
