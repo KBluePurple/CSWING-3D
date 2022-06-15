@@ -1330,8 +1330,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 52dd72388e94c5e4db5b946c90fde322, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _part: 1
   _image: {fileID: 1240865484}
+  _part: 1
 --- !u!1 &157432240
 GameObject:
   m_ObjectHideFlags: 0
@@ -1817,8 +1817,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e625d3d89248844083a648fe49f7788, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _part: 1
   _image: {fileID: 835269435}
+  _part: 1
 --- !u!1 &290975436
 GameObject:
   m_ObjectHideFlags: 0
@@ -4064,8 +4064,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 52dd72388e94c5e4db5b946c90fde322, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _part: 2
   _image: {fileID: 590232057}
+  _part: 2
 --- !u!114 &653008878
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5945,8 +5945,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0b1b8dd13bf0cfc4d8a6de5a588d1527, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _part: 3
   _image: {fileID: 379606753}
+  _part: 3
 --- !u!114 &823824912
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9223,8 +9223,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6ed52817de57b6443be65e91ec7746b7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _part: 3
   _image: {fileID: 1462089988}
+  _part: 3
 --- !u!114 &1238004844
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9821,8 +9821,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0b1b8dd13bf0cfc4d8a6de5a588d1527, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _part: 1
   _image: {fileID: 832330240}
+  _part: 1
 --- !u!1 &1299174541
 GameObject:
   m_ObjectHideFlags: 0
@@ -10095,8 +10095,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6ed52817de57b6443be65e91ec7746b7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _part: 1
   _image: {fileID: 662527630}
+  _part: 1
 --- !u!1 &1300658726
 GameObject:
   m_ObjectHideFlags: 0
@@ -10151,8 +10151,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0b1b8dd13bf0cfc4d8a6de5a588d1527, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _part: 2
   _image: {fileID: 2095393961}
+  _part: 2
 --- !u!114 &1300658729
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10631,8 +10631,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e625d3d89248844083a648fe49f7788, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _part: 2
   _image: {fileID: 1373511323}
+  _part: 2
 --- !u!114 &1387951110
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11348,6 +11348,9 @@ MonoBehaviour:
     WeaponSprite: 
     SpesialWeapon: 0
     SpesialWeaponSprite: 
+    Orin: 0
+    Idirium: 0
+    Tumtain: 0
 --- !u!1 &1455873170
 GameObject:
   m_ObjectHideFlags: 0
@@ -11613,8 +11616,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 52dd72388e94c5e4db5b946c90fde322, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _part: 3
   _image: {fileID: 1934424612}
+  _part: 3
 --- !u!114 &1474270773
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11751,8 +11754,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e625d3d89248844083a648fe49f7788, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _part: 3
   _image: {fileID: 1105407878}
+  _part: 3
 --- !u!114 &1495517377
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12801,8 +12804,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e0ddb6b0d6b3b5840a8de16cf542d967, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _part: 2
   _image: {fileID: 209366628}
+  _part: 2
   _bundleAdress: weapon4
 --- !u!114 &1533933765
 MonoBehaviour:
@@ -13341,9 +13344,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e0ddb6b0d6b3b5840a8de16cf542d967, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _part: 3
   _image: {fileID: 638056263}
-  _bundleAdress: w
+  _part: 3
+  _bundleAdress: weapon1
 --- !u!114 &1667169182
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13812,8 +13815,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e0ddb6b0d6b3b5840a8de16cf542d967, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _part: 1
   _image: {fileID: 639807132}
+  _part: 1
   _bundleAdress: weapon2
 --- !u!1 &1752266940
 GameObject:
@@ -14273,8 +14276,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6ed52817de57b6443be65e91ec7746b7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _part: 2
   _image: {fileID: 1496708018}
+  _part: 2
 --- !u!114 &1825600708
 MonoBehaviour:
   m_ObjectHideFlags: 0
