@@ -47,9 +47,9 @@ namespace GameScene
             curShieldRecoverydelay += Time.deltaTime;
             delay += Time.deltaTime;
 
-            if(curShieldRecoverydelay >= shieldRecoveryDelay)
+            if (curShieldRecoverydelay >= shieldRecoveryDelay)
             {
-                if(delay >= 1f)
+                if (delay >= 1f)
                 {
                     Stat.Shield += 10;
                     delay = 0;

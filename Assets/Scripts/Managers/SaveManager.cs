@@ -16,6 +16,7 @@ public class SaveManager : MonoSingleton<SaveManager>
     private void Awake()
     {
         DontDestroyOnLoad(gameObject);
+
         SAVE_PATH = Application.dataPath + "/Json";
         if (!Directory.Exists(SAVE_PATH))
         {

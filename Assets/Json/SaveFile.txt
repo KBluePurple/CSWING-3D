@@ -1,7 +1,12 @@
 ﻿{
     "Core": 2,
+    "CoreSprite": "",
     "Engine": 1,
+    "EngineSprite": "",
     "Body": 2,
-    "Weapon": 1,
-    "SpesialWeapon": 3
+    "BodySprite": "",
+    "Weapon": 2,
+    "WeaponSprite": "weapon4",
+    "SpesialWeapon": 3,
+    "SpesialWeaponSprite": ""
 }

@@ -1,9 +1,9 @@
 ManifestFileVersion: 0
-CRC: 3566856912
+CRC: 1732725008
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: bde32626f4024bed562dad6999e46c99
+    Hash: 41e205c2f16d54515f82a0a670b892a9
   TypeTreeHash:
     serializedVersion: 2
     Hash: 4df8c69f2c8a6ad9e3cbf82bb83e4dc3
@@ -15,5 +15,8 @@ ClassTypes:
   Script: {instanceID: 0}
 SerializeReferenceClassIdentifiers: []
 Assets:
-- Assets/Bundles/WeaponVectorImage.psd
+- Assets/Images/weapon4.png
+- Assets/Images/weapon3.png
+- Assets/Images/weapon1.png
+- Assets/Images/weapon2.png
 Dependencies: []
