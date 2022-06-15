@@ -10,7 +10,7 @@ namespace GameScene
         {
             MouseManager.Show(false);
             MouseManager.Lock(true);
+            SoundManager.Instance.PlaySound("StreetLove", SoundType.BGM);
         }
-
     }
 }
