@@ -347,6 +347,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Desert_Design5
       objectReference: {fileID: 0}
+    - target: {fileID: 2409545828415709538, guid: b3a5d11ab20d2cc4dad9237f39ede68e, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b3a5d11ab20d2cc4dad9237f39ede68e, type: 3}
 --- !u!1 &166721473
@@ -1003,7 +1007,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4392030041918626012, guid: af406d5f83860cb428d30a8e92cdd422, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -10.171904
+      value: -25.95
       objectReference: {fileID: 0}
     - target: {fileID: 4392030041918626012, guid: af406d5f83860cb428d30a8e92cdd422, type: 3}
       propertyPath: m_LocalPosition.y
@@ -1256,8 +1260,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 798, y: -175}
-  m_SizeDelta: {x: 200, y: 50}
+  m_AnchoredPosition: {x: 805.94336, y: -175}
+  m_SizeDelta: {x: 220, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &474815095
 MonoBehaviour:
@@ -14885,8 +14889,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -35}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 825, y: -175}
-  m_SizeDelta: {x: 200, y: 200}
+  m_AnchoredPosition: {x: 8, y: -175}
+  m_SizeDelta: {x: 250, y: 250}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1915473133
 MonoBehaviour:
@@ -15816,6 +15820,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: MicroRecon
       objectReference: {fileID: 0}
+    - target: {fileID: 2396654017003249568, guid: 0075fe33d13e5774c896fe792a9d9086, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3029075979542562074, guid: 0075fe33d13e5774c896fe792a9d9086, type: 3}
       propertyPath: m_RootOrder
       value: 10
@@ -15933,6 +15941,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: InfraredFurtive
       objectReference: {fileID: 0}
+    - target: {fileID: 7796535582860682044, guid: 8b13cb00d068bcf48bff34ab46eff12b, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8b13cb00d068bcf48bff34ab46eff12b, type: 3}
 --- !u!1 &8164078558349442684
@@ -16020,6 +16032,10 @@ PrefabInstance:
     - target: {fileID: 9158961982107514718, guid: 7eb4392ea1aad6546b1d69b509069642, type: 3}
       propertyPath: m_Name
       value: DualStriker
+      objectReference: {fileID: 0}
+    - target: {fileID: 9158961982107514718, guid: 7eb4392ea1aad6546b1d69b509069642, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7eb4392ea1aad6546b1d69b509069642, type: 3}
