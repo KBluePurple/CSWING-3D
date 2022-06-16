@@ -18,12 +18,14 @@ namespace GameScene
 
         private bool isActivePausePanel = false;
 
+        private PlayerMove playerMove = null;
 
         void Start()
         {
             MouseManager.Show(false);
             MouseManager.Lock(true);
             SoundManager.Instance.PlaySound("StreetLove", SoundType.BGM);
+            playerMove = FindObjectOfType<PlayerMove>();
         }
 
         private void Update()
@@ -39,6 +41,7 @@ namespace GameScene
             MouseManager.Show(true);
             MouseManager.Lock(false);
             pausePanel.SetActive(!pausePanel.activeSelf);
+            playerMove.isTimeStop = !playerMove.isTimeStop;
             Time.timeScale = pausePanel.activeSelf ? 0 : 1;
         }
 

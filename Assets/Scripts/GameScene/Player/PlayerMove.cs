@@ -28,6 +28,8 @@ namespace GameScene
 
         private bool isSafeZone = false;
 
+        public bool isTimeStop = false;
+
         private void Start()
         {
             virtualCamera.m_Lens.FieldOfView = 50;
@@ -44,7 +46,10 @@ namespace GameScene
 
             Vector3 lerpVector = new Vector3(vertical * _xRotateSpeed, -horizontal * _yRotateSpeed, 0).normalized * ((Mathf.Abs(horizontal) + Mathf.Abs(vertical)) / 2);
             _rotate = Vector3.Lerp(_rotate, lerpVector, _smooth * Time.deltaTime);
-            transform.Rotate(((-_rotate) + (new Vector3(0, 0, rotate) * _zRotateSpeed * -1)));
+            if (!isTimeStop)
+            {
+                transform.Rotate(((-_rotate) + (new Vector3(0, 0, rotate) * _zRotateSpeed * -1)));
+            }
             visual.rectTransform.anchoredPosition = new Vector2(-_rotate.y, _rotate.x) * 100;
 
             float speed = Input.GetAxis("Vertical");
