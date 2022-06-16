@@ -45,11 +45,13 @@ namespace GameScene
         public void Resume()
         {
             TogglePausePanel();
+            MouseManager.Show(false);
+            MouseManager.Lock(true);
         }
 
         public void Setting()
         {
-            Debug.Log("¼¼ÆÃ");
+            Debug.Log("ï¿½ï¿½ï¿½ï¿½");
         }
 
         public void BackToMainMenu()

@@ -8618,7 +8618,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1422582451}
-  - component: {fileID: 1422582452}
   - component: {fileID: 1422582453}
   m_Layer: 0
   m_Name: Level 10
@@ -8641,21 +8640,6 @@ Transform:
   m_Father: {fileID: 1477631830}
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1422582452
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1422582450}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4ac3acdb3b79fec4da1d4d4b49997245, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  subBoss: 1
-  subBossHP: 150
-  subBossPre: {fileID: 0}
 --- !u!114 &1422582453
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8668,7 +8652,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b56e50b8652b1c74c9f12fd6ddbfbaba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  boss: {fileID: 0}
+  boss: {fileID: 4704958077005794946, guid: a8f71e4d2be6621489b6db22f2aa136c, type: 3}
   spawnPos: {fileID: 0}
 --- !u!1 &1434881765
 GameObject:
