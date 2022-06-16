@@ -22,19 +22,23 @@ public class RepairBase : MonoBehaviour
         _image.sprite = BundleLoader.Instance.FindAsset(_bundleAdress);
         _alarmPanel = transform.parent.parent.parent.parent.Find("MakePartPanel").gameObject;
         UseSet();
+        if (_canUse)
+        {
+            _button.onClick.AddListener(()=>PartsSet());
+        }
+        else
+        {
+            _button.onClick.AddListener(() => ShowAlarmPanel());
+        }
         _button.onClick.AddListener(() =>
         {
             SoundManager.Instance.PlaySound("Dock", SoundType.SE);
-            if (_canUse)
-                PartsSet();
-            else
-                ShowAlarmPanel();
         });
     }
 
     protected void ShowAlarmPanel()
     {
-        _button.onClick.AddListener(()=>_alarmPanel.SetActive(true));
+        _alarmPanel.SetActive(true);
     }
 
     protected virtual void PartsSet()
