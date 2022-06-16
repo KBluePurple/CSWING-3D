@@ -79,7 +79,7 @@ public abstract class Enemy : MonoBehaviour
         {
             health -= PlayerAttack.FindObjectOfType<PlayerAttack>().bulletDamaged;
             Debug.Log("Enemy 데미지입음");
-            if(health <= 0)
+            if (health <= 0)
             {
                 Destroy(gameObject);
                 Debug.Log("Enemy 사망");
