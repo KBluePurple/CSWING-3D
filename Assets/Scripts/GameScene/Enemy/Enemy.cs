@@ -86,4 +86,10 @@ public abstract class Enemy : MonoBehaviour
             }
         }
     }
+
+    internal void ComeHere(Vector3 position)
+    {
+        targetPosition = position;
+        detectionRange = 100f;
+    }
 }
