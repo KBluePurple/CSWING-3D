@@ -166,16 +166,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c63f698528a6db3428f0ff096bbad187, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fixedPursuitPre: {fileID: 0}
-  movedPursuitPre: {fileID: 0}
-  smallPursuitPre: {fileID: 0}
-  middlePursuitPre: {fileID: 0}
-  bigPursuitPre: {fileID: 0}
+  fixedPursuitPre: {fileID: 768138431652014799, guid: af406d5f83860cb428d30a8e92cdd422, type: 3}
+  movedPursuitPre: {fileID: 768138431652014799, guid: af406d5f83860cb428d30a8e92cdd422, type: 3}
+  smallPursuitPre: {fileID: 2396654017003249568, guid: 0075fe33d13e5774c896fe792a9d9086, type: 3}
+  middlePursuitPre: {fileID: 7796535582860682044, guid: 8b13cb00d068bcf48bff34ab46eff12b, type: 3}
+  bigPursuitPre: {fileID: 9158961982107514718, guid: 7eb4392ea1aad6546b1d69b509069642, type: 3}
   curPursuitSpawnCount: 0
   curSmallPursuitSpawnCount: 0
   curMiddlePursuitSpawnCount: 0
   curBigPursuitSpawnCount: 0
-  player: {fileID: 0}
+  player: {fileID: 919132149040170661}
 --- !u!1 &55800971
 GameObject:
   m_ObjectHideFlags: 0
@@ -221,7 +221,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   subBoss: 1
   subBossHP: 150
-  subBossPre: {fileID: 0}
+  subBossPre: {fileID: 5966333274988375271, guid: c7afef893346c5a4baab9f9188f8c985, type: 3}
 --- !u!1 &58690064 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 768138431652014799, guid: af406d5f83860cb428d30a8e92cdd422, type: 3}
@@ -270,16 +270,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c7264e7b91e082143b558252d7e23231, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fixedPursuitPre: {fileID: 0}
-  movedPursuitPre: {fileID: 0}
-  smallPursuitPre: {fileID: 0}
-  middlePursuitPre: {fileID: 0}
-  bigPursuitPre: {fileID: 0}
+  fixedPursuitPre: {fileID: 768138431652014799, guid: af406d5f83860cb428d30a8e92cdd422, type: 3}
+  movedPursuitPre: {fileID: 768138431652014799, guid: af406d5f83860cb428d30a8e92cdd422, type: 3}
+  smallPursuitPre: {fileID: 2396654017003249568, guid: 0075fe33d13e5774c896fe792a9d9086, type: 3}
+  middlePursuitPre: {fileID: 7796535582860682044, guid: 8b13cb00d068bcf48bff34ab46eff12b, type: 3}
+  bigPursuitPre: {fileID: 9158961982107514718, guid: 7eb4392ea1aad6546b1d69b509069642, type: 3}
   curPursuitSpawnCount: 0
   curSmallPursuitSpawnCount: 0
   curMiddlePursuitSpawnCount: 0
   curBigPursuitSpawnCount: 0
-  player: {fileID: 0}
+  player: {fileID: 919132149040170661}
 --- !u!1001 &124959973
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1215,16 +1215,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54364462f92ff3743b7f930f24f30e81, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fixedPursuitPre: {fileID: 0}
-  movedPursuitPre: {fileID: 0}
-  smallPursuitPre: {fileID: 0}
-  middlePursuitPre: {fileID: 0}
-  bigPursuitPre: {fileID: 0}
+  fixedPursuitPre: {fileID: 768138431652014799, guid: af406d5f83860cb428d30a8e92cdd422, type: 3}
+  movedPursuitPre: {fileID: 768138431652014799, guid: af406d5f83860cb428d30a8e92cdd422, type: 3}
+  smallPursuitPre: {fileID: 2396654017003249568, guid: 0075fe33d13e5774c896fe792a9d9086, type: 3}
+  middlePursuitPre: {fileID: 7796535582860682044, guid: 8b13cb00d068bcf48bff34ab46eff12b, type: 3}
+  bigPursuitPre: {fileID: 9158961982107514718, guid: 7eb4392ea1aad6546b1d69b509069642, type: 3}
   curPursuitSpawnCount: 0
   curSmallPursuitSpawnCount: 0
   curMiddlePursuitSpawnCount: 0
   curBigPursuitSpawnCount: 0
-  player: {fileID: 0}
+  player: {fileID: 919132149040170661}
 --- !u!1 &474815093
 GameObject:
   m_ObjectHideFlags: 0
@@ -2038,16 +2038,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e79608053ac21fc40923490b0587760c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fixedPursuitPre: {fileID: 0}
-  movedPursuitPre: {fileID: 0}
-  smallPursuitPre: {fileID: 0}
-  middlePursuitPre: {fileID: 0}
-  bigPursuitPre: {fileID: 0}
+  fixedPursuitPre: {fileID: 768138431652014799, guid: af406d5f83860cb428d30a8e92cdd422, type: 3}
+  movedPursuitPre: {fileID: 768138431652014799, guid: af406d5f83860cb428d30a8e92cdd422, type: 3}
+  smallPursuitPre: {fileID: 2396654017003249568, guid: 0075fe33d13e5774c896fe792a9d9086, type: 3}
+  middlePursuitPre: {fileID: 7796535582860682044, guid: 8b13cb00d068bcf48bff34ab46eff12b, type: 3}
+  bigPursuitPre: {fileID: 9158961982107514718, guid: 7eb4392ea1aad6546b1d69b509069642, type: 3}
   curPursuitSpawnCount: 0
   curSmallPursuitSpawnCount: 0
   curMiddlePursuitSpawnCount: 0
   curBigPursuitSpawnCount: 0
-  player: {fileID: 0}
+  player: {fileID: 919132149040170661}
 --- !u!1 &859408633
 GameObject:
   m_ObjectHideFlags: 0
@@ -2340,16 +2340,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 58699fcb302749348aa3d1aa2dbbaa70, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fixedPursuitPre: {fileID: 0}
-  movedPursuitPre: {fileID: 0}
-  smallPursuitPre: {fileID: 0}
-  middlePursuitPre: {fileID: 0}
-  bigPursuitPre: {fileID: 0}
+  fixedPursuitPre: {fileID: 768138431652014799, guid: af406d5f83860cb428d30a8e92cdd422, type: 3}
+  movedPursuitPre: {fileID: 768138431652014799, guid: af406d5f83860cb428d30a8e92cdd422, type: 3}
+  smallPursuitPre: {fileID: 2396654017003249568, guid: 0075fe33d13e5774c896fe792a9d9086, type: 3}
+  middlePursuitPre: {fileID: 7796535582860682044, guid: 8b13cb00d068bcf48bff34ab46eff12b, type: 3}
+  bigPursuitPre: {fileID: 9158961982107514718, guid: 7eb4392ea1aad6546b1d69b509069642, type: 3}
   curPursuitSpawnCount: 0
   curSmallPursuitSpawnCount: 0
   curMiddlePursuitSpawnCount: 0
   curBigPursuitSpawnCount: 0
-  player: {fileID: 0}
+  player: {fileID: 919132149040170661}
 --- !u!1 &946850049
 GameObject:
   m_ObjectHideFlags: 0
@@ -3176,16 +3176,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 620e47f858a3dde4eadc33d6d2e5c658, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fixedPursuitPre: {fileID: 0}
-  movedPursuitPre: {fileID: 0}
-  smallPursuitPre: {fileID: 0}
-  middlePursuitPre: {fileID: 0}
-  bigPursuitPre: {fileID: 0}
+  fixedPursuitPre: {fileID: 768138431652014799, guid: af406d5f83860cb428d30a8e92cdd422, type: 3}
+  movedPursuitPre: {fileID: 768138431652014799, guid: af406d5f83860cb428d30a8e92cdd422, type: 3}
+  smallPursuitPre: {fileID: 2396654017003249568, guid: 0075fe33d13e5774c896fe792a9d9086, type: 3}
+  middlePursuitPre: {fileID: 7796535582860682044, guid: 8b13cb00d068bcf48bff34ab46eff12b, type: 3}
+  bigPursuitPre: {fileID: 9158961982107514718, guid: 7eb4392ea1aad6546b1d69b509069642, type: 3}
   curPursuitSpawnCount: 0
   curSmallPursuitSpawnCount: 0
   curMiddlePursuitSpawnCount: 0
   curBigPursuitSpawnCount: 0
-  player: {fileID: 0}
+  player: {fileID: 919132149040170661}
 --- !u!1 &1259998044
 GameObject:
   m_ObjectHideFlags: 0
@@ -14531,16 +14531,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 83e0cff6937ec9a4d8e50e2de93865ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fixedPursuitPre: {fileID: 0}
-  movedPursuitPre: {fileID: 0}
-  smallPursuitPre: {fileID: 0}
-  middlePursuitPre: {fileID: 0}
-  bigPursuitPre: {fileID: 0}
+  fixedPursuitPre: {fileID: 768138431652014799, guid: af406d5f83860cb428d30a8e92cdd422, type: 3}
+  movedPursuitPre: {fileID: 768138431652014799, guid: af406d5f83860cb428d30a8e92cdd422, type: 3}
+  smallPursuitPre: {fileID: 2396654017003249568, guid: 0075fe33d13e5774c896fe792a9d9086, type: 3}
+  middlePursuitPre: {fileID: 7796535582860682044, guid: 8b13cb00d068bcf48bff34ab46eff12b, type: 3}
+  bigPursuitPre: {fileID: 9158961982107514718, guid: 7eb4392ea1aad6546b1d69b509069642, type: 3}
   curPursuitSpawnCount: 0
   curSmallPursuitSpawnCount: 0
   curMiddlePursuitSpawnCount: 0
   curBigPursuitSpawnCount: 0
-  player: {fileID: 0}
+  player: {fileID: 919132149040170661}
 --- !u!1 &1716781513
 GameObject:
   m_ObjectHideFlags: 0
@@ -14889,7 +14889,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -35}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 8, y: -175}
+  m_AnchoredPosition: {x: 805, y: -175}
   m_SizeDelta: {x: 250, y: 250}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1915473133
@@ -15427,16 +15427,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 14719c0c17ae3f046857956bb0606c7c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fixedPursuitPre: {fileID: 0}
-  movedPursuitPre: {fileID: 0}
-  smallPursuitPre: {fileID: 0}
-  middlePursuitPre: {fileID: 0}
-  bigPursuitPre: {fileID: 0}
+  fixedPursuitPre: {fileID: 768138431652014799, guid: af406d5f83860cb428d30a8e92cdd422, type: 3}
+  movedPursuitPre: {fileID: 768138431652014799, guid: af406d5f83860cb428d30a8e92cdd422, type: 3}
+  smallPursuitPre: {fileID: 2396654017003249568, guid: 0075fe33d13e5774c896fe792a9d9086, type: 3}
+  middlePursuitPre: {fileID: 7796535582860682044, guid: 8b13cb00d068bcf48bff34ab46eff12b, type: 3}
+  bigPursuitPre: {fileID: 9158961982107514718, guid: 7eb4392ea1aad6546b1d69b509069642, type: 3}
   curPursuitSpawnCount: 0
   curSmallPursuitSpawnCount: 0
   curMiddlePursuitSpawnCount: 0
   curBigPursuitSpawnCount: 0
-  player: {fileID: 0}
+  player: {fileID: 919132149040170661}
 --- !u!1 &2060915801
 GameObject:
   m_ObjectHideFlags: 0
