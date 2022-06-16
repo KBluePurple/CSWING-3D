@@ -8,5 +8,10 @@
     "Weapon": 2,
     "WeaponSprite": "weapon4",
     "SpesialWeapon": 3,
-    "SpesialWeaponSprite": ""
+    "SpesialWeaponSprite": "",
+    "CORE": [false, false, false],
+    "ENGINE": [false, false, false],
+    "BODY": [false, false, false],
+    "WEAPON": [false, false, false],
+    "SWEAPON": [false, false, false]
 }

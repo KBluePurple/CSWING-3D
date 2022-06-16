@@ -9,6 +9,7 @@ public class RepairBase : MonoBehaviour
     [SerializeField] protected string _bundleAdress;
     [SerializeField] protected int _number;
 
+    protected GameObject _alarmPanel;
     protected Image _buttonImage;
     protected Button _button;
     protected Image _toggleImage;
@@ -19,25 +20,21 @@ public class RepairBase : MonoBehaviour
         _buttonImage = GetComponent<Image>();
         _toggleImage = transform.Find("Active").GetComponent<Image>();
         _image.sprite = BundleLoader.Instance.FindAsset(_bundleAdress);
+        _alarmPanel = transform.parent.parent.parent.parent.Find("MakePartPanel").gameObject;
         UseSet();
-        if(!_canUse)
+        _button.onClick.AddListener(() =>
         {
-            _buttonImage.color = Color.black;
-            _toggleImage.enabled = false;
-            _button.onClick.AddListener(ShowMakePanel);
-        }
-        else
-        {
-            _button.onClick.AddListener(() =>
-            {
-                SoundManager.Instance.PlaySound("Dock", SoundType.SE);
+            SoundManager.Instance.PlaySound("Dock", SoundType.SE);
+            if (_canUse)
                 PartsSet();
-            });
-        }
+            else
+                ShowAlarmPanel();
+        });
     }
-    protected void ShowMakePanel()
-    {
 
+    protected void ShowAlarmPanel()
+    {
+        _button.onClick.AddListener(()=>_alarmPanel.SetActive(true));
     }
 
     protected virtual void PartsSet()

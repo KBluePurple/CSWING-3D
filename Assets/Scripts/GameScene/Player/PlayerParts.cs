@@ -11,9 +11,6 @@ public class PlayerParts
     public string WeaponSprite;
     public SpesialWeaponPart SpesialWeapon;
     public string SpesialWeaponSprite;
-    public int Orin;
-    public int Idirium;
-    public int Tumtain;
 
     public bool[] CORE;
     public bool[] ENGINE;
