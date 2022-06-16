@@ -52,7 +52,7 @@ public class ButtonManager : MonoBehaviour
     {
         SoundManager.Instance.PlaySound("UI_Click");
         Debug.Log("StartGame");
-        SceneManager.LoadScene("GameScene");
+        LoadingSceneManager.LoadScene("GameScene");
     }
 
     public void DisalbleAllScroll()
