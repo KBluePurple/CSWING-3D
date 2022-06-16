@@ -149,14 +149,11 @@ namespace GameScene
         public IEnumerator PlayerExplosion()
         {
             GameObject effect = Instantiate(explosionEffect, transform.position, Quaternion.identity);
-            //Debug.Log("�÷��̾� ����");
             yield return new WaitForSeconds(2f);
             Destroy(effect);
-            // TODO : �̰� Ǯ�Ŵ��� ���� �ʿ�
             Instantiate(explosionEffect, transform.position, Quaternion.identity);
             PlayerManager.Instance.Damaged(10);
 
-            //Debug.Log("�÷��̾� ����");
             //Destroy(gameObject);
         }
     }
