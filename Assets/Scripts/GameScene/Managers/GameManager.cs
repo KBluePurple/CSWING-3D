@@ -16,7 +16,7 @@ namespace GameScene
         [SerializeField]
         private GameObject backToMainMenuButton = null;
 
-        private bool isActivePausePanel = false;
+        public bool isActivePausePanel = false;
 
         private PlayerMove playerMove = null;
 
@@ -41,6 +41,7 @@ namespace GameScene
             MouseManager.Show(true);
             MouseManager.Lock(false);
             pausePanel.SetActive(!pausePanel.activeSelf);
+            isActivePausePanel = !isActivePausePanel;
             playerMove.isTimeStop = !playerMove.isTimeStop;
             Time.timeScale = pausePanel.activeSelf ? 0 : 1;
         }
@@ -54,7 +55,7 @@ namespace GameScene
 
         public void Setting()
         {
-            Debug.Log("����");
+            Debug.Log("Setting");
         }
 
         public void BackToMainMenu()

@@ -33,22 +33,43 @@ namespace GameScene
         [SerializeField]
         public GameObject Skill2;
 
+        [Header("PauseUI")]
+        [SerializeField]
+        private TextMeshProUGUI shieldText;
+        [SerializeField]
+        private TextMeshProUGUI hpText;
+        [SerializeField]
+        private TextMeshProUGUI energyText;
+        [SerializeField]
+        private TextMeshProUGUI speedText;
+        [SerializeField]
+        private TextMeshProUGUI weaponText;
+        [SerializeField]
+        private TextMeshProUGUI coreText;
+
         [SerializeField]
         private GameObject gameOverPanel;
         [SerializeField] TextMeshProUGUI _warningCountDownText = null;
 
         private PlayerMove playerMove;
+        private GameManager gameManager;
 
         private void Start()
         {
             SafeZoneManager.Instance.OnSafeZoneCountDown += OnSafeZoneCounterUpdate;
             playerMove = FindObjectOfType<PlayerMove>();
+            gameManager = FindObjectOfType<GameManager>();
         }
 
         private void Update()
         {
             Speed.fillAmount = playerMove._speed / 10;
             BackSpeed.fillAmount = - playerMove._speed / 5;
+
+            if (gameManager.isActivePausePanel)
+            {
+                ShowPlayerStat();
+            }
         }
 
         public void OnSafeZoneCounterUpdate(int count)
@@ -71,6 +92,16 @@ namespace GameScene
         public void BackToMainMenu()
         {
             SceneManager.LoadScene("TitleScene");
+        }
+
+        public void ShowPlayerStat()
+        {
+            shieldText.text = "PlayerSheild : " + PlayerManager.Instance.Stat.Shield.ToString();
+            hpText.text = "PlayerHp : " + PlayerManager.Instance.Stat.Hp.ToString();
+            energyText.text = "PlayerEnergy : " + PlayerManager.Instance.Stat.Energy.ToString();
+            speedText.text = $"Player Speed : {playerMove._speed:F1}km/s";
+            weaponText.text = "Player Weapon :\n" + SaveManager.Instance.Parts.Weapon.ToString();
+            coreText.text = "Player Core :\n" + SaveManager.Instance.Parts.Core.ToString();
         }
     }
 }
