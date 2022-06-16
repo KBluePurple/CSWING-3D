@@ -168,7 +168,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fixedPursuitPre: {fileID: 0}
   movedPursuitPre: {fileID: 0}
+  smallPursuitPre: {fileID: 0}
+  middlePursuitPre: {fileID: 0}
+  bigPursuitPre: {fileID: 0}
   curPursuitSpawnCount: 0
+  curSmallPursuitSpawnCount: 0
+  curMiddlePursuitSpawnCount: 0
+  curBigPursuitSpawnCount: 0
   player: {fileID: 0}
 --- !u!1 &55800971
 GameObject:
@@ -264,6 +270,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c7264e7b91e082143b558252d7e23231, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  fixedPursuitPre: {fileID: 0}
+  movedPursuitPre: {fileID: 0}
+  smallPursuitPre: {fileID: 0}
+  middlePursuitPre: {fileID: 0}
+  bigPursuitPre: {fileID: 0}
+  curPursuitSpawnCount: 0
+  curSmallPursuitSpawnCount: 0
+  curMiddlePursuitSpawnCount: 0
+  curBigPursuitSpawnCount: 0
+  player: {fileID: 0}
 --- !u!1001 &124959973
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -872,6 +888,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -1049917179397573790, guid: af406d5f83860cb428d30a8e92cdd422, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 736852347838181702, guid: af406d5f83860cb428d30a8e92cdd422, type: 3}
       propertyPath: material_black
       value: 
@@ -962,6 +982,99 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &286535607
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 286535608}
+  - component: {fileID: 286535609}
+  m_Layer: 0
+  m_Name: LightPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &286535608
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 286535607}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1.35, y: -0.85, z: -4.5}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1151388029233081671}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!108 &286535609
+Light:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 286535607}
+  m_Enabled: 1
+  serializedVersion: 10
+  m_Type: 2
+  m_Shape: 0
+  m_Color: {r: 0, g: 0, b: 1, a: 1}
+  m_Intensity: 1
+  m_Range: 0.5
+  m_SpotAngle: 30
+  m_InnerSpotAngle: 21.80208
+  m_CookieSize: 10
+  m_Shadows:
+    m_Type: 0
+    m_Resolution: -1
+    m_CustomResolution: -1
+    m_Strength: 1
+    m_Bias: 0.05
+    m_NormalBias: 0.4
+    m_NearPlane: 0.2
+    m_CullingMatrixOverride:
+      e00: 1
+      e01: 0
+      e02: 0
+      e03: 0
+      e10: 0
+      e11: 1
+      e12: 0
+      e13: 0
+      e20: 0
+      e21: 0
+      e22: 1
+      e23: 0
+      e30: 0
+      e31: 0
+      e32: 0
+      e33: 1
+    m_UseCullingMatrixOverride: 0
+  m_Cookie: {fileID: 0}
+  m_DrawHalo: 0
+  m_Flare: {fileID: 0}
+  m_RenderMode: 0
+  m_CullingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_RenderingLayerMask: 1
+  m_Lightmapping: 1
+  m_LightShadowCasterMode: 0
+  m_AreaSize: {x: 1, y: 1}
+  m_BounceIntensity: 1
+  m_ColorTemperature: 6570
+  m_UseColorTemperature: 0
+  m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
+  m_UseBoundingSphereOverride: 0
+  m_UseViewFrustumForShadowCasterCull: 1
+  m_ShadowRadius: 0
+  m_ShadowAngle: 0
 --- !u!1 &312696603
 GameObject:
   m_ObjectHideFlags: 0
@@ -1005,6 +1118,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54364462f92ff3743b7f930f24f30e81, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  fixedPursuitPre: {fileID: 0}
+  movedPursuitPre: {fileID: 0}
+  smallPursuitPre: {fileID: 0}
+  middlePursuitPre: {fileID: 0}
+  bigPursuitPre: {fileID: 0}
+  curPursuitSpawnCount: 0
+  curSmallPursuitSpawnCount: 0
+  curMiddlePursuitSpawnCount: 0
+  curBigPursuitSpawnCount: 0
+  player: {fileID: 0}
 --- !u!1 &474815093
 GameObject:
   m_ObjectHideFlags: 0
@@ -1584,6 +1707,99 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &765513638
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 765513639}
+  - component: {fileID: 765513640}
+  m_Layer: 0
+  m_Name: LightPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &765513639
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 765513638}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -1.35, y: -0.85, z: -4.5}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1151388029233081671}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!108 &765513640
+Light:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 765513638}
+  m_Enabled: 1
+  serializedVersion: 10
+  m_Type: 2
+  m_Shape: 0
+  m_Color: {r: 0, g: 0, b: 1, a: 1}
+  m_Intensity: 1
+  m_Range: 0.5
+  m_SpotAngle: 30
+  m_InnerSpotAngle: 21.80208
+  m_CookieSize: 10
+  m_Shadows:
+    m_Type: 0
+    m_Resolution: -1
+    m_CustomResolution: -1
+    m_Strength: 1
+    m_Bias: 0.05
+    m_NormalBias: 0.4
+    m_NearPlane: 0.2
+    m_CullingMatrixOverride:
+      e00: 1
+      e01: 0
+      e02: 0
+      e03: 0
+      e10: 0
+      e11: 1
+      e12: 0
+      e13: 0
+      e20: 0
+      e21: 0
+      e22: 1
+      e23: 0
+      e30: 0
+      e31: 0
+      e32: 0
+      e33: 1
+    m_UseCullingMatrixOverride: 0
+  m_Cookie: {fileID: 0}
+  m_DrawHalo: 0
+  m_Flare: {fileID: 0}
+  m_RenderMode: 0
+  m_CullingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_RenderingLayerMask: 1
+  m_Lightmapping: 1
+  m_LightShadowCasterMode: 0
+  m_AreaSize: {x: 1, y: 1}
+  m_BounceIntensity: 1
+  m_ColorTemperature: 6570
+  m_UseColorTemperature: 0
+  m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
+  m_UseBoundingSphereOverride: 0
+  m_UseViewFrustumForShadowCasterCull: 1
+  m_ShadowRadius: 0
+  m_ShadowAngle: 0
 --- !u!1 &790785074
 GameObject:
   m_ObjectHideFlags: 0
@@ -1668,6 +1884,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e79608053ac21fc40923490b0587760c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  fixedPursuitPre: {fileID: 0}
+  movedPursuitPre: {fileID: 0}
+  smallPursuitPre: {fileID: 0}
+  middlePursuitPre: {fileID: 0}
+  bigPursuitPre: {fileID: 0}
+  curPursuitSpawnCount: 0
+  curSmallPursuitSpawnCount: 0
+  curMiddlePursuitSpawnCount: 0
+  curBigPursuitSpawnCount: 0
+  player: {fileID: 0}
 --- !u!1 &859408633
 GameObject:
   m_ObjectHideFlags: 0
@@ -1960,6 +2186,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 58699fcb302749348aa3d1aa2dbbaa70, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  fixedPursuitPre: {fileID: 0}
+  movedPursuitPre: {fileID: 0}
+  smallPursuitPre: {fileID: 0}
+  middlePursuitPre: {fileID: 0}
+  bigPursuitPre: {fileID: 0}
+  curPursuitSpawnCount: 0
+  curSmallPursuitSpawnCount: 0
+  curMiddlePursuitSpawnCount: 0
+  curBigPursuitSpawnCount: 0
+  player: {fileID: 0}
 --- !u!1 &946850049
 GameObject:
   m_ObjectHideFlags: 0
@@ -2756,7 +2992,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fixedPursuitPre: {fileID: 0}
   movedPursuitPre: {fileID: 0}
+  smallPursuitPre: {fileID: 0}
+  middlePursuitPre: {fileID: 0}
+  bigPursuitPre: {fileID: 0}
   curPursuitSpawnCount: 0
+  curSmallPursuitSpawnCount: 0
+  curMiddlePursuitSpawnCount: 0
+  curBigPursuitSpawnCount: 0
   player: {fileID: 0}
 --- !u!1 &1259998044
 GameObject:
@@ -8240,6 +8482,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b56e50b8652b1c74c9f12fd6ddbfbaba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  boss: {fileID: 0}
+  spawnPos: {fileID: 0}
 --- !u!1 &1434881765
 GameObject:
   m_ObjectHideFlags: 0
@@ -13181,6 +13425,99 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1496270168
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1496270169}
+  - component: {fileID: 1496270170}
+  m_Layer: 0
+  m_Name: LightPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1496270169
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1496270168}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -1.35, y: 0.05, z: -4.5}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1151388029233081671}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!108 &1496270170
+Light:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1496270168}
+  m_Enabled: 1
+  serializedVersion: 10
+  m_Type: 2
+  m_Shape: 0
+  m_Color: {r: 0, g: 0, b: 1, a: 1}
+  m_Intensity: 1
+  m_Range: 0.5
+  m_SpotAngle: 30
+  m_InnerSpotAngle: 21.80208
+  m_CookieSize: 10
+  m_Shadows:
+    m_Type: 0
+    m_Resolution: -1
+    m_CustomResolution: -1
+    m_Strength: 1
+    m_Bias: 0.05
+    m_NormalBias: 0.4
+    m_NearPlane: 0.2
+    m_CullingMatrixOverride:
+      e00: 1
+      e01: 0
+      e02: 0
+      e03: 0
+      e10: 0
+      e11: 1
+      e12: 0
+      e13: 0
+      e20: 0
+      e21: 0
+      e22: 1
+      e23: 0
+      e30: 0
+      e31: 0
+      e32: 0
+      e33: 1
+    m_UseCullingMatrixOverride: 0
+  m_Cookie: {fileID: 0}
+  m_DrawHalo: 0
+  m_Flare: {fileID: 0}
+  m_RenderMode: 0
+  m_CullingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_RenderingLayerMask: 1
+  m_Lightmapping: 1
+  m_LightShadowCasterMode: 0
+  m_AreaSize: {x: 1, y: 1}
+  m_BounceIntensity: 1
+  m_ColorTemperature: 6570
+  m_UseColorTemperature: 0
+  m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
+  m_UseBoundingSphereOverride: 0
+  m_UseViewFrustumForShadowCasterCull: 1
+  m_ShadowRadius: 0
+  m_ShadowAngle: 0
 --- !u!1 &1519810347
 GameObject:
   m_ObjectHideFlags: 0
@@ -13332,6 +13669,99 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1550269684}
   m_CullTransparentMesh: 1
+--- !u!1 &1605404140
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1605404141}
+  - component: {fileID: 1605404142}
+  m_Layer: 0
+  m_Name: LightPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1605404141
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1605404140}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1.35, y: 0.05, z: -4.5}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1151388029233081671}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!108 &1605404142
+Light:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1605404140}
+  m_Enabled: 1
+  serializedVersion: 10
+  m_Type: 2
+  m_Shape: 0
+  m_Color: {r: 0, g: 0, b: 1, a: 1}
+  m_Intensity: 1
+  m_Range: 0.5
+  m_SpotAngle: 30
+  m_InnerSpotAngle: 21.80208
+  m_CookieSize: 10
+  m_Shadows:
+    m_Type: 0
+    m_Resolution: -1
+    m_CustomResolution: -1
+    m_Strength: 1
+    m_Bias: 0.05
+    m_NormalBias: 0.4
+    m_NearPlane: 0.2
+    m_CullingMatrixOverride:
+      e00: 1
+      e01: 0
+      e02: 0
+      e03: 0
+      e10: 0
+      e11: 1
+      e12: 0
+      e13: 0
+      e20: 0
+      e21: 0
+      e22: 1
+      e23: 0
+      e30: 0
+      e31: 0
+      e32: 0
+      e33: 1
+    m_UseCullingMatrixOverride: 0
+  m_Cookie: {fileID: 0}
+  m_DrawHalo: 0
+  m_Flare: {fileID: 0}
+  m_RenderMode: 0
+  m_CullingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_RenderingLayerMask: 1
+  m_Lightmapping: 1
+  m_LightShadowCasterMode: 0
+  m_AreaSize: {x: 1, y: 1}
+  m_BounceIntensity: 1
+  m_ColorTemperature: 6570
+  m_UseColorTemperature: 0
+  m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
+  m_UseBoundingSphereOverride: 0
+  m_UseViewFrustumForShadowCasterCull: 1
+  m_ShadowRadius: 0
+  m_ShadowAngle: 0
 --- !u!1 &1609561915
 GameObject:
   m_ObjectHideFlags: 0
@@ -13357,7 +13787,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1609561915}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -0.15, y: 8.49, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -13969,7 +14399,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fixedPursuitPre: {fileID: 0}
   movedPursuitPre: {fileID: 0}
+  smallPursuitPre: {fileID: 0}
+  middlePursuitPre: {fileID: 0}
+  bigPursuitPre: {fileID: 0}
   curPursuitSpawnCount: 0
+  curSmallPursuitSpawnCount: 0
+  curMiddlePursuitSpawnCount: 0
+  curBigPursuitSpawnCount: 0
   player: {fileID: 0}
 --- !u!1 &1716781513
 GameObject:
@@ -14859,7 +15295,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fixedPursuitPre: {fileID: 0}
   movedPursuitPre: {fileID: 0}
+  smallPursuitPre: {fileID: 0}
+  middlePursuitPre: {fileID: 0}
+  bigPursuitPre: {fileID: 0}
   curPursuitSpawnCount: 0
+  curSmallPursuitSpawnCount: 0
+  curMiddlePursuitSpawnCount: 0
+  curBigPursuitSpawnCount: 0
   player: {fileID: 0}
 --- !u!1 &2060915801
 GameObject:
@@ -15169,7 +15611,11 @@ Transform:
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 1496270169}
+  - {fileID: 1605404141}
+  - {fileID: 765513639}
+  - {fileID: 286535608}
   m_Father: {fileID: 543450652775160863}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

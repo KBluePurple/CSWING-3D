@@ -8,7 +8,7 @@ using Cinemachine;
 
 namespace GameScene
 {
-    public class PlayerMove : MonoBehaviour
+    public class PlayerMove : MonoSingleton<PlayerMove>
     {
         private Vector3 _rotate;
 
