@@ -67,9 +67,34 @@ public class PlayerAttack : MonoBehaviour
 
     void Fire()
     {
-        GameObject bullet = Instantiate(bulletPre, bulletPos);
-        SoundManager.Instance.PlaySound("Hand Gun 1");
-        bullet.transform.SetParent(null);
+        GameObject bullet = null;
+        switch (SaveManager.Instance.Parts.Weapon)
+        {
+        case WeaponPart.G_01:
+            bullet = Instantiate(G_01_bulletPre, bulletPos.position, bulletPos.rotation);
+            bullet.GetComponent<Bullet>()
+                .SetDamage(bulletDamaged)
+                .SetSpeed(10f)
+                .SetDistance(rayMaxDistance)
+                .Fire(bulletPos, rayHit.transform);
+            break;
+        case WeaponPart.L_01:
+            bullet = Instantiate(L_01_bulletPre, bulletPos.position, bulletPos.rotation);
+            bullet.GetComponent<LaserBullet>()
+                .SetDamage(bulletDamaged)
+                .SetLifeTime(2f)
+                .SetDistance(rayMaxDistance)
+                .Fire(bulletPos, rayHit.transform);
+            break;
+        case WeaponPart.M_01:
+            bullet = Instantiate(M_01_bulletPre, bulletPos.position, bulletPos.rotation);
+            break;
+        default:
+            break;
+        }
+        // GameObject bullet = Instantiate(bulletPre, bulletPos);
+        // SoundManager.Instance.PlaySound("Hand Gun 1");
+        // bullet.transform.SetParent(null);
         Destroy(bullet, 3f);
     }
 }
