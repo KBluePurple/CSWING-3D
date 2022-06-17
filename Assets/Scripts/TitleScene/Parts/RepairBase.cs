@@ -22,6 +22,7 @@ public class RepairBase : MonoBehaviour
         _image.sprite = BundleLoader.Instance.FindAsset(_bundleAdress);
         _alarmPanel = transform.parent.parent.parent.parent.Find("MakePartPanel").gameObject;
         UseSet();
+        _button.onClick.RemoveAllListeners();
         if (_canUse)
         {
             _button.onClick.AddListener(()=>PartsSet());

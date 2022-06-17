@@ -63,8 +63,8 @@ namespace GameScene
 
         private void Update()
         {
-            Speed.fillAmount = playerMove._speed / 10;
-            BackSpeed.fillAmount = - playerMove._speed / 5;
+            Speed.fillAmount = playerMove._speed / playerMove.MaxSpeed;
+            BackSpeed.fillAmount = -playerMove._speed / playerMove.MaxSpeed;
 
             if (gameManager.isActivePausePanel)
             {

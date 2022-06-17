@@ -9,7 +9,6 @@ public class PlayerAttack : MonoBehaviour
     [SerializeField]
     private Transform rayTransform;
     private RaycastHit rayHit;
-
     // Shot Bullet
     public GameObject bulletPre { private set; get; }
     [SerializeField]
@@ -69,6 +68,7 @@ public class PlayerAttack : MonoBehaviour
     void Fire()
     {
         GameObject bullet = Instantiate(bulletPre, bulletPos);
+        SoundManager.Instance.PlaySound("Hand Gun 1");
         bullet.transform.SetParent(null);
         Destroy(bullet, 3f);
     }

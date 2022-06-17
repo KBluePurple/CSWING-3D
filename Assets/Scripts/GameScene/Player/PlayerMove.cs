@@ -20,6 +20,10 @@ namespace GameScene
         [SerializeField] float _speedChange = 1f;
         [SerializeField] float _smooth = 3f;
         [SerializeField] float _maxSpeed = 10f;
+        public float MaxSpeed 
+        {
+            get { return _maxSpeed; }
+        }
         [SerializeField] float _dashSpeed = 10f;
         [SerializeField] Image visual;
         [SerializeField] GameObject explosionEffect = null;
@@ -87,6 +91,7 @@ namespace GameScene
             if (isPushedLeft)
             {
                 Debug.Log("LeftDash");
+                SoundManager.Instance.PlaySound("Dodge");
                 transform.DOMove(transform.position + -transform.right * _dashSpeed, 1f);
                 transform.DORotate(new Vector3(0, 0, 360), 1f, RotateMode.LocalAxisAdd);
                 cameraPos.transform.SetParent(null);
@@ -108,6 +113,7 @@ namespace GameScene
             if (isPushedRight)
             {
                 Debug.Log("RightDash");
+                SoundManager.Instance.PlaySound("Dodge");
                 transform.DOMove(transform.position + transform.right * _dashSpeed, 1f);
                 transform.DORotate(new Vector3(0, 0, -360), 1f, RotateMode.LocalAxisAdd);
                 cameraPos.transform.SetParent(null);
