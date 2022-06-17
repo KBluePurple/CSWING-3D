@@ -36,7 +36,7 @@ namespace GameScene
 
         private void Start()
         {
-            virtualCamera.m_Lens.FieldOfView = 50;
+            virtualCamera.m_Lens.FieldOfView = 25;
         }
 
         private void Update()
@@ -82,7 +82,7 @@ namespace GameScene
                 StartCoroutine(RightDash());
             }
 
-            virtualCamera.m_Lens.FieldOfView = 50 + Mathf.Abs(_speed) / _maxSpeed * 50;
+            virtualCamera.m_Lens.FieldOfView = 50 + Mathf.Abs(_speed) / _maxSpeed * 10;
         }
 
         bool isPushedLeft = false;

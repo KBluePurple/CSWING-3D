@@ -28,12 +28,19 @@ public class LaserBullet : MonoBehaviour
         return this;
     }
 
-    public void Fire(Transform from, Transform to)
+    public LaserBullet SetTargetPos(Vector3 targetPos)
+    {
+        this.targetPos = targetPos;
+        return this;
+    }
+
+    public void Fire(Transform from)
     {
         float distance = Vector3.Distance(transform.position, targetPos);
         laser.LookAt(targetPos);
         laser.transform.position = Vector3.Lerp(transform.position, targetPos, 0.5f);
         laser.transform.localScale = new Vector3(laser.transform.localScale.x, laser.transform.localScale.y, distance);
+        Debug.DrawRay(laser.transform.position, laser.transform.forward * distance, Color.white, 5f);
     }
 
     private void Update()

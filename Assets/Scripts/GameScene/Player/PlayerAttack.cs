@@ -5,10 +5,9 @@ using UnityEngine;
 public class PlayerAttack : MonoBehaviour
 {
     [SerializeField]
-    private float rayMaxDistance = 30f;
+    private float maxDistance = 30f;
     [SerializeField]
     private Transform rayTransform;
-    private RaycastHit rayHit;
     // Shot Bullet
     public GameObject bulletPre { private set; get; }
     [SerializeField]
@@ -28,12 +27,6 @@ public class PlayerAttack : MonoBehaviour
     void Update()
     {
         curDelay += Time.deltaTime;
-
-        Debug.DrawRay(rayTransform.position, (rayTransform.position - transform.position) * rayMaxDistance, Color.red);
-        if (Physics.Raycast(rayTransform.position, (rayTransform.position - transform.position), out rayHit, rayMaxDistance))
-        {
-            Debug.Log("적 감지");
-        }
 
         WeaponSet();
 
@@ -57,7 +50,6 @@ public class PlayerAttack : MonoBehaviour
             bulletPre = G_01_bulletPre;
             break;
         case WeaponPart.L_01:
-            shotDelay = 3f;
             bulletPre = L_01_bulletPre;
             break;
         case WeaponPart.M_01:
@@ -69,6 +61,7 @@ public class PlayerAttack : MonoBehaviour
     void Fire()
     {
         GameObject bullet = null;
+        // Debug.DrawRay(transform.position, transform.forward * maxDistance, Color.white, 5f);
         switch (SaveManager.Instance.Parts.Weapon)
         {
         case WeaponPart.G_01:
@@ -76,16 +69,19 @@ public class PlayerAttack : MonoBehaviour
             bullet.GetComponent<Bullet>()
                 .SetDamage(bulletDamaged)
                 .SetSpeed(10f)
-                .SetDistance(rayMaxDistance)
-                .Fire(bulletPos, rayHit.transform);
+                .SetDistance(maxDistance)
+                .SetTargetPos(transform.position + transform.forward * maxDistance)
+                .Fire(bulletPos);
             break;
         case WeaponPart.L_01:
             bullet = Instantiate(L_01_bulletPre, bulletPos.position, bulletPos.rotation);
             bullet.GetComponent<LaserBullet>()
                 .SetDamage(bulletDamaged)
                 .SetLifeTime(2f)
-                .SetDistance(rayMaxDistance)
-                .Fire(bulletPos, rayHit.transform);
+                .SetDistance(maxDistance)
+                .SetTargetPos(transform.position + transform.forward * maxDistance)
+                .Fire(bulletPos);
+            shotDelay = 3f;
             break;
         case WeaponPart.M_01:
             bullet = Instantiate(M_01_bulletPre, bulletPos.position, bulletPos.rotation);

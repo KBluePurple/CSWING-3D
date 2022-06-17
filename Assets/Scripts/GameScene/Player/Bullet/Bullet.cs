@@ -6,6 +6,8 @@ public class Bullet : MonoBehaviour
     [SerializeField] float speed = 10f;
     [SerializeField] float maxDistance = 30f;
 
+    private Vector3 targetPos;
+
     public Bullet SetDamage(float damage)
     {
         this.damage = damage;
@@ -24,9 +26,15 @@ public class Bullet : MonoBehaviour
         return this;
     }
 
-    public void Fire(Transform from, Transform to)
+    public Bullet SetTargetPos(Vector3 targetPos)
     {
-        var direction = to.position - from.position;
+        this.targetPos = targetPos;
+        return this;
+    }
+
+    public void Fire(Transform from)
+    {
+        var direction = targetPos - from.position;
         direction.Normalize();
         transform.position = from.position;
         transform.rotation = Quaternion.LookRotation(direction);
