@@ -5,7 +5,7 @@ using UnityEngine;
 public abstract class Enemy : MonoBehaviour
 {
     [Header("Parameters")]
-    [SerializeField] protected Transform target;
+    protected Transform target;
     [SerializeField] protected Vector3 reconnaissancePosition;
     [SerializeField] protected float speed = 10f;
     [SerializeField] protected float health = 100f;
@@ -37,7 +37,8 @@ public abstract class Enemy : MonoBehaviour
     protected virtual void Awake()
     {
         reconnaissancePosition = transform.position;
-    }
+        target = GameObject.FindGameObjectWithTag("Player").transform;
+}
 
     protected virtual void Update()
     {
