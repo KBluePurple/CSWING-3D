@@ -1,3 +1,4 @@
+using System.Runtime.CompilerServices;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
@@ -8,6 +9,9 @@ public class LoadingSceneManager : MonoBehaviour
     public static string nextScene;
     [SerializeField]
     Image progressBar;
+
+    [SerializeField]
+    GameObject Player;
 
     private void Start()
     {
