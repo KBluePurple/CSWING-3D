@@ -16,7 +16,6 @@ public class SurvivorModeManager : MonoBehaviour
     private GameObject bigPursuitPre;
 
     private float spawnDelay = 5f;
-    private float curDelay = 0f;
 
     public int curPursuitSpawnCount = 0;
     public int curSmallPursuitSpawnCount = 0;
@@ -30,78 +29,69 @@ public class SurvivorModeManager : MonoBehaviour
     protected int pursuitSpawnCount = 0;
 
     public GameObject player;
+    private LevelManager levelManager = null;
 
-    protected virtual void Update()
+    private void Start()
     {
-        curDelay += Time.deltaTime;
-
-        SpawnPurusit();
+        levelManager = FindObjectOfType<LevelManager>();
+        StartCoroutine(SpawnPurusit());
     }
 
     /// <summary>
     /// 소환 규칙 : 단계만큼 고정 적 추가소환, 단계가 짝수일 때 이동가능한 적 + 1
     /// </summary>
 
-    protected virtual void SpawnPurusit()
+    protected virtual IEnumerator SpawnPurusit()
     {
         for(int i = 0; i < FixedPursuitSpawnCount; i++)
         {
-            if(curDelay >= spawnDelay)
-            {
-                SpawnFixedPursuit();
-                curPursuitSpawnCount++;
-                pursuitSpawnCount++;
-                curDelay = 0;
-                Debug.Log("Spawn FixedPursuit");
-            }
+            SpawnFixedPursuit();
+            curPursuitSpawnCount++;
+            pursuitSpawnCount++;
+            Debug.Log("Spawn FixedPursuit");
+            yield return new WaitForSeconds(5f);
         }
 
         for (int i = 0; i < MovedPursuitSpawnCount; i++)
         {
-            if (curDelay >= spawnDelay)
-            {
                 SpawnMovedPursuit();
                 curPursuitSpawnCount++;
                 pursuitSpawnCount++;
-                curDelay = 0f;
                 Debug.Log("Spawn MovedPursuit");
-            }
+                yield return new WaitForSeconds(5f);
         }
 
         for (int i = 0; i < smallPursuitSpawnCount; i++)
         {
-            if (curDelay >= spawnDelay)
-            {
+
                 SpawnSmallPursuit();
                 curSmallPursuitSpawnCount++;
                 pursuitSpawnCount++;
-                curDelay = 0f;
                 Debug.Log("Spawn MovedPursuit");
-            }
+                yield return new WaitForSeconds(5f);
+
         }
 
         for (int i = 0; i < middlePursuitSpawnCount; i++)
         {
-            if (curDelay >= spawnDelay)
-            {
+
                 SpawnMiddlePursuit();
                 curMiddlePursuitSpawnCount++;
                 pursuitSpawnCount++;
-                curDelay = 0f;
                 Debug.Log("Spawn MovedPursuit");
-            }
+                yield return new WaitForSeconds(5f);
+
         }
 
         for (int i = 0; i < bigPursuitSpawnCount; i++)
         {
-            if (curDelay >= spawnDelay)
-            {
+
                 SpawnBigPursuit();
                 curBigPursuitSpawnCount++;
                 pursuitSpawnCount++;
-                curDelay = 0f;
                 Debug.Log("Spawn MovedPursuit");
-            }
+                yield return new WaitForSeconds(5f);
+
         }
     }
 
@@ -113,7 +103,7 @@ public class SurvivorModeManager : MonoBehaviour
 
         Vector3 spawnPos = new Vector3(spawnPosX, spawnPosY, spawnPosZ);
 
-        // Instantiate(fixedPursuitPre, spawnPos, Quaternion.identity);
+        Instantiate(fixedPursuitPre, spawnPos, Quaternion.identity);
     }
 
     protected virtual void SpawnMovedPursuit()
@@ -162,10 +152,21 @@ public class SurvivorModeManager : MonoBehaviour
 
     protected virtual void goNextLevel()
     {
-        if(pursuitSpawnCount >= FixedPursuitSpawnCount + MovedPursuitSpawnCount && curPursuitSpawnCount <= 0)
+        if(levelManager.curLevel == 5)
         {
-            LevelManager.FindObjectOfType<LevelManager>().nextLevel();
-            pursuitSpawnCount = 0;
+            if(pursuitSpawnCount >= FixedPursuitSpawnCount + MovedPursuitSpawnCount && curPursuitSpawnCount <= 4)
+            {
+                levelManager.nextLevel();
+                pursuitSpawnCount = 0;
+            }
+        }
+        else
+        {
+            if (pursuitSpawnCount >= FixedPursuitSpawnCount + MovedPursuitSpawnCount && curPursuitSpawnCount <= 0)
+            {
+                levelManager.nextLevel();
+                pursuitSpawnCount = 0;
+            }
         }
     }
 

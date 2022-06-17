@@ -6,37 +6,42 @@ public class LockOn : MonoBehaviour
 {
     private List<GameObject> pursuitObjects;
     [SerializeField]
-    private GameObject pursuit;
-    [SerializeField]
     private float shortestDistance;
 
+    private GameObject pursuit;
     private bool isLockOn = false;
 
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.R))
         {
-            isLockOn = !isLockOn;
             FindShortestPursuit();
-            transform.LookAt(pursuit.transform.position);
         }
     }
 
     void FindShortestPursuit()
     {
         pursuitObjects = new List<GameObject>(GameObject.FindGameObjectsWithTag("Pursuit"));
-        shortestDistance = Vector3.Distance(gameObject.transform.position, pursuitObjects[0].transform.position);
-        pursuit = pursuitObjects[0];
-
-        foreach (GameObject enemyItem in pursuitObjects)
+        pursuitObjects.AddRange(GameObject.FindGameObjectsWithTag("Enemy"));
+        if(pursuitObjects.Count >= 1)
         {
-            float distance = Vector3.Distance(transform.position, enemyItem.transform.position);
+            isLockOn = !isLockOn;
 
-            if (distance < shortestDistance)
+            shortestDistance = Vector3.Distance(gameObject.transform.position, pursuitObjects[0].transform.position);
+            pursuit = pursuitObjects[0];
+
+            foreach (GameObject enemyItem in pursuitObjects)
             {
-                pursuit = enemyItem;
-                shortestDistance = distance;
+                float distance = Vector3.Distance(transform.position, enemyItem.transform.position);
+
+                if (distance < shortestDistance)
+                {
+                    pursuit = enemyItem;
+                    shortestDistance = distance;
+                }
             }
+
+            transform.LookAt(pursuit.transform.position);
         }
     }
 }

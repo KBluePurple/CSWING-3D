@@ -7,7 +7,7 @@ public class LevelManager : MonoBehaviour
     [SerializeField]
     private GameObject[] Level;
 
-    private int curLevel = 0;
+    public int curLevel { private set; get; } = 0;
 
     private float curDelay = 0f;
     private float levelDelay = 90f;
@@ -32,9 +32,17 @@ public class LevelManager : MonoBehaviour
         curDelay = 0f;
         ++curLevel;
 
-        if(curLevel != 5)
+        Debug.Log((curLevel + 1) + "스테이지 시작");
+
+        if(curLevel == 5)
         {
-            Level[curLevel].SetActive(true);
+            levelDelay = 180f;
         }
+        else
+        {
+            levelDelay = 90f;
+        }
+
+        Level[curLevel].SetActive(true);
     }
 }

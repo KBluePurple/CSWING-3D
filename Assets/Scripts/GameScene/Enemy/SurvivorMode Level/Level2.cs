@@ -4,25 +4,15 @@ using UnityEngine;
 
 public class Level2 : SurvivorModeManager
 {
-    private void Start()
+    private void OnEnable()
     {
         FixedPursuitSpawnCount = 5;
         MovedPursuitSpawnCount = 3;
     }
 
-    protected override void Update()
+    protected override IEnumerator SpawnPurusit()
     {
-        base.Update();
-    }
-
-    protected override void SpawnFixedPursuit()
-    {
-        base.SpawnFixedPursuit();
-    }
-
-    protected override void SpawnMovedPursuit()
-    {
-        base.SpawnMovedPursuit();
+        return base.SpawnPurusit();
     }
 
     protected override void goNextLevel()
