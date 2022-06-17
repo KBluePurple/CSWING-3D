@@ -16,4 +16,16 @@ public class SmallEnemy : Enemy
         StartCoroutine(SetRandomReconnaissancePosition());
         targetPosition = parant.position;
     }
+
+    public SmallEnemy SetParant(Transform parant)
+    {
+        this.parant = parant;
+        return this;
+    }
+
+    public SmallEnemy SetTarget(Transform target)
+    {
+        this.target = target;
+        return this;
+    }
 }

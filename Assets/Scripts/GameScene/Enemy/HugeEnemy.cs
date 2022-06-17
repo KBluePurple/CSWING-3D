@@ -21,10 +21,14 @@ public class HugeEnemy : MonoBehaviour
     [SerializeField] float maxHp = 500f;
     [SerializeField] float hp = 500f;
     [SerializeField] float speed = 10f;
+    [SerializeField] GameObject laserPrefab;
+    [SerializeField] GameObject smallEnemyPrefab;
 
     private State currentState = State.Patrol;
 
     private bool isDetecting = false;
+    private bool isFreezed = false;
+    private float delay = 0f;
 
     private void OnDrawGizmosSelected()
     {
@@ -55,6 +59,11 @@ public class HugeEnemy : MonoBehaviour
             }
         }
 
+        if (isFreezed)
+        {
+            return;
+        }
+
         switch (currentState)
         {
             case State.Patrol:
@@ -79,28 +88,28 @@ public class HugeEnemy : MonoBehaviour
                 Dead();
                 break;
         }
+    }
 
-        IEnumerator OnDetected()
+    IEnumerator OnDetected()
+    {
+        // 적이 발견되었을 때 4개 공격 중 하나 랜덤 실행
+        int behaviorType = Random.Range(0, 5);
+        currentState = (State)(behaviorType + 1);
+
+        yield return null;
+    }
+
+    IEnumerator OnUndetected()
+    {
+        if (hp > maxHp / 2)
         {
-            // 적이 발견되었을 때 4개 공격 중 하나 랜덤 실행
-            int behaviorType = Random.Range(0, 5);
-            currentState = (State)(behaviorType + 1);
-
-            yield return null;
+            currentState = State.Boundary;
         }
-
-        IEnumerator OnUndetected()
+        else
         {
-            if (hp > maxHp / 2)
-            {
-                currentState = State.Boundary;
-            }
-            else
-            {
-                currentState = State.Patrol;
-            }
-            yield return null;
+            currentState = State.Patrol;
         }
+        yield return null;
     }
 
     private void AttackType1()
@@ -121,12 +130,42 @@ public class HugeEnemy : MonoBehaviour
 
     private void AttackType3()
     {
-        // TODO : 플레이어 주변을 돌면서 소형 적을 소환한다.
+        transform.Translate(Vector3.forward * Time.deltaTime * speed);
+
+        if (delay > 0)
+        {
+            delay -= Time.deltaTime;
+            return;
+        }
+
+        delay = 1f;
+        GameObject smallEnemy = Instantiate(smallEnemyPrefab, transform.position, Quaternion.identity);
+        smallEnemy.GetComponent<SmallEnemy>()
+            .SetParant(transform)
+            .SetTarget(target);
+        transform.LookAt(target.position + Random.onUnitSphere * 10f);
     }
 
     private void AttackType4()
     {
-        // TODO : 정지 후 강한 공격을 한다.
+        StartCoroutine(AttackType4_Coroutine());
+    }
+
+    IEnumerator AttackType4_Coroutine()
+    {
+        // 차징 후 강한 공격 발사
+        isFreezed = true;
+        yield return new WaitForSeconds(1f);
+        GameObject laser = Instantiate(laserPrefab, transform.position, Quaternion.identity);
+        laser.GetComponent<Laser>()
+            .SetParent(transform)
+            .SetTarget(target)
+            .SetTime(1f)
+            .SetDamage(100);
+        yield return new WaitForSeconds(1f);
+        isFreezed = false;
+
+        yield return null;
     }
 
     private void Dead()
@@ -136,11 +175,31 @@ public class HugeEnemy : MonoBehaviour
 
     private void Boundary()
     {
-        // TODO : 맵 중앙 돌기
+        transform.Translate(Vector3.forward * Time.deltaTime * speed);
+
+        if (delay > 0)
+        {
+            delay -= Time.deltaTime;
+            return;
+        }
+
+        delay = 1f;
+
+        transform.LookAt(Random.onUnitSphere * 10f);
     }
 
     private void Patrol()
     {
-        // TODO : 순찰
+        transform.Translate(Vector3.forward * Time.deltaTime * speed);
+
+        if (delay > 0)
+        {
+            delay -= Time.deltaTime;
+            return;
+        }
+
+        delay = 10f;
+
+        transform.LookAt(Vector3.zero);
     }
 }
