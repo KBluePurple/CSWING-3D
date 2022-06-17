@@ -9,7 +9,7 @@ public class Level10 : MonoBehaviour
     [SerializeField]
     private GameObject spawnPos = null;
 
-    void Start()
+    void OnEnable()
     {
         Instantiate(boss, spawnPos.transform);
     }

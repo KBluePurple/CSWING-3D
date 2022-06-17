@@ -39,7 +39,33 @@ public class PursuitController : MonoBehaviour
     {
         if (target != null)
         {
-            if (Vector3.Distance(target.transform.position, transform.position) <= Enemy.FindObjectOfType<Enemy>().detectionRange)
+            if (this.gameObject.CompareTag("Pursuit"))
+            {
+                if (Vector3.Distance(target.transform.position, transform.position) <= 30f)
+                {
+                    lineRenderer.enabled = true;
+
+                    curTime += Time.deltaTime;
+
+                    transform.LookAt(target.transform);
+
+                    lineRenderer.SetPosition(0, transform.position);
+                    lineRenderer.SetPosition(1, target.transform.position);
+
+                    if (curTime >= shotDelay - 0.2f)
+                    {
+                        lineRenderer.material.color = Color.red;
+                    }
+
+                    if (curTime >= shotDelay)
+                    {
+                        AttackTarget();
+                        curTime = 0f;
+                        lineRenderer.material.color = Color.white;
+                    }
+                }
+            }
+            else if (Vector3.Distance(target.transform.position, transform.position) <= Enemy.FindObjectOfType<Enemy>().detectionRange)
             {
                 lineRenderer.enabled = true;
 

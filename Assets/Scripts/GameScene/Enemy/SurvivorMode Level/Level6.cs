@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Level6 : SurvivorModeManager
 {
-    private void Start()
+    private void OnEnable()
     {
         FixedPursuitSpawnCount = 14;
         smallPursuitSpawnCount = 3;
@@ -12,29 +12,9 @@ public class Level6 : SurvivorModeManager
         bigPursuitSpawnCount = 1;
     }
 
-    protected override void Update()
+    protected override IEnumerator SpawnPurusit()
     {
-        base.Update();
-    }
-
-    protected override void SpawnFixedPursuit()
-    {
-        base.SpawnFixedPursuit();
-    }
-
-    protected override void SpawnSmallPursuit()
-    {
-        base.SpawnSmallPursuit();
-    }
-
-    protected override void SpawnMiddlePursuit()
-    {
-        base.SpawnMiddlePursuit();
-    }
-
-    protected override void SpawnBigPursuit()
-    {
-        base.SpawnBigPursuit();
+        return base.SpawnPurusit();
     }
 
     protected override void goNextLevel()
