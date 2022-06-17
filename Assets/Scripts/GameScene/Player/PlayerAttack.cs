@@ -51,17 +51,18 @@ public class PlayerAttack : MonoBehaviour
     {
         switch (SaveManager.Instance.Parts.Weapon)
         {
-            case WeaponPart.NONE:
-                break;
-            case WeaponPart.G_01:
-                bulletPre = G_01_bulletPre;
-                break;
-            case WeaponPart.L_01:
-                bulletPre = L_01_bulletPre;
-                break;
-            case WeaponPart.M_01:
-                bulletPre = M_01_bulletPre;
-                break;
+        case WeaponPart.NONE:
+            break;
+        case WeaponPart.G_01:
+            bulletPre = G_01_bulletPre;
+            break;
+        case WeaponPart.L_01:
+            shotDelay = 3f;
+            bulletPre = L_01_bulletPre;
+            break;
+        case WeaponPart.M_01:
+            bulletPre = M_01_bulletPre;
+            break;
         }
     }
 
@@ -92,9 +93,10 @@ public class PlayerAttack : MonoBehaviour
         default:
             break;
         }
+
+        curDelay = shotDelay;
         // GameObject bullet = Instantiate(bulletPre, bulletPos);
         // SoundManager.Instance.PlaySound("Hand Gun 1");
         // bullet.transform.SetParent(null);
-        Destroy(bullet, 3f);
     }
 }

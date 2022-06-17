@@ -1182,6 +1182,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Pursuit
       objectReference: {fileID: 0}
+    - target: {fileID: 768138431652014799, guid: af406d5f83860cb428d30a8e92cdd422, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4392030041918626012, guid: af406d5f83860cb428d30a8e92cdd422, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -2138,13 +2142,13 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 5966333274988375270, guid: c7afef893346c5a4baab9f9188f8c985, type: 3}
-      propertyPath: target
-      value: 
-      objectReference: {fileID: 543450652775160863}
     - target: {fileID: 5966333274988375271, guid: c7afef893346c5a4baab9f9188f8c985, type: 3}
       propertyPath: m_Name
       value: StarMarineTrooper
+      objectReference: {fileID: 0}
+    - target: {fileID: 5966333274988375271, guid: c7afef893346c5a4baab9f9188f8c985, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6451261520490149469, guid: c7afef893346c5a4baab9f9188f8c985, type: 3}
       propertyPath: m_RootOrder
@@ -6164,7 +6168,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e3ba63ba49347e0478f5d59e248475f3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerMove: {fileID: 0}
+  playerMove: {fileID: 2955955303584734741}
 --- !u!1 &2084347323
 GameObject:
   m_ObjectHideFlags: 0
@@ -6310,6 +6314,10 @@ PrefabInstance:
       propertyPath: virtualCamera
       value: 
       objectReference: {fileID: 2001038196}
+    - target: {fileID: 2721511723029223603, guid: 0c0718f0adfff124d9357ed815c427f0, type: 3}
+      propertyPath: L_01_bulletPre
+      value: 
+      objectReference: {fileID: 549486428017323360, guid: a3c8dee95f3458b4eb074ca2330ea2a1, type: 3}
     - target: {fileID: 2721511723029223615, guid: 0c0718f0adfff124d9357ed815c427f0, type: 3}
       propertyPath: pursuit
       value: 
@@ -6360,6 +6368,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0c0718f0adfff124d9357ed815c427f0, type: 3}
+--- !u!114 &2955955303584734741 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2721511723029223602, guid: 0c0718f0adfff124d9357ed815c427f0, type: 3}
+  m_PrefabInstance: {fileID: 2955955303584734740}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 919132149040170661}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 42b4b1886638de944b8eea44c67eee0c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &3279686989199692411
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6373,7 +6392,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2396654017003249568, guid: 0075fe33d13e5774c896fe792a9d9086, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3029075979542562074, guid: 0075fe33d13e5774c896fe792a9d9086, type: 3}
       propertyPath: m_RootOrder
@@ -6494,7 +6513,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7796535582860682044, guid: 8b13cb00d068bcf48bff34ab46eff12b, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8b13cb00d068bcf48bff34ab46eff12b, type: 3}
