@@ -1,4 +1,5 @@
 using System;
+using GameScene;
 using UnityEngine;
 
 public class Laser : MonoBehaviour
@@ -6,7 +7,8 @@ public class Laser : MonoBehaviour
     [SerializeField] Transform parent;
     [SerializeField] Transform target;
     [SerializeField] Transform laser;
-    public float Time = 1f;
+    private float time = 1f;
+    private int damage = 10;
 
     private void Start()
     {
@@ -20,9 +22,9 @@ public class Laser : MonoBehaviour
         laser.transform.position = Vector3.Lerp(parent.position, target.position, 0.5f);
         laser.transform.localScale = new Vector3(laser.transform.localScale.x, laser.transform.localScale.y, distance);
 
-        Time -= UnityEngine.Time.deltaTime;
+        time -= UnityEngine.Time.deltaTime;
 
-        if (Time <= 0)
+        if (time <= 0)
         {
             Destroy(gameObject);
         }
@@ -30,7 +32,7 @@ public class Laser : MonoBehaviour
 
     public Laser SetTime(float time)
     {
-        Time = time;
+        this.time = time;
         return this;
     }
 
@@ -40,13 +42,23 @@ public class Laser : MonoBehaviour
         return this;
     }
 
-    public void SetParent(Transform transform)
+    public Laser SetParent(Transform transform)
     {
         this.parent = transform;
+        return this;
+    }
+
+    public Laser SetDamage(int damage)
+    {
+        this.damage = damage;
+        return this;
     }
 
     private void OnCollisionEnter(Collision other)
     {
-        // TODO : 충돌 시 체력 깎음
+        if (other.gameObject.tag == "Player")
+        {
+            PlayerManager.Instance.Damaged(damage);
+        }
     }
 }
