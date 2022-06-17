@@ -2138,6 +2138,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5966333274988375270, guid: c7afef893346c5a4baab9f9188f8c985, type: 3}
+      propertyPath: target
+      value: 
+      objectReference: {fileID: 543450652775160863}
     - target: {fileID: 5966333274988375271, guid: c7afef893346c5a4baab9f9188f8c985, type: 3}
       propertyPath: m_Name
       value: StarMarineTrooper

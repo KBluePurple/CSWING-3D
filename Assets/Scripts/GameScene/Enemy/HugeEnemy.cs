@@ -16,7 +16,7 @@ public class HugeEnemy : MonoBehaviour
         Dead
     }
 
-    [SerializeField] Transform target;
+    Transform target;
     [SerializeField] float ditectionRange = 30f;
     [SerializeField] float maxHp = 500f;
     [SerializeField] float hp = 500f;
@@ -38,6 +38,10 @@ public class HugeEnemy : MonoBehaviour
         Gizmos.DrawLine(transform.position, target.position);
     }
 
+    private void Awake()
+    {
+        target = GameObject.FindGameObjectWithTag("Player").transform;
+    }
     private void Update()
     {
         float distance = Vector3.Distance(transform.position, target.position);
