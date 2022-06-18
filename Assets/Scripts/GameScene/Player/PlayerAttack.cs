@@ -81,6 +81,7 @@ public class PlayerAttack : MonoBehaviour
                     .SetTargetPos(transform.position + transform.forward * maxDistance)
                     .SetTargetTag("Enemy")
                     .Fire(bulletPos);
+                SoundManager.Instance.PlaySound("Hand Gun 1", SoundType.SE);
                 break;
             case WeaponPart.L_01:
                 bullet = Instantiate(L_01_bulletPre, bulletPos.position, bulletPos.rotation);
