@@ -13,7 +13,7 @@ namespace GameScene
         private Vector3 _rotate;
 
         //[SerializeField] float _speed = 1f;
-        public float _speed = 1f;
+        public float Speed = 1f;
         [SerializeField] float _xRotateSpeed = 1f;
         [SerializeField] float _yRotateSpeed = 1f;
         [SerializeField] float _zRotateSpeed = 1f;
@@ -59,18 +59,18 @@ namespace GameScene
 
             if (speed < 0 && Input.GetKey(KeyCode.Space))
             {
-                _speed = Mathf.Lerp(_speed, 0f, Time.deltaTime * (1 / _speedChange));
+                Speed = Mathf.Lerp(Speed, 0f, Time.deltaTime * (1 / _speedChange));
                 speed = 0;
             }
             else
             {
-                _speed += speed * _speedChange * Time.deltaTime;
-                _speed = Mathf.Clamp(_speed, -(_maxSpeed / 2), _maxSpeed);
+                Speed += speed * _speedChange * Time.deltaTime;
+                Speed = Mathf.Clamp(Speed, -(_maxSpeed / 2), _maxSpeed);
             }
 
             Debug.DrawRay(transform.position, transform.forward * 100, Color.red);
             // transform.Translate(transform.forward * _speed * Time.deltaTime);
-            rigid.velocity = transform.forward * _speed;
+            rigid.velocity = transform.forward * Speed;
 
             if (Input.GetKeyDown(KeyCode.A))
             {
@@ -81,7 +81,7 @@ namespace GameScene
                 StartCoroutine(RightDash());
             }
 
-            virtualCamera.m_Lens.FieldOfView = 50 + Mathf.Abs(_speed) / _maxSpeed * 10;
+            virtualCamera.m_Lens.FieldOfView = 50 + Mathf.Abs(Speed) / _maxSpeed * 10;
         }
 
         bool isPushedLeft = false;

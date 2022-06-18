@@ -16,7 +16,7 @@ public class PlayerLightController : MonoBehaviour
     {
         foreach (var light in _lights)
         {
-            light.intensity = Mathf.Lerp(light.intensity, PlayerMove.Instance._speed / 10, Time.deltaTime);
+            light.intensity = Mathf.Lerp(light.intensity, PlayerMove.Instance.Speed / 10, Time.deltaTime);
             light.intensity = Mathf.Clamp(light.intensity, 1, 10);
         }
     }

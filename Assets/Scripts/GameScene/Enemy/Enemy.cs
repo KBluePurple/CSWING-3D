@@ -121,4 +121,23 @@ public abstract class Enemy : MonoBehaviour
 
         //Destroy(gameObject);
     }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.CompareTag("Player"))
+        {
+            int damage = (int)((speed * 0.6f) + (other.GetComponent<GameScene.PlayerMove>().Speed * 0.6f));
+            if (health < damage)
+            {
+                Dead();
+            }
+            else
+            {
+                health -= damage;
+                other.GetComponent<Rigidbody>().AddForce(-transform.forward * 100f);
+            }
+
+            GameScene.PlayerManager.Instance.Damaged(damage);
+        }
+    }
 }

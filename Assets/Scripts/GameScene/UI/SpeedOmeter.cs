@@ -15,6 +15,6 @@ public class SpeedOmeter : MonoBehaviour
 
     private void Update()
     {
-        _text.text = string.Format($"{PlayerMove.Instance._speed:F1} Km/s");
+        _text.text = string.Format($"{PlayerMove.Instance.Speed:F1} Km/s");
     }
 }

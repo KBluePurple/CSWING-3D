@@ -13,6 +13,7 @@ public class Item : MonoBehaviour
     {
         // TODO : 먹는거 만들어줄 사람 구함
         // 이거 이리 해도 되나???
+        // ㅁ?ㄹ
         if (other.gameObject.CompareTag("Player"))
         {
             SoundManager.Instance.PlaySound("magic_02");

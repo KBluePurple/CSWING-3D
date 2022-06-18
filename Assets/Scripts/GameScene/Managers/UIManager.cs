@@ -65,8 +65,8 @@ namespace GameScene
 
         private void Update()
         {
-            Speed.fillAmount = playerMove._speed / playerMove.MaxSpeed;
-            BackSpeed.fillAmount = -playerMove._speed / playerMove.MaxSpeed;
+            Speed.fillAmount = playerMove.Speed / playerMove.MaxSpeed;
+            BackSpeed.fillAmount = -playerMove.Speed / playerMove.MaxSpeed;
 
             if (gameManager.isActivePausePanel)
             {
@@ -127,7 +127,7 @@ namespace GameScene
             shieldText.text = "PlayerSheild : " + PlayerManager.Instance.Stat.Shield.ToString();
             hpText.text = "PlayerHp : " + PlayerManager.Instance.Stat.Hp.ToString();
             energyText.text = "PlayerEnergy : " + PlayerManager.Instance.Stat.Energy.ToString();
-            speedText.text = $"Player Speed : {playerMove._speed:F1}km/s";
+            speedText.text = $"Player Speed : {playerMove.Speed:F1}km/s";
             weaponText.text = "Player Weapon :\n" + SaveManager.Instance.Parts.Weapon.ToString();
             coreText.text = "Player Core :\n" + SaveManager.Instance.Parts.Core.ToString();
         }
