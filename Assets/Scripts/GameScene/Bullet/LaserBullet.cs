@@ -1,9 +1,8 @@
 using System;
 using UnityEngine;
 
-public class LaserBullet : MonoBehaviour
+public class LaserBullet : Bullet
 {
-    [SerializeField] float damage = 1f;
     [SerializeField] float lifeTime = 1f;
     [SerializeField] float distance = 30f;
     [SerializeField] Transform laser;
@@ -34,7 +33,7 @@ public class LaserBullet : MonoBehaviour
         return this;
     }
 
-    public void Fire(Transform from)
+    public override void Fire(Transform from)
     {
         float distance = Vector3.Distance(transform.position, targetPos);
         laser.LookAt(targetPos);

@@ -85,7 +85,8 @@ public class FinalBoss : MonoBehaviour
                 .SetTarget(target)
                 .SetSpeed(missileSpeed)
                 .SetDamage(1)
-                .Build();
+                .SetTargetTag("Player")
+                .Fire(transform);
         }
     }
 

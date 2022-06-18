@@ -1,11 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class PlayerAttack : MonoBehaviour
 {
     [SerializeField]
-    private float maxDistance = 30f;
+    private float maxDistance = 100f;
     [SerializeField]
     private Transform rayTransform;
     // Shot Bullet
@@ -20,6 +21,7 @@ public class PlayerAttack : MonoBehaviour
     private Transform bulletPos;
     [SerializeField]
     public int bulletDamaged { get; private set; } = 1;
+    [SerializeField] Material bulletMaterial;
 
     private float shotDelay = 0.1f;
     private float curDelay = 0f;
@@ -72,11 +74,12 @@ public class PlayerAttack : MonoBehaviour
         {
             case WeaponPart.G_01:
                 bullet = Instantiate(G_01_bulletPre, bulletPos.position, bulletPos.rotation);
-                bullet.GetComponent<Bullet>()
+                bullet.GetComponent<NormalBullet>()
                     .SetDamage(bulletDamaged)
-                    .SetSpeed(10f)
+                    .SetSpeed(100)
                     .SetDistance(maxDistance)
                     .SetTargetPos(transform.position + transform.forward * maxDistance)
+                    .SetTargetTag("Enemy")
                     .Fire(bulletPos);
                 break;
             case WeaponPart.L_01:
@@ -86,21 +89,24 @@ public class PlayerAttack : MonoBehaviour
                     .SetLifeTime(2f)
                     .SetDistance(maxDistance)
                     .SetTargetPos(transform.position + transform.forward * maxDistance)
+                    .SetTargetTag("Enemy")
                     .Fire(bulletPos);
                 shotDelay = 3f;
                 break;
             case WeaponPart.M_01:
                 bullet = Instantiate(M_01_bulletPre, bulletPos.position, bulletPos.rotation);
-                bullet.GetComponent<Bullet>()
+                bullet.GetComponent<MissileBullet>()
                     .SetDamage(bulletDamaged)
-                    .SetSpeed(10f)
-                    .SetDistance(maxDistance)
-                    .SetTargetPos(transform.position + transform.forward * maxDistance)
+                    .SetSpeed(100)
+                    .SetLifeTime(3f)
+                    .SetTarget(transform) // TODO 태훈이가 해주겠지
+                    .SetTargetTag("Enemy")
                     .Fire(bulletPos);
                 break;
             default:
                 break;
         }
+        bullet.GetComponentsInChildren<Renderer>().ToList().ForEach(x => x.material = bulletMaterial);
 
         curDelay = shotDelay;
         // GameObject bullet = Instantiate(bulletPre, bulletPos);
