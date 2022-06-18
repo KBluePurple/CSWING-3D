@@ -6,6 +6,7 @@ public class MiddleBoss : Enemy
     [SerializeField] float fireRange = 30f;
     [SerializeField] GameObject laserPrefab;
     private bool isCharging = false;
+    
 
     protected override void OnDrawGizmosSelected()
     {
@@ -44,9 +45,10 @@ public class MiddleBoss : Enemy
         GameObject laser = Instantiate(laserPrefab, transform.position, Quaternion.identity);
         laser.GetComponent<Laser>()
             .SetTarget(target)
-            .SetTime(1f)
+            .SetTime(1/health * 50)
             .SetParent(transform);
         // TODO : 체력 비례 시간 조절
+        
         isCharging = false;
     }
 }
