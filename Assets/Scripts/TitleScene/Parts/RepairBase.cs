@@ -15,7 +15,6 @@ public class RepairBase : MonoBehaviour
     public Image _toggleImage;
     protected bool _canUse = false; //�ش� ������ ��밡���Ѱ� ����
     public bool _isActive = false;
-    protected RepairBase[] otherParts;
     protected void ChildrenStart()
     {
         _button = GetComponent<Button>();
@@ -23,7 +22,6 @@ public class RepairBase : MonoBehaviour
         _toggleImage = transform.Find("Active").GetComponent<Image>();
         _image.sprite = BundleLoader.Instance.FindAsset(_bundleAdress);
         _alarmPanel = transform.parent.parent.parent.parent.Find("MakePartPanel").gameObject;
-        otherParts = transform.parent.GetComponentsInChildren<RepairBase>();
         UseSet();
         _button.onClick.RemoveAllListeners();
         if (_canUse)
@@ -36,7 +34,14 @@ public class RepairBase : MonoBehaviour
         }
         _button.onClick.AddListener(() =>
         {
-            SoundManager.Instance.PlaySound("Dock", SoundType.SE);
+            if (_canUse)
+            {
+                SoundManager.Instance.PlaySound("Dock", SoundType.SE);
+            }
+            else
+            {
+                SoundManager.Instance.PlaySound("UI_Beep", SoundType.SE);
+            }
         });
     }
 
