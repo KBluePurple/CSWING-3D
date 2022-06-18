@@ -145,6 +145,7 @@ namespace GameScene
             {
                 isSafeZone = true;
                 SafeZoneManager.Instance.OnEnterSafeZone();
+                UIManager.Instance.OnSafeZoneCounterUpdate(0);
             }
         }
 
