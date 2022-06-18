@@ -37,6 +37,7 @@ namespace GameScene
             if (Input.GetKeyDown(KeyCode.Escape))
             {
                 TogglePausePanel();
+                SoundManager.Instance.PlaySound("Stop");
             }
         }
 

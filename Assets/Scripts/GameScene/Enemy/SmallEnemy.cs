@@ -17,6 +17,12 @@ public class SmallEnemy : Enemy
         targetPosition = parant.position;
     }
 
+    protected override void Dead()
+    {
+        base.Dead();
+        SoundManager.Instance.PlaySound("Heavy Object Impact 4");
+    }
+
     public SmallEnemy SetParant(Transform parant)
     {
         this.parant = parant;

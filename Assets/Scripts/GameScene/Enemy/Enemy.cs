@@ -96,9 +96,14 @@ public abstract class Enemy : MonoBehaviour
         StartCoroutine(ExplosionEffect());
         if (health <= 0)
         {
-            Destroy(gameObject);
-            Debug.Log("Enemy ���");
+            Dead();
         }
+    }
+
+    protected virtual void Dead()
+    {
+        Destroy(gameObject);
+        Debug.Log("Enemy ���");
     }
 
     internal void ComeHere(Vector3 position)

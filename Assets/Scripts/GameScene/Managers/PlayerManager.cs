@@ -6,20 +6,20 @@ namespace GameScene
 {
     public class PlayerManager : MonoSingleton<PlayerManager>
     {
-        //½ºÅÈ
+        //ï¿½ï¿½ï¿½ï¿½
         public PlayerStat Stat;
-        //¹«±â1, ¹«±â2
+        //ï¿½ï¿½ï¿½ï¿½1, ï¿½ï¿½ï¿½ï¿½2
         private GameObject playerWeapon1;
         private GameObject playerWeapon2;
-        //Æ¯¼ö½ºÅ³1, Æ¯¼ö½ºÅ³2
+        //Æ¯ï¿½ï¿½ï¿½ï¿½Å³1, Æ¯ï¿½ï¿½ï¿½ï¿½Å³2
         private GameObject playerSkill1;
         private GameObject playerSkill2;
 
-        //¸öÃ¼ È¸Àü¼Óµµ, °¨µµ
+        //ï¿½ï¿½Ã¼ È¸ï¿½ï¿½ï¿½Óµï¿½, ï¿½ï¿½ï¿½ï¿½
         private float rotationSpeed;
-        //°¨µµ? ´Â ¾îÄÉ? ¾²?Áö?
+        //ï¿½ï¿½ï¿½ï¿½? ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½? ï¿½ï¿½?ï¿½ï¿½?
 
-        // ½¯µå ÀÚµ¿ÃæÀü ÄðÅ¸ÀÓ
+        // ï¿½ï¿½ï¿½ï¿½ ï¿½Úµï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Å¸ï¿½ï¿½
         private float shieldRecoveryDelay = 5f;
         private float curShieldRecoverydelay = 0f;
         private float delay = 0f;
@@ -56,6 +56,11 @@ namespace GameScene
             {
                 Stat.Hp += Stat.Shield;
                 Stat.Shield = 0;
+                SoundManager.Instance.PlaySound("Metal impact 5");
+            }
+            else
+            {
+                SoundManager.Instance.PlaySound("Hit_shield");
             }
 
             if (Stat.Hp <= 0)

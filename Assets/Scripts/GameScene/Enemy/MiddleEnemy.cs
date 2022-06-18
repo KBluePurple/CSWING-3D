@@ -43,4 +43,10 @@ public class MiddleEnemy : Enemy
     {
         //OnCTriggerEnter(other);
     }
+
+    protected override void Dead()
+    {
+        base.Dead();
+        SoundManager.Instance.PlaySound("Railgun - Shot 6");
+    }
 }

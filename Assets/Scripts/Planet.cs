@@ -7,11 +7,12 @@ public class Planet : MonoBehaviour
 {
     private void OnTriggerEnter(Collider other)
     {
-        if(other.CompareTag("Bullet"))
+        if (other.CompareTag("Bullet"))
         {
+            SoundManager.Instance.PlaySound("Gun Sound 3");
             Destroy(other.gameObject);
         }
-        if(other.CompareTag("Enemy"))
+        if (other.CompareTag("Enemy"))
         {
 
         }

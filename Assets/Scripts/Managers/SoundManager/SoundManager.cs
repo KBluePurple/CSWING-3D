@@ -45,5 +45,9 @@ public class SoundManager : MonoSingleton<SoundManager>
                 BMGAudioSource.Play();
             }
         }
+        else
+        {
+            Debug.LogError("소리 없음 : " + soundName);
+        }
     }
 }

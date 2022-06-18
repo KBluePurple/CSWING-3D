@@ -93,6 +93,7 @@ public class PlayerAttack : MonoBehaviour
                     .SetTargetTag("Enemy")
                     .Fire(bulletPos);
                 shotDelay = 3f;
+                SoundManager.Instance.PlaySound("laser_01");
                 break;
             case WeaponPart.M_01:
                 bullet = Instantiate(M_01_bulletPre, bulletPos.position, bulletPos.rotation);
@@ -103,6 +104,7 @@ public class PlayerAttack : MonoBehaviour
                     .SetTarget(transform) // TODO 태훈이가 해주겠지
                     .SetTargetTag("Enemy")
                     .Fire(bulletPos);
+                SoundManager.Instance.PlaySound("Flare gun 5-2");
                 break;
             default:
                 break;

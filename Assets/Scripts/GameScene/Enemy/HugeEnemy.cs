@@ -35,7 +35,7 @@ public class HugeEnemy : MonoBehaviour
         Gizmos.color = Color.red; // 감지 범위
         Gizmos.DrawWireSphere(transform.position, ditectionRange);
         Gizmos.color = Color.cyan; // 순찰 경로
-        if(target!=null)
+        if (target != null)
             Gizmos.DrawLine(transform.position, target.position);
     }
 
@@ -176,9 +176,10 @@ public class HugeEnemy : MonoBehaviour
     private void Dead()
     {
         // TODO : 사망 처리
-        if(hp <= 0)
+        if (hp <= 0)
         {
             Destroy(gameObject);
+            SoundManager.Instance.PlaySound("Explosion 1");
         }
     }
 

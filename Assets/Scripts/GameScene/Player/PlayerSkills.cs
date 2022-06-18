@@ -30,7 +30,7 @@ public class PlayerSkills : MonoBehaviour
             }
         }
 
-        if(isSkill)
+        if (isSkill)
         {
             curdelay += Time.deltaTime;
         }
@@ -43,8 +43,9 @@ public class PlayerSkills : MonoBehaviour
 
         PlayerManager.Instance.Stat.Shield += PlayerManager.Instance.Stat.Energy;
         PlayerManager.Instance.Stat.Energy -= PlayerManager.Instance.Stat.Energy;
+        SoundManager.Instance.PlaySound("electronic_02");
 
-        if(curdelay >= skillDelay)
+        if (curdelay >= skillDelay)
         {
             isSkill = false;
 
@@ -60,20 +61,21 @@ public class PlayerSkills : MonoBehaviour
 
         Time.timeScale = 0.5f;
 
-        if(PlayerManager.Instance.Stat.Energy >= energy)
+        if (PlayerManager.Instance.Stat.Energy >= energy)
         {
             PlayerManager.Instance.Stat.Energy -= PlayerManager.Instance.Stat.Energy;
+            SoundManager.Instance.PlaySound("skill2");
         }
         else
         {
-            Debug.Log("¿¡³ÊÁö ºÎÁ·");
+            Debug.Log("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½");
         }
 
         if (curdelay >= 7f)
         {
             Time.timeScale = 1f;
         }
-        if(curdelay >= skillDelay)
+        if (curdelay >= skillDelay)
         {
             isSkill = false;
             curdelay = 0f;
@@ -89,17 +91,18 @@ public class PlayerSkills : MonoBehaviour
         if (PlayerManager.Instance.Stat.Energy >= energy)
         {
             PlayerManager.Instance.Stat.Energy -= PlayerManager.Instance.Stat.Energy;
+            SoundManager.Instance.PlaySound("Missile - Shot 4");
         }
         else
         {
-            Debug.Log("¿¡³ÊÁö ºÎÁ·");
+            Debug.Log("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½");
         }
 
         GameObject bullet = GetComponent<PlayerAttack>().bulletPre;
         bullet.transform.localScale = new Vector3(10f, 10f, 10f);
         Instantiate(bullet, bulletPos.transform);
 
-        if(curdelay >= skillDelay)
+        if (curdelay >= skillDelay)
         {
             isSkill = false;
             curdelay = 0f;
