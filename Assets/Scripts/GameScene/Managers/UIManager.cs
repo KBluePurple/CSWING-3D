@@ -78,27 +78,26 @@ namespace GameScene
 
         void DisplaySafeZone()
         {
-            if (playerMove.transform.position.x >= Mathf.Abs(450f))
+            if (playerMove.transform.position.x >= Mathf.Abs(400f))
             {
                 Color color = displaySafeZone.color;
-                color.a = (Mathf.Abs(playerMove.transform.position.x) - 450f)/50f;
+                color.a = (Mathf.Abs(playerMove.transform.position.x) - 400f)/10f;
                 displaySafeZone.color = color;
+            }
+            if (playerMove.transform.position.y >= Mathf.Abs(400f))
+            {
+                Color color = displaySafeZone.color;
+                color.a = (Mathf.Abs(playerMove.transform.position.y) - 400f) / 10f;
+                displaySafeZone.color = color;
+            }
+            if (playerMove.transform.position.z >= Mathf.Abs(400f))
+            {
+                Color color = displaySafeZone.color;
+                color.a = (Mathf.Abs(playerMove.transform.position.z) - 400f) / 10f;
+                displaySafeZone.color = color;
+            }
 
-            }
-            if (playerMove.transform.position.y >= Mathf.Abs(450f))
-            {
-                Color color = displaySafeZone.color;
-                color.a = (Mathf.Abs(playerMove.transform.position.y) - 450f) / 50f;
-                displaySafeZone.color = color;
-            }
-            if (playerMove.transform.position.z >= Mathf.Abs(450f))
-            {
-                Color color = displaySafeZone.color;
-                color.a = (Mathf.Abs(playerMove.transform.position.z) - 450f) / 50f;
-                displaySafeZone.color = color;
-            }
-
-            if(playerMove.transform.position.x <= Mathf.Abs(450f) || playerMove.transform.position.y <= Mathf.Abs(450f) || playerMove.transform.position.z <= Mathf.Abs(450f))
+            if( (playerMove.transform.position.x <= Mathf.Abs(400f) && playerMove.transform.position.y <= Mathf.Abs(400f) && playerMove.transform.position.z <= Mathf.Abs(400f)))
             {
                 Color color = displaySafeZone.color;
                 color.a = 0;
