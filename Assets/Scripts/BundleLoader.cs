@@ -5,18 +5,21 @@ using UnityEngine.Networking;
 
 public class BundleLoader : MonoSingleton<BundleLoader>
 {
-    private string _bundleAdress;
+    private string _bundleAddress;
     private UnityWebRequest _bundleRequest;
     private AssetBundle _bundle;
     private void Awake()
     {
-        StartCoroutine(LoadBundle());
+        if(_bundleAddress!=null)
+        {
+            StartCoroutine(LoadBundle());
+        }
     }
 
     private IEnumerator LoadBundle()
     {
-        _bundleAdress = "file:///" + Application.dataPath + "/Bundles/sprites";
-        _bundleRequest = UnityWebRequestAssetBundle.GetAssetBundle(_bundleAdress, 0);
+        _bundleAddress = "file:///" + Application.dataPath + "/Bundles/sprites";
+        _bundleRequest = UnityWebRequestAssetBundle.GetAssetBundle(_bundleAddress, 0);
         yield return _bundleRequest.SendWebRequest();
         _bundle = DownloadHandlerAssetBundle.GetContent(_bundleRequest);
         Debug.Log("번들 로딩 완료!");
@@ -24,6 +27,7 @@ public class BundleLoader : MonoSingleton<BundleLoader>
 
     public Sprite FindAsset(string assetName)
     {
+        
         return _bundle.LoadAsset<Sprite>(assetName);
     }
 }
