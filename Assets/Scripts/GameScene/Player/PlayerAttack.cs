@@ -24,15 +24,18 @@ public class PlayerAttack : MonoBehaviour
     private float shotDelay = 0.1f;
     private float curDelay = 0f;
 
+    private void Start()
+    {
+        WeaponSet();
+    }
+
     void Update()
     {
         curDelay += Time.deltaTime;
 
-        WeaponSet();
-
         if (Input.GetMouseButton(0))
         {
-            if(curDelay >= shotDelay)
+            if (curDelay >= shotDelay)
             {
                 Fire();
                 curDelay = 0f;
@@ -44,20 +47,20 @@ public class PlayerAttack : MonoBehaviour
     {
         switch (SaveManager.Instance.Parts.Weapon)
         {
-        case WeaponPart.NONE:
-            break;
-        case WeaponPart.G_01:
-            bulletPre = G_01_bulletPre;
+            case WeaponPart.NONE:
+                break;
+            case WeaponPart.G_01:
+                bulletPre = G_01_bulletPre;
                 shotDelay = 0.1f;
-            break;
-        case WeaponPart.L_01:
-            bulletPre = L_01_bulletPre;
+                break;
+            case WeaponPart.L_01:
+                bulletPre = L_01_bulletPre;
                 shotDelay = 0.3f;
-            break;
-        case WeaponPart.M_01:
-            bulletPre = M_01_bulletPre;
+                break;
+            case WeaponPart.M_01:
+                bulletPre = M_01_bulletPre;
                 shotDelay = 0.75f;
-            break;
+                break;
         }
     }
 
@@ -67,36 +70,36 @@ public class PlayerAttack : MonoBehaviour
         // Debug.DrawRay(transform.position, transform.forward * maxDistance, Color.white, 5f);
         switch (SaveManager.Instance.Parts.Weapon)
         {
-        case WeaponPart.G_01:
-            bullet = Instantiate(G_01_bulletPre, bulletPos.position, bulletPos.rotation);
-            bullet.GetComponent<Bullet>()
-                .SetDamage(bulletDamaged)
-                .SetSpeed(10f)
-                .SetDistance(maxDistance)
-                .SetTargetPos(transform.position + transform.forward * maxDistance)
-                .Fire(bulletPos);
-            break;
-        case WeaponPart.L_01:
-            bullet = Instantiate(L_01_bulletPre, bulletPos.position, bulletPos.rotation);
-            bullet.GetComponent<LaserBullet>()
-                .SetDamage(bulletDamaged)
-                .SetLifeTime(2f)
-                .SetDistance(maxDistance)
-                .SetTargetPos(transform.position + transform.forward * maxDistance)
-                .Fire(bulletPos);
-            shotDelay = 3f;
-            break;
-        case WeaponPart.M_01:
-            bullet = Instantiate(M_01_bulletPre, bulletPos.position, bulletPos.rotation);
-            bullet.GetComponent<Bullet>()
-                .SetDamage(bulletDamaged)
-                .SetSpeed(10f)
-                .SetDistance(maxDistance)
-                .SetTargetPos(transform.position + transform.forward * maxDistance)
-                .Fire(bulletPos);
-            break;
-        default:
-            break;
+            case WeaponPart.G_01:
+                bullet = Instantiate(G_01_bulletPre, bulletPos.position, bulletPos.rotation);
+                bullet.GetComponent<Bullet>()
+                    .SetDamage(bulletDamaged)
+                    .SetSpeed(10f)
+                    .SetDistance(maxDistance)
+                    .SetTargetPos(transform.position + transform.forward * maxDistance)
+                    .Fire(bulletPos);
+                break;
+            case WeaponPart.L_01:
+                bullet = Instantiate(L_01_bulletPre, bulletPos.position, bulletPos.rotation);
+                bullet.GetComponent<LaserBullet>()
+                    .SetDamage(bulletDamaged)
+                    .SetLifeTime(2f)
+                    .SetDistance(maxDistance)
+                    .SetTargetPos(transform.position + transform.forward * maxDistance)
+                    .Fire(bulletPos);
+                shotDelay = 3f;
+                break;
+            case WeaponPart.M_01:
+                bullet = Instantiate(M_01_bulletPre, bulletPos.position, bulletPos.rotation);
+                bullet.GetComponent<Bullet>()
+                    .SetDamage(bulletDamaged)
+                    .SetSpeed(10f)
+                    .SetDistance(maxDistance)
+                    .SetTargetPos(transform.position + transform.forward * maxDistance)
+                    .Fire(bulletPos);
+                break;
+            default:
+                break;
         }
 
         curDelay = shotDelay;

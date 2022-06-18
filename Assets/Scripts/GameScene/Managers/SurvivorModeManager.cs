@@ -30,20 +30,33 @@ public class SurvivorModeManager : MonoBehaviour
 
     public GameObject player;
     private LevelManager levelManager = null;
+    public List<GameObject> enemyList = null;
 
     private void Start()
     {
         levelManager = FindObjectOfType<LevelManager>();
+        enemyList = new List<GameObject>();
         StartCoroutine(SpawnPurusit());
+    }
+
+    private void Update()
+    {
+        foreach (GameObject enemy in enemyList)
+        {
+            if (enemy == null)
+            {
+                enemyList.Remove(enemy);
+                break;
+            }
+        }
     }
 
     /// <summary>
     /// 소환 규칙 : 단계만큼 고정 적 추가소환, 단계가 짝수일 때 이동가능한 적 + 1
     /// </summary>
-
     protected virtual IEnumerator SpawnPurusit()
     {
-        for(int i = 0; i < FixedPursuitSpawnCount; i++)
+        for (int i = 0; i < FixedPursuitSpawnCount; i++)
         {
             SpawnFixedPursuit();
             curPursuitSpawnCount++;
@@ -54,43 +67,43 @@ public class SurvivorModeManager : MonoBehaviour
 
         for (int i = 0; i < MovedPursuitSpawnCount; i++)
         {
-                SpawnMovedPursuit();
-                curPursuitSpawnCount++;
-                pursuitSpawnCount++;
-                Debug.Log("Spawn MovedPursuit");
-                yield return new WaitForSeconds(5f);
+            SpawnMovedPursuit();
+            curPursuitSpawnCount++;
+            pursuitSpawnCount++;
+            Debug.Log("Spawn MovedPursuit");
+            yield return new WaitForSeconds(5f);
         }
 
         for (int i = 0; i < smallPursuitSpawnCount; i++)
         {
 
-                SpawnSmallPursuit();
-                curSmallPursuitSpawnCount++;
-                pursuitSpawnCount++;
-                Debug.Log("Spawn MovedPursuit");
-                yield return new WaitForSeconds(5f);
+            SpawnSmallPursuit();
+            curSmallPursuitSpawnCount++;
+            pursuitSpawnCount++;
+            Debug.Log("Spawn MovedPursuit");
+            yield return new WaitForSeconds(5f);
 
         }
 
         for (int i = 0; i < middlePursuitSpawnCount; i++)
         {
 
-                SpawnMiddlePursuit();
-                curMiddlePursuitSpawnCount++;
-                pursuitSpawnCount++;
-                Debug.Log("Spawn MovedPursuit");
-                yield return new WaitForSeconds(5f);
+            SpawnMiddlePursuit();
+            curMiddlePursuitSpawnCount++;
+            pursuitSpawnCount++;
+            Debug.Log("Spawn MovedPursuit");
+            yield return new WaitForSeconds(5f);
 
         }
 
         for (int i = 0; i < bigPursuitSpawnCount; i++)
         {
 
-                SpawnBigPursuit();
-                curBigPursuitSpawnCount++;
-                pursuitSpawnCount++;
-                Debug.Log("Spawn MovedPursuit");
-                yield return new WaitForSeconds(5f);
+            SpawnBigPursuit();
+            curBigPursuitSpawnCount++;
+            pursuitSpawnCount++;
+            Debug.Log("Spawn MovedPursuit");
+            yield return new WaitForSeconds(5f);
 
         }
     }
@@ -103,7 +116,8 @@ public class SurvivorModeManager : MonoBehaviour
 
         Vector3 spawnPos = new Vector3(spawnPosX, spawnPosY, spawnPosZ);
 
-        Instantiate(fixedPursuitPre, spawnPos, Quaternion.identity);
+        GameObject enemy = Instantiate(fixedPursuitPre, spawnPos, Quaternion.identity);
+        enemyList.Add(enemy);
     }
 
     protected virtual void SpawnMovedPursuit()
@@ -114,7 +128,8 @@ public class SurvivorModeManager : MonoBehaviour
 
         Vector3 spawnPos = new Vector3(spawnPosX, spawnPosY, spawnPosZ);
 
-        Instantiate(movedPursuitPre, spawnPos, Quaternion.identity);
+        GameObject enemy = Instantiate(movedPursuitPre, spawnPos, Quaternion.identity);
+        enemyList.Add(enemy);
     }
 
     protected virtual void SpawnSmallPursuit()
@@ -125,7 +140,8 @@ public class SurvivorModeManager : MonoBehaviour
 
         Vector3 spawnPos = new Vector3(spawnPosX, spawnPosY, spawnPosZ);
 
-        Instantiate(smallPursuitPre, spawnPos, Quaternion.identity);
+        GameObject enemy = Instantiate(smallPursuitPre, spawnPos, Quaternion.identity);
+        enemyList.Add(enemy);
     }
 
     protected virtual void SpawnMiddlePursuit()
@@ -136,7 +152,8 @@ public class SurvivorModeManager : MonoBehaviour
 
         Vector3 spawnPos = new Vector3(spawnPosX, spawnPosY, spawnPosZ);
 
-        Instantiate(middlePursuitPre, spawnPos, Quaternion.identity);
+        GameObject enemy = Instantiate(middlePursuitPre, spawnPos, Quaternion.identity);
+        enemyList.Add(enemy);
     }
 
     protected virtual void SpawnBigPursuit()
@@ -147,14 +164,15 @@ public class SurvivorModeManager : MonoBehaviour
 
         Vector3 spawnPos = new Vector3(spawnPosX, spawnPosY, spawnPosZ);
 
-        Instantiate(bigPursuitPre, spawnPos, Quaternion.identity);
+        GameObject enemy = Instantiate(bigPursuitPre, spawnPos, Quaternion.identity);
+        enemyList.Add(enemy);
     }
 
     protected virtual void goNextLevel()
     {
-        if(levelManager.curLevel == 5)
+        if (levelManager.curLevel == 5)
         {
-            if(pursuitSpawnCount >= FixedPursuitSpawnCount + MovedPursuitSpawnCount && curPursuitSpawnCount <= 4)
+            if (pursuitSpawnCount >= FixedPursuitSpawnCount + MovedPursuitSpawnCount && curPursuitSpawnCount <= 4)
             {
                 levelManager.nextLevel();
                 pursuitSpawnCount = 0;
