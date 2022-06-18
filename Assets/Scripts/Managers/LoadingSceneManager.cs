@@ -29,6 +29,8 @@ public class LoadingSceneManager : MonoBehaviour
     {
         yield return null;
 
+        Debug.Log("¾À ·ÎµùÁß");
+
         AsyncOperation op = SceneManager.LoadSceneAsync(nextScene);
         op.allowSceneActivation = false;
 
@@ -51,9 +53,6 @@ public class LoadingSceneManager : MonoBehaviour
                 progressBar.fillAmount = Mathf.Lerp(progressBar.fillAmount, 1f, timer);
                 if (progressBar.fillAmount == 1.0f)
                 {
-
-                    Player.transform.Translate(Player.transform.forward * 10f * Time.deltaTime);
-                    yield return new WaitForSeconds(4f);
                     op.allowSceneActivation = true;
                     yield break;
                 }
