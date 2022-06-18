@@ -21,9 +21,9 @@ public class LevelManager : MonoBehaviour
     {
         curDelay += Time.deltaTime;
 
-        if (curLevel + 1 == 4)
+        if (curLevel + 1 == 4 || curLevel + 1 == 9)
         {
-            SurvivorModeManager survivorModeManager = Level[3].GetComponent<SurvivorModeManager>();
+            SurvivorModeManager survivorModeManager = Level[curLevel].GetComponent<SurvivorModeManager>();
             if (survivorModeManager.enemyList.Count == 0)
             {
                 nextLevel();

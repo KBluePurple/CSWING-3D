@@ -102,16 +102,25 @@ public class PursuitController : MonoBehaviour
         pursuitBullet.transform.SetParent(null);
     }
 
-    private void OnTriggerEnter(Collider other)
+    // private void OnTriggerEnter(Collider other)
+    // {
+    //     if (other.gameObject.CompareTag("Bullet"))
+    //     {
+    //         pursuitLife -= playerAttack.bulletDamaged;
+    //         Debug.Log("Pursuit ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½");
+    //         if (pursuitLife <= 0)
+    //         {
+    //             PursuitDead();
+    //         }
+    //     }
+    // }
+
+    public void Damaged(int damage)
     {
-        if (other.gameObject.CompareTag("Bullet"))
+        pursuitLife -= damage;
+        if (pursuitLife <= 0)
         {
-            pursuitLife -= playerAttack.bulletDamaged;
-            Debug.Log("Pursuit µ¥¹ÌÁöÀÔÀ½");
-            if (pursuitLife <= 0)
-            {
-                PursuitDead();
-            }
+            PursuitDead();
         }
     }
 
@@ -120,6 +129,6 @@ public class PursuitController : MonoBehaviour
         Destroy(gameObject);
         // survivorModeManager.curPursuitSpawnCount--;
         ItemManager.Instance.SpawnItem(ItemType.CORE, transform.position);
-        Debug.Log("Pursuit »ç¸Á");
+        Debug.Log("Pursuit ï¿½ï¿½ï¿½");
     }
 }

@@ -8,7 +8,7 @@ public class NormalBullet : Bullet
     private Vector3 targetPos;
     private Vector3 startPos;
 
-    public NormalBullet SetDamage(float damage)
+    public NormalBullet SetDamage(int damage)
     {
         this.damage = damage;
         return this;

@@ -41,6 +41,6 @@ public class MiddleEnemy : Enemy
 
     private void OnTriggerEnter(Collider other)
     {
-        OnCTriggerEnter(other);
+        //OnCTriggerEnter(other);
     }
 }
