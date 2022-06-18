@@ -6318,6 +6318,10 @@ PrefabInstance:
       propertyPath: L_01_bulletPre
       value: 
       objectReference: {fileID: 549486428017323360, guid: a3c8dee95f3458b4eb074ca2330ea2a1, type: 3}
+    - target: {fileID: 2721511723029223613, guid: 0c0718f0adfff124d9357ed815c427f0, type: 3}
+      propertyPath: m_UseGravity
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2721511723029223615, guid: 0c0718f0adfff124d9357ed815c427f0, type: 3}
       propertyPath: pursuit
       value: 

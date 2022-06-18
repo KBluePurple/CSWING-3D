@@ -15,13 +15,15 @@ public class FinalBoss : MonoBehaviour
 
     [SerializeField] GameObject missilePrefab;
     [SerializeField] float missileSpeed = 10;
+    [SerializeField] Transform target;
 
     private State state = State.Dash;
     private int missileCount = 5;
+    private bool isInvincied = false;
 
     private void Start()
     {
-        
+
     }
 
     private void Update()
@@ -45,7 +47,7 @@ public class FinalBoss : MonoBehaviour
 
     private void ChangeState()
     {
-        state = (State)Random.Range(0, 3);
+        state = isInvincied ? (State)Random.Range(0, 3) : (State)Random.Range(0, 4);
 
         switch (state)
         {
@@ -54,11 +56,13 @@ public class FinalBoss : MonoBehaviour
             case State.Missile:
                 missileCount++;
                 break;
-            case State.Invincibility:
-                break;
             case State.Mixing:
                 break;
+            case State.Invincibility:
+                break;
         }
+
+        Debug.Log($"{this.GetType().Name} : {state}");
     }
 
     private void Mixing() // TODO 나중에 알려주겠지
@@ -66,30 +70,55 @@ public class FinalBoss : MonoBehaviour
         Debug.LogError("구현 안됨");
     }
 
-    private void Invincibility() // TODO 나중에 알려주겠지
+    private void Invincibility()
     {
-        Debug.LogError("구현 안됨");
+        // TODO 가만히...
     }
 
     private void Missile()
     {
-        // TODO 제자리에 멈춰서 추적하는 미사일 n발 발사, 미사일 파괴 가능
-        Debug.LogError("구현 안됨");
+        for (int i = 0; i < missileCount; i++)
+        {
+            GameObject missile = Instantiate(missilePrefab, transform.position, Quaternion.identity);
+            missile.transform.Rotate(0, 0, Random.Range(0, 360));
+            missile.GetComponent<MissileBullet>()
+                .SetTarget(target)
+                .SetSpeed(missileSpeed)
+                .SetDamage(1)
+                .Build();
+        }
     }
 
     private void Dash()
     {
-        Debug.LogError("구현 안됨");
+        transform.LookAt(target);
+        transform.position += transform.forward * speed * Time.deltaTime;
     }
 
     public void OnDamage(float damage)
     {
         if (state == State.Invincibility)
             return;
+
+        damage *= 0.8f;
+
         hp -= damage;
         if (hp <= 0)
         {
             Destroy(gameObject);
+        }
+    }
+
+    private void OnCollisionEnter(Collision other)
+    {
+        if (state == State.Dash)
+        {
+            if (other.gameObject.tag == "Player")
+            {
+                GameScene.PlayerManager.Instance.Damaged(50);
+            }
+
+            other.gameObject.GetComponent<Rigidbody>().AddForce(transform.forward * 10, ForceMode.Impulse);
         }
     }
 }
