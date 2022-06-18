@@ -68,6 +68,7 @@ public class PartsSetting : MonoSingleton<PartsSetting>
     {
         _pWeapon[0].sprite = BundleLoader.Instance.FindAsset(SaveManager.Instance.Parts.WeaponSprite);
         _pWeapon[1].sprite = BundleLoader.Instance.FindAsset(SaveManager.Instance.Parts.WeaponSprite);
+        _pWeapon[1].sprite = BundleLoader.Instance.FindAsset(SaveManager.Instance.Parts.WeaponSprite);
     }
 
     public void GetPart(Image image, PartType type)

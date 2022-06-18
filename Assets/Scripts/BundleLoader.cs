@@ -10,10 +10,7 @@ public class BundleLoader : MonoSingleton<BundleLoader>
     private AssetBundle _bundle;
     private void Awake()
     {
-        if(_bundleAddress!=null)
-        {
-            StartCoroutine(LoadBundle());
-        }
+        StartCoroutine(LoadBundle());
     }
 
     private IEnumerator LoadBundle()

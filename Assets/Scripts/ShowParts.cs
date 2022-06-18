@@ -16,4 +16,9 @@ public class ShowParts : MonoBehaviour
         stat.SetText($"Core\n[ {SaveManager.Instance.Parts.Core} ]\nEngine\n[ {SaveManager.Instance.Parts.Engine} ]");
         weapon.SetText($"Weapon\n[ {SaveManager.Instance.Parts.Weapon} ]\nSWeapon\n[ {SaveManager.Instance.Parts.SpesialWeapon} ]");
     }
+
+    public void ChangeSprite()
+    {
+
+    }
 }

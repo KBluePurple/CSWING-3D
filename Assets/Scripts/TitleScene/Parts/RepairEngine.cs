@@ -10,12 +10,18 @@ public class RepairEngine : RepairBase
     private void Start()
     {
         ChildrenStart();
+        if (SaveManager.Instance.Parts.Engine == _part)
+        {
+            _toggleImage.color = Color.yellow;
+            _isActive = true;
+        }
     }
 
     protected override void PartsSet()
     {
         Debug.Log($"{_part} 장비 설정!");
-        PartsSetting.Instance.SetPart(_image, _part, _bundleAdress);
+        SaveManager.Instance.Parts.Engine = _part;
+        base.PartsSet();
     }
 
     protected override void UseSet()

@@ -13,7 +13,8 @@ public class RepairBase : MonoBehaviour
     protected Image _buttonImage;
     protected Button _button;
     protected Image _toggleImage;
-    protected bool _canUse = false; //해당 파츠를 제작해놔서 사용가능한가 여부
+    protected bool _canUse = false; //해당 파츠를 사용가능한가 여부
+    protected bool _isActive = false;
     protected void ChildrenStart()
     {
         _button = GetComponent<Button>();
@@ -44,6 +45,17 @@ public class RepairBase : MonoBehaviour
 
     protected virtual void PartsSet()
     {
+        if (!_isActive)
+        {
+            _toggleImage.color = Color.yellow;
+            _isActive = true;
+        }
+        else
+        {
+            _toggleImage.color = Color.gray;
+            _isActive = false;
+        }
+
         //선언만 해둠
     }
 
