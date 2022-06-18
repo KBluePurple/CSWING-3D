@@ -8,6 +8,8 @@ namespace GameScene
     public class GameManager : MonoBehaviour
     {
         [SerializeField]
+        private GameObject pausePanelBackground = null;
+        [SerializeField]
         private GameObject pausePanel = null;
         [SerializeField]
         private GameObject resumeButton = null;
@@ -15,6 +17,8 @@ namespace GameScene
         private GameObject settingButton = null;
         [SerializeField]
         private GameObject backToMainMenuButton = null;
+        [SerializeField]
+        private GameObject settingPanel = null;
 
         public bool isActivePausePanel = false;
 
@@ -40,10 +44,11 @@ namespace GameScene
         {
             MouseManager.Show(true);
             MouseManager.Lock(false);
-            pausePanel.SetActive(!pausePanel.activeSelf);
-            isActivePausePanel = !isActivePausePanel;
+            pausePanelBackground.SetActive(!pausePanelBackground.activeSelf);
+            pausePanel.SetActive(true);
+            settingPanel.SetActive(false);
             playerMove.isTimeStop = !playerMove.isTimeStop;
-            Time.timeScale = pausePanel.activeSelf ? 0 : 1;
+            Time.timeScale = pausePanelBackground.activeSelf ? 0 : 1;
         }
 
         public void Resume()
@@ -56,6 +61,8 @@ namespace GameScene
         public void Setting()
         {
             Debug.Log("Setting");
+            pausePanel.SetActive(false);
+            settingPanel.SetActive(true);
         }
 
         public void BackToMainMenu()
@@ -63,6 +70,12 @@ namespace GameScene
             //LoadingSceneManager.LoadScene("TitleScene");
             Time.timeScale = 1;
             SceneManager.LoadScene("TitleScene");
+        }
+
+        public void Back()
+        {
+            pausePanel.SetActive(true);
+            settingPanel.SetActive(false);
         }
     }
 }
