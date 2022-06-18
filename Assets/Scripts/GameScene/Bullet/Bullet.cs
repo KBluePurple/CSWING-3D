@@ -32,12 +32,15 @@ public abstract class Bullet : MonoBehaviour
                     enemy.Damaged(damage);
                 }
             }
-            else if (targetTag.CompareTo("Pursuit") == 0)
+        }
+        else if (other.CompareTag("Pursuit"))
+        {
+            if (targetTag.CompareTo("Enemy") == 0)
             {
-                var pursuit = other.GetComponent<PursuitController>();
-                if (pursuit != null)
+                var enemy = other.GetComponent<PursuitController>();
+                if (enemy != null)
                 {
-                    pursuit.Damaged(damage);
+                    enemy.Damaged(damage);
                 }
             }
         }

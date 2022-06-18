@@ -44,7 +44,7 @@ public class NormalBullet : Bullet
     private void Update()
     {
         transform.position += transform.forward * speed * Time.deltaTime;
-        Debug.Log($"{Vector3.Distance(transform.position, startPos)} / {maxDistance}");
+        //  Debug.Log($"{Vector3.Distance(transform.position, startPos)} / {maxDistance}");
         if (Vector3.Distance(transform.position, startPos) > maxDistance)
         {
             Destroy(gameObject);
