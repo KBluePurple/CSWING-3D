@@ -60,6 +60,8 @@ namespace GameScene
 
         public void BackToMainMenu()
         {
+            //LoadingSceneManager.LoadScene("TitleScene");
+            Time.timeScale = 1;
             SceneManager.LoadScene("TitleScene");
         }
     }

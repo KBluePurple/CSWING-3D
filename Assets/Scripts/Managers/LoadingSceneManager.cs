@@ -15,6 +15,7 @@ public class LoadingSceneManager : MonoBehaviour
 
     private void Start()
     {
+        progressBar.fillAmount = 0;
         StartCoroutine(LoadScene());
     }
 
@@ -27,6 +28,8 @@ public class LoadingSceneManager : MonoBehaviour
     IEnumerator LoadScene()
     {
         yield return null;
+
+        Debug.Log("¾À ·ÎµùÁß");
 
         AsyncOperation op = SceneManager.LoadSceneAsync(nextScene);
         op.allowSceneActivation = false;

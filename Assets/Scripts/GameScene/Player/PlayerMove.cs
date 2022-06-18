@@ -31,11 +31,12 @@ namespace GameScene
         [SerializeField] CinemachineVirtualCamera virtualCamera;
 
         private bool isSafeZone = false;
-
+        private Rigidbody rigid;
         public bool isTimeStop = false;
 
         private void Start()
         {
+            rigid = GetComponent<Rigidbody>();
             virtualCamera.m_Lens.FieldOfView = 25;
         }
 
@@ -71,7 +72,7 @@ namespace GameScene
 
             Debug.DrawRay(transform.position, transform.forward * 100, Color.red);
             // transform.Translate(transform.forward * _speed * Time.deltaTime);
-            transform.position += transform.forward * _speed * Time.deltaTime;
+            rigid.velocity = transform.forward * _speed;
 
             if (Input.GetKeyDown(KeyCode.A))
             {
@@ -145,6 +146,7 @@ namespace GameScene
             {
                 isSafeZone = true;
                 SafeZoneManager.Instance.OnEnterSafeZone();
+                UIManager.Instance.OnSafeZoneCounterUpdate(0);
             }
         }
 

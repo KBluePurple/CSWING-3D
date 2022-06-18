@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 1982393515711210840}
   - component: {fileID: 827818237655341130}
   - component: {fileID: 827818237655341131}
+  - component: {fileID: 1807040055077405457}
   m_Layer: 0
   m_Name: Alien_Design10
   m_TagString: Untagged
@@ -110,7 +111,19 @@ Rigidbody:
   m_Drag: 0
   m_AngularDrag: 0.05
   m_UseGravity: 0
-  m_IsKinematic: 0
+  m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 14
   m_CollisionDetection: 0
+--- !u!114 &1807040055077405457
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 269712858874581380}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 11ae34ad17b95b640b12633b714634a3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

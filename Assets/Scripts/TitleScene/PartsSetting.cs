@@ -37,7 +37,7 @@ public enum WeaponPart
     M_01,
 }
 
-public enum SpesialWeaponPart
+public enum SpecialWeaponPart
 {
     NONE,
     GA_00,
@@ -120,7 +120,7 @@ public class PartsSetting : MonoSingleton<PartsSetting>
         SaveManager.Instance.Parts.Weapon = weapon;
     }
 
-    public void SetPart(Image image, SpesialWeaponPart spesialWeapon, string adress)
+    public void SetPart(Image image, SpecialWeaponPart spesialWeapon, string adress)
     {
         _pSweapon[0].sprite = image.sprite;
         _pSweapon[1].sprite = image.sprite;
@@ -149,7 +149,7 @@ public class PartsSetting : MonoSingleton<PartsSetting>
                 _pWeapon[1].sprite = null;
                 break;
             case PartType.SWeapon:
-                SaveManager.Instance.Parts.SpesialWeapon = SpesialWeaponPart.NONE;
+                SaveManager.Instance.Parts.SpesialWeapon = SpecialWeaponPart.NONE;
                 _pSweapon[0].sprite = null;
                 _pSweapon[1].sprite = null;
                 break;

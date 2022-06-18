@@ -89,11 +89,6 @@ namespace GameScene
             MouseManager.Lock(false);
         }
 
-        public void BackToMainMenu()
-        {
-            SceneManager.LoadScene("TitleScene");
-        }
-
         public void ShowPlayerStat()
         {
             shieldText.text = "PlayerSheild : " + PlayerManager.Instance.Stat.Shield.ToString();

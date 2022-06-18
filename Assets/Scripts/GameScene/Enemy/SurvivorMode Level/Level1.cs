@@ -16,16 +16,6 @@ public class Level1 : SurvivorModeManager
         return base.SpawnPurusit();
     }
 
-    protected override void SpawnFixedPursuit()
-    {
-        base.SpawnFixedPursuit();
-    }
-
-    protected override void SpawnMovedPursuit()
-    {
-        base.SpawnMovedPursuit();
-    }
-
     protected override void goNextLevel()
     {
         base.goNextLevel();
