@@ -13,7 +13,7 @@ public class RepairBase : MonoBehaviour
     protected Image _buttonImage;
     protected Button _button;
     protected Image _toggleImage;
-    protected bool _canUse = false; //ÇØ´ç ÆÄÃ÷¸¦ »ç¿ë°¡´ÉÇÑ°¡ ¿©ºÎ
+    protected bool _canUse = false; //ï¿½Ø´ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ë°¡ï¿½ï¿½ï¿½Ñ°ï¿½ ï¿½ï¿½ï¿½ï¿½
     protected bool _isActive = false;
     protected RepairBase[] otherParts;
     protected void ChildrenStart()
@@ -28,7 +28,7 @@ public class RepairBase : MonoBehaviour
         _button.onClick.RemoveAllListeners();
         if (_canUse)
         {
-            _button.onClick.AddListener(()=>PartsSet());
+            _button.onClick.AddListener(() => PartsSet());
         }
         else
         {
@@ -50,8 +50,8 @@ public class RepairBase : MonoBehaviour
         if (!_isActive)
         {
             _toggleImage.color = Color.yellow;
-            foreach (RepairBase a in otherParts)
-                a.PartsSet();
+            // foreach (RepairBase a in otherParts)
+            //     a.PartsSet();
             _isActive = true;
         }
         else
@@ -60,11 +60,11 @@ public class RepairBase : MonoBehaviour
             _isActive = false;
         }
 
-        //¼±¾ð¸¸ ÇØµÒ
+        //ï¿½ï¿½ï¿½ï¿½ ï¿½Øµï¿½
     }
 
     protected virtual void UseSet()
     {
-        //¾êµµ ¼±¾ð¸¸ ÇØµÒ
+        //ï¿½êµµ ï¿½ï¿½ï¿½ï¿½ ï¿½Øµï¿½
     }
 }
