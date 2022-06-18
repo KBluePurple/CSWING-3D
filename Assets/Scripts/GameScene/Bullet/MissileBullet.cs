@@ -29,7 +29,7 @@ public class MissileBullet : Bullet
         }
     }
 
-    public MissileBullet SetDamage(float damage)
+    public MissileBullet SetDamage(int damage)
     {
         this.damage = damage;
         return this;

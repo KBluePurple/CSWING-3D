@@ -31,6 +31,6 @@ public class SmallEnemy : Enemy
 
     private void OnTriggerEnter(Collider other)
     {
-        OnCTriggerEnter(other);
+        //OnCTriggerEnter(other);
     }
 }

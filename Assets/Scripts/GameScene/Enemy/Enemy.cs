@@ -39,7 +39,7 @@ public abstract class Enemy : MonoBehaviour
     {
         reconnaissancePosition = transform.position;
         target = GameObject.FindGameObjectWithTag("Player").transform;
-}
+    }
 
     protected virtual void Update()
     {
@@ -75,18 +75,29 @@ public abstract class Enemy : MonoBehaviour
         }
     }
 
-    protected virtual void OnCTriggerEnter(Collider other)
+    // protected virtual void OnCTriggerEnter(Collider other)
+    // {
+    //     if (other.gameObject.CompareTag("Bullet"))
+    //     {
+    //         health -= PlayerAttack.FindObjectOfType<PlayerAttack>().bulletDamaged;
+    //         Debug.Log("Enemy ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½");
+    //         StartCoroutine(ExplosionEffect());
+    //         if (health <= 0)
+    //         {
+    //             Destroy(gameObject);
+    //             Debug.Log("Enemy ï¿½ï¿½ï¿½");
+    //         }
+    //     }
+    // }
+
+    public virtual void Damaged(int damage)
     {
-        if (other.gameObject.CompareTag("Bullet"))
+        health -= damage;
+        StartCoroutine(ExplosionEffect());
+        if (health <= 0)
         {
-            health -= PlayerAttack.FindObjectOfType<PlayerAttack>().bulletDamaged;
-            Debug.Log("Enemy µ¥¹ÌÁöÀÔÀ½");
-            StartCoroutine(ExplosionEffect());
-            if (health <= 0)
-            {
-                Destroy(gameObject);
-                Debug.Log("Enemy »ç¸Á");
-            }
+            Destroy(gameObject);
+            Debug.Log("Enemy ï¿½ï¿½ï¿½");
         }
     }
 
