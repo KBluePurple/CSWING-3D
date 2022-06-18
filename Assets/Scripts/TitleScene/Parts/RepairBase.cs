@@ -15,6 +15,7 @@ public class RepairBase : MonoBehaviour
     protected Image _toggleImage;
     protected bool _canUse = false; //해당 파츠를 사용가능한가 여부
     protected bool _isActive = false;
+    protected RepairBase[] otherParts;
     protected void ChildrenStart()
     {
         _button = GetComponent<Button>();
@@ -22,6 +23,7 @@ public class RepairBase : MonoBehaviour
         _toggleImage = transform.Find("Active").GetComponent<Image>();
         _image.sprite = BundleLoader.Instance.FindAsset(_bundleAdress);
         _alarmPanel = transform.parent.parent.parent.parent.Find("MakePartPanel").gameObject;
+        otherParts = transform.parent.GetComponentsInChildren<RepairBase>();
         UseSet();
         _button.onClick.RemoveAllListeners();
         if (_canUse)
@@ -43,11 +45,13 @@ public class RepairBase : MonoBehaviour
         _alarmPanel.SetActive(true);
     }
 
-    protected virtual void PartsSet()
+    public virtual void PartsSet()
     {
         if (!_isActive)
         {
             _toggleImage.color = Color.yellow;
+            foreach (RepairBase a in otherParts)
+                a.PartsSet();
             _isActive = true;
         }
         else

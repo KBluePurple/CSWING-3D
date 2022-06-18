@@ -17,7 +17,7 @@ public class RepairWeapon : RepairBase
         }
     }
 
-    protected override void PartsSet()
+    public override void PartsSet()
     {
         base.PartsSet();
         Debug.Log($"{_part} 장비 설정!");
