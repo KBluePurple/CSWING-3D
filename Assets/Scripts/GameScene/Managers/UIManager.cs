@@ -48,6 +48,8 @@ namespace GameScene
         private TextMeshProUGUI coreText;
 
         [SerializeField]
+        private Image displaySafeZone;
+        [SerializeField]
         private GameObject gameOverPanel;
         [SerializeField] TextMeshProUGUI _warningCountDownText = null;
 
@@ -69,6 +71,38 @@ namespace GameScene
             if (gameManager.isActivePausePanel)
             {
                 ShowPlayerStat();
+            }
+
+            DisplaySafeZone();
+        }
+
+        void DisplaySafeZone()
+        {
+            if (playerMove.transform.position.x >= Mathf.Abs(450f))
+            {
+                Color color = displaySafeZone.color;
+                color.a = (Mathf.Abs(playerMove.transform.position.x) - 450f)/50f;
+                displaySafeZone.color = color;
+
+            }
+            if (playerMove.transform.position.y >= Mathf.Abs(450f))
+            {
+                Color color = displaySafeZone.color;
+                color.a = (Mathf.Abs(playerMove.transform.position.y) - 450f) / 50f;
+                displaySafeZone.color = color;
+            }
+            if (playerMove.transform.position.z >= Mathf.Abs(450f))
+            {
+                Color color = displaySafeZone.color;
+                color.a = (Mathf.Abs(playerMove.transform.position.z) - 450f) / 50f;
+                displaySafeZone.color = color;
+            }
+
+            if(playerMove.transform.position.x <= Mathf.Abs(450f) || playerMove.transform.position.y <= Mathf.Abs(450f) || playerMove.transform.position.z <= Mathf.Abs(450f))
+            {
+                Color color = displaySafeZone.color;
+                color.a = 0;
+                displaySafeZone.color = color;
             }
         }
 
