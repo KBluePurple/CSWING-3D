@@ -20,12 +20,11 @@ namespace GameScene
         [SerializeField] float _speedChange = 1f;
         [SerializeField] float _smooth = 3f;
         [SerializeField] float _maxSpeed = 10f;
-        public float MaxSpeed 
+        public float MaxSpeed
         {
             get { return _maxSpeed; }
         }
         [SerializeField] float _dashSpeed = 10f;
-        [SerializeField] Image visual;
         [SerializeField] GameObject explosionEffect = null;
         [SerializeField] GameObject cameraPos = null;
         [SerializeField] CinemachineVirtualCamera virtualCamera;
@@ -55,7 +54,6 @@ namespace GameScene
             {
                 transform.Rotate(((-_rotate) + (new Vector3(0, 0, rotate) * _zRotateSpeed * -1)));
             }
-            visual.rectTransform.anchoredPosition = new Vector2(-_rotate.y, _rotate.x) * 100;
 
             float speed = Input.GetAxis("Vertical");
 
