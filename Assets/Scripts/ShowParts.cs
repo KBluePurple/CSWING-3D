@@ -10,7 +10,7 @@ public class ShowParts : MonoBehaviour
     [SerializeField] TextMeshProUGUI stat;
     [SerializeField] TextMeshProUGUI weapon;
 
-    private void OnEnable()
+    private void Update()
     {
         body.sprite = BundleLoader.Instance.FindAsset(SaveManager.Instance.Parts.BodySprite);
         stat.SetText($"Core\n[ {SaveManager.Instance.Parts.Core} ]\nEngine\n[ {SaveManager.Instance.Parts.Engine} ]");
