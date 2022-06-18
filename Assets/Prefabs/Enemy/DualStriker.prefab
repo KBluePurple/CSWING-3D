@@ -92,6 +92,7 @@ GameObject:
   - component: {fileID: 8381475751075196388}
   - component: {fileID: 8699208676580617435}
   - component: {fileID: -3922596973153450151}
+  - component: {fileID: 8348058203372881324}
   m_Layer: 0
   m_Name: DualStriker
   m_TagString: Enemy
@@ -143,3 +144,21 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &8348058203372881324
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9158961982107514718}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 54e2ae5e3a000c14c84e4652612413ee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ditectionRange: 30
+  maxHp: 500
+  hp: 500
+  speed: 10
+  laserPrefab: {fileID: 0}
+  smallEnemyPrefab: {fileID: 0}

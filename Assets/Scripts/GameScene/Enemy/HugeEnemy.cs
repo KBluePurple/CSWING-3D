@@ -35,7 +35,8 @@ public class HugeEnemy : MonoBehaviour
         Gizmos.color = Color.red; // 감지 범위
         Gizmos.DrawWireSphere(transform.position, ditectionRange);
         Gizmos.color = Color.cyan; // 순찰 경로
-        Gizmos.DrawLine(transform.position, target.position);
+        if(target!=null)
+            Gizmos.DrawLine(transform.position, target.position);
     }
 
     private void Awake()
