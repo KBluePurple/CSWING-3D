@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class LockOn : MonoBehaviour
 {
@@ -11,11 +12,15 @@ public class LockOn : MonoBehaviour
     private GameObject pursuit;
     private bool isLockOn = false;
 
+    [SerializeField]
+    private GameObject lockOnTarget;
+
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.R))
         {
             isLockOn = !isLockOn;
+            lockOnTarget.SetActive(isLockOn);
             FindShortestPursuit();
         }
 
