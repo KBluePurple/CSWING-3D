@@ -118,6 +118,8 @@ public class PursuitController : MonoBehaviour
     public void Damaged(int damage)
     {
         pursuitLife -= damage;
+        Debug.Log("damaged");
+
         if (pursuitLife <= 0)
         {
             PursuitDead();
