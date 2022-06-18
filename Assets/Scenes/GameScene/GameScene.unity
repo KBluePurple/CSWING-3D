@@ -15245,8 +15245,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 192028894}
-        m_TargetAssemblyTypeName: GameScene.UIManager, Assembly-CSharp
+      - m_Target: {fileID: 1704607845}
+        m_TargetAssemblyTypeName: GameScene.GameManager, Assembly-CSharp
         m_MethodName: BackToMainMenu
         m_Mode: 1
         m_Arguments:

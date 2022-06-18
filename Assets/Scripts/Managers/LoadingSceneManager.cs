@@ -15,6 +15,7 @@ public class LoadingSceneManager : MonoBehaviour
 
     private void Start()
     {
+        progressBar.fillAmount = 0;
         StartCoroutine(LoadScene());
     }
 
