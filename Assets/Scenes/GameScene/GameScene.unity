@@ -1411,7 +1411,7 @@ GameObject:
   - component: {fileID: 284875517}
   - component: {fileID: 284875516}
   m_Layer: 5
-  m_Name: Player Speed
+  m_Name: PlayerSpeed
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1692,7 +1692,7 @@ GameObject:
   - component: {fileID: 329184315}
   - component: {fileID: 329184314}
   m_Layer: 5
-  m_Name: Player Weapon
+  m_Name: PlayerWeapon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -15504,6 +15504,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1532869346}
+  - component: {fileID: 1532869347}
   m_Layer: 5
   m_Name: PlayerStats
   m_TagString: Untagged
@@ -15536,6 +15537,18 @@ RectTransform:
   m_AnchoredPosition: {x: -200, y: -155}
   m_SizeDelta: {x: 410, y: 570}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1532869347
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1532869345}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0a48dc7103a1ea649a8f957bde87fb91, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1550269684
 GameObject:
   m_ObjectHideFlags: 0
@@ -15851,7 +15864,7 @@ GameObject:
   - component: {fileID: 1609352032}
   - component: {fileID: 1609352031}
   m_Layer: 5
-  m_Name: Player Core
+  m_Name: PlayerCore
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -16310,7 +16323,7 @@ GameObject:
   - component: {fileID: 1685828195}
   - component: {fileID: 1685828194}
   m_Layer: 5
-  m_Name: Player Energy
+  m_Name: PlayerEnergy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -95,6 +95,10 @@ namespace GameScene
             }
         }
 
+        public int MaxShield { get { return _maxShield; } }
+        public int MaxHp { get { return _maxHp; } }
+        public int MaxEnergy { get { return _maxEnergy; } }
+        public float MaxSpeed { get { return maxSpeed; } }
         private void CallAllParts()
         {
             core = SaveManager.Instance.Parts.Core;
