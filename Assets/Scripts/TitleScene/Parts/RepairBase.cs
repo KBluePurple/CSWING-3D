@@ -12,9 +12,9 @@ public class RepairBase : MonoBehaviour
     protected GameObject _alarmPanel;
     protected Image _buttonImage;
     protected Button _button;
-    protected Image _toggleImage;
+    public Image _toggleImage;
     protected bool _canUse = false; //�ش� ������ ��밡���Ѱ� ����
-    protected bool _isActive = false;
+    public bool _isActive = false;
     protected RepairBase[] otherParts;
     protected void ChildrenStart()
     {
@@ -50,8 +50,6 @@ public class RepairBase : MonoBehaviour
         if (!_isActive)
         {
             _toggleImage.color = Color.yellow;
-            // foreach (RepairBase a in otherParts)
-            //     a.PartsSet();
             _isActive = true;
         }
         else
@@ -59,7 +57,7 @@ public class RepairBase : MonoBehaviour
             _toggleImage.color = Color.gray;
             _isActive = false;
         }
-
+        SendMessageUpwards("ChangeValue", this);
         //���� �ص�
     }
 
