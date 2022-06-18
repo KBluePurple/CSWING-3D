@@ -1,39 +1,38 @@
 using UnityEngine;
 
-public class Bullet : MonoBehaviour
+public class NormalBullet : Bullet
 {
-    [SerializeField] float damage = 1f;
     [SerializeField] float speed = 10f;
     [SerializeField] float maxDistance = 30f;
 
     private Vector3 targetPos;
     private Vector3 startPos;
 
-    public Bullet SetDamage(float damage)
+    public NormalBullet SetDamage(float damage)
     {
         this.damage = damage;
         return this;
     }
 
-    public Bullet SetSpeed(float speed)
+    public NormalBullet SetSpeed(float speed)
     {
         this.speed = speed;
         return this;
     }
 
-    public Bullet SetDistance(float maxDistance)
+    public NormalBullet SetDistance(float maxDistance)
     {
         this.maxDistance = maxDistance;
         return this;
     }
 
-    public Bullet SetTargetPos(Vector3 targetPos)
+    public NormalBullet SetTargetPos(Vector3 targetPos)
     {
         this.targetPos = targetPos;
         return this;
     }
 
-    public void Fire(Transform from)
+    public override void Fire(Transform from)
     {
         var direction = targetPos - from.position;
         direction.Normalize();
@@ -42,9 +41,10 @@ public class Bullet : MonoBehaviour
         startPos = transform.position;
     }
 
-    void Update()
+    private void Update()
     {
-        transform.Translate(Vector3.forward * speed * Time.deltaTime);
+        transform.position += transform.forward * speed * Time.deltaTime;
+        Debug.Log($"{Vector3.Distance(transform.position, startPos)} / {maxDistance}");
         if (Vector3.Distance(transform.position, startPos) > maxDistance)
         {
             Destroy(gameObject);

@@ -16938,12 +16938,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 46b0a5efa8b51b74ba90f2a6516b349f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxDistance: 30
+  maxDistance: 100
   rayTransform: {fileID: 1855989032}
   G_01_bulletPre: {fileID: 4848083708199283256, guid: 6c31c2c036529464695166638d205993, type: 3}
   L_01_bulletPre: {fileID: 549486428017323360, guid: a3c8dee95f3458b4eb074ca2330ea2a1, type: 3}
-  M_01_bulletPre: {fileID: 4848083708199283256, guid: 6c31c2c036529464695166638d205993, type: 3}
+  M_01_bulletPre: {fileID: 7898407388880706741, guid: d84a7e49d12faae409924c4ceb35a3e0, type: 3}
   bulletPos: {fileID: 504114993}
+  bulletMaterial: {fileID: 2100000, guid: 61dbb9f698d88be49adcd52bbfd90302, type: 2}
 --- !u!114 &919132149040170664
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17053,7 +17054,7 @@ MeshRenderer:
   - {fileID: -4417202438312633621, guid: ad423ecbd3f6c8d4693a4a513f1c3296, type: 3}
   - {fileID: -1582530549972576511, guid: ad423ecbd3f6c8d4693a4a513f1c3296, type: 3}
   - {fileID: 7927948617519899461, guid: ad423ecbd3f6c8d4693a4a513f1c3296, type: 3}
-  - {fileID: 4696707876141689522, guid: ad423ecbd3f6c8d4693a4a513f1c3296, type: 3}
+  - {fileID: 2100000, guid: 1946e02a2b7346544b01c3579a5bccbe, type: 2}
   - {fileID: 6783420135419102460, guid: ad423ecbd3f6c8d4693a4a513f1c3296, type: 3}
   - {fileID: -2098388626680880503, guid: ad423ecbd3f6c8d4693a4a513f1c3296, type: 3}
   - {fileID: 8389396838864268513, guid: ad423ecbd3f6c8d4693a4a513f1c3296, type: 3}
