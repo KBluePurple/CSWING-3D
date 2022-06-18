@@ -11,6 +11,7 @@ public class LevelManager : MonoBehaviour
 
     private float curDelay = 0f;
     private float levelDelay = 90f;
+    private bool doNotLoadNextLevel = false;
 
     private void Start()
     {
@@ -19,21 +20,32 @@ public class LevelManager : MonoBehaviour
 
     private void Update()
     {
-        curDelay += Time.deltaTime;
-
-        if (curLevel + 1 == 4 || curLevel + 1 == 9)
+        if (!doNotLoadNextLevel)
         {
-            SurvivorModeManager survivorModeManager = Level[curLevel].GetComponent<SurvivorModeManager>();
-            if (survivorModeManager.enemyList.Count == 0)
+            curDelay += Time.deltaTime;
+            if (curLevel + 1 == 4 || curLevel + 1 == 9)
             {
-                nextLevel();
+                SurvivorModeManager survivorModeManager = Level[curLevel].GetComponent<SurvivorModeManager>();
+                if (survivorModeManager.enemyList.Count == 0)
+                {
+                    nextLevel();
+                }
             }
-        }
-        else
-        {
-            if (curDelay >= levelDelay)
+            else if (curLevel == 4 || curLevel == 9)
             {
-                nextLevel();
+                SurvivorModeManager survivorModeManager = Level[curLevel].GetComponent<SurvivorModeManager>();
+                if (survivorModeManager.enemyList.Count == 0)
+                {
+                    nextLevel();
+                    doNotLoadNextLevel = false;
+                }
+            }
+            else
+            {
+                if (curDelay >= levelDelay)
+                {
+                    nextLevel();
+                }
             }
         }
     }
