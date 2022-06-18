@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class RepairSWeapon : RepairBase
 {
-    [SerializeField] SpesialWeaponPart _part;
+    [SerializeField] SpecialWeaponPart _part;
 
     private void Start()
     {

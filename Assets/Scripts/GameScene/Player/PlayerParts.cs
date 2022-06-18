@@ -9,7 +9,7 @@ public class PlayerParts
     public string BodySprite;
     public WeaponPart Weapon;
     public string WeaponSprite;
-    public SpesialWeaponPart SpesialWeapon;
+    public SpecialWeaponPart SpesialWeapon;
     public string SpesialWeaponSprite;
 
     public bool[] CORE;
