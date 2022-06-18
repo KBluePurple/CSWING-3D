@@ -38,4 +38,9 @@ public class MiddleEnemy : Enemy
     {
         StartCoroutine(SetRandomReconnaissancePosition());
     }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        OnCTriggerEnter(other);
+    }
 }

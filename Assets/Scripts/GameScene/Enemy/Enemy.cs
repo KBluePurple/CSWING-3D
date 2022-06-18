@@ -11,6 +11,7 @@ public abstract class Enemy : MonoBehaviour
     [SerializeField] protected float health = 100f;
     [SerializeField] protected float damage = 10f;
     [SerializeField] protected float reconnaissanceRange = 10f;
+    [SerializeField] protected GameObject explosionEffect = null;
     [SerializeField] public float detectionRange = 10f;
 
     protected Vector3 targetPosition = Vector3.zero;
@@ -74,12 +75,13 @@ public abstract class Enemy : MonoBehaviour
         }
     }
 
-    protected virtual void OnCTriggerEnter(Collision other)
+    protected virtual void OnCTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("Bullet"))
         {
             health -= PlayerAttack.FindObjectOfType<PlayerAttack>().bulletDamaged;
             Debug.Log("Enemy 데미지입음");
+            StartCoroutine(ExplosionEffect());
             if (health <= 0)
             {
                 Destroy(gameObject);
@@ -92,5 +94,15 @@ public abstract class Enemy : MonoBehaviour
     {
         targetPosition = position;
         detectionRange = 100f;
+    }
+
+    protected IEnumerator ExplosionEffect()
+    {
+        GameObject effect = Instantiate(explosionEffect, transform.position, Quaternion.identity);
+        yield return new WaitForSeconds(2f);
+        Destroy(effect);
+        Instantiate(explosionEffect, transform.position, Quaternion.identity);
+
+        //Destroy(gameObject);
     }
 }

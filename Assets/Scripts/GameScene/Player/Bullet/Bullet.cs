@@ -7,6 +7,7 @@ public class Bullet : MonoBehaviour
     [SerializeField] float maxDistance = 30f;
 
     private Vector3 targetPos;
+    private Vector3 startPos;
 
     public Bullet SetDamage(float damage)
     {
@@ -38,12 +39,13 @@ public class Bullet : MonoBehaviour
         direction.Normalize();
         transform.position = from.position;
         transform.rotation = Quaternion.LookRotation(direction);
+        startPos = transform.position;
     }
 
     void Update()
     {
         transform.Translate(Vector3.forward * speed * Time.deltaTime);
-        if (Vector3.Distance(transform.position, transform.parent.position) > maxDistance)
+        if (Vector3.Distance(transform.position, startPos) > maxDistance)
         {
             Destroy(gameObject);
         }

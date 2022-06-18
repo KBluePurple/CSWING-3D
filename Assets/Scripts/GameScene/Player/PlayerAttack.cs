@@ -48,12 +48,15 @@ public class PlayerAttack : MonoBehaviour
             break;
         case WeaponPart.G_01:
             bulletPre = G_01_bulletPre;
+                shotDelay = 0.1f;
             break;
         case WeaponPart.L_01:
             bulletPre = L_01_bulletPre;
+                shotDelay = 0.3f;
             break;
         case WeaponPart.M_01:
             bulletPre = M_01_bulletPre;
+                shotDelay = 0.75f;
             break;
         }
     }
@@ -85,6 +88,12 @@ public class PlayerAttack : MonoBehaviour
             break;
         case WeaponPart.M_01:
             bullet = Instantiate(M_01_bulletPre, bulletPos.position, bulletPos.rotation);
+            bullet.GetComponent<Bullet>()
+                .SetDamage(bulletDamaged)
+                .SetSpeed(10f)
+                .SetDistance(maxDistance)
+                .SetTargetPos(transform.position + transform.forward * maxDistance)
+                .Fire(bulletPos);
             break;
         default:
             break;

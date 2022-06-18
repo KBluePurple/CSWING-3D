@@ -5,7 +5,7 @@
     "EngineSprite": "",
     "Body": 2,
     "BodySprite": "",
-    "Weapon": 2,
+    "Weapon": 1,
     "WeaponSprite": "weapon4",
     "SpesialWeapon": 3,
     "SpesialWeaponSprite": "",
