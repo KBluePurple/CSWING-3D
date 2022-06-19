@@ -1,20 +1,20 @@
 [System.Serializable]
 public class PlayerParts
 {
-    public CorePart Core;
-    public string CoreSprite;
-    public EnginePart Engine;
-    public string EngineSprite;
-    public BodyPart Body;
-    public string BodySprite;
-    public WeaponPart Weapon;
-    public string WeaponSprite;
-    public SpecialWeaponPart SpesialWeapon;
-    public string SpesialWeaponSprite;
+    public CorePart Core = CorePart.CORE_01;
+    public string CoreSprite = "";
+    public EnginePart Engine = EnginePart.BU_01;
+    public string EngineSprite = "";
+    public BodyPart Body = BodyPart.CS_01;
+    public string BodySprite = "";
+    public WeaponPart Weapon = WeaponPart.G_01;
+    public string WeaponSprite = "";
+    public SpecialWeaponPart SpesialWeapon = SpecialWeaponPart.BU_03;
+    public string SpesialWeaponSprite = "";
 
-    public bool[] CORE;
-    public bool[] ENGINE;
-    public bool[] BODY;
-    public bool[] WEAPON;
-    public bool[] SWEAPON;
+    public bool[] CORE = new bool[3];
+    public bool[] ENGINE = new bool[3];
+    public bool[] BODY = new bool[3];
+    public bool[] WEAPON = new bool[3];
+    public bool[] SWEAPON = new bool[3];
 }
