@@ -44,6 +44,7 @@ public abstract class Bullet : MonoBehaviour
                 }
             }
         }
+        Destroy(gameObject);
     }
 
     public abstract void Fire(Transform bulletPos);

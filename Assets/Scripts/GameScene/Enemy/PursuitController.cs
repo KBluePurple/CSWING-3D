@@ -11,7 +11,7 @@ public class PursuitController : MonoBehaviour
     private GameObject pursuitBulletPrefab;
     private Transform pursuitBulletPos;
 
-    private int pursuitLife = 10;
+    private int pursuitLife = 100;
 
     private float curTime = 0f;
     private float shotDelay = 2f;

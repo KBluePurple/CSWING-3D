@@ -75,7 +75,7 @@ public class PlayerAttack : MonoBehaviour
             case WeaponPart.G_01:
                 bullet = Instantiate(G_01_bulletPre, bulletPos.position, bulletPos.rotation);
                 bullet.GetComponent<NormalBullet>()
-                    .SetDamage(bulletDamaged)
+                    .SetDamage(15)
                     .SetSpeed(100)
                     .SetDistance(maxDistance)
                     .SetTargetPos(transform.position + transform.forward * maxDistance)
@@ -86,7 +86,7 @@ public class PlayerAttack : MonoBehaviour
             case WeaponPart.L_01:
                 bullet = Instantiate(L_01_bulletPre, bulletPos.position, bulletPos.rotation);
                 bullet.GetComponent<LaserBullet>()
-                    .SetDamage(bulletDamaged)
+                    .SetDamage(50)
                     .SetLifeTime(2f)
                     .SetDistance(maxDistance)
                     .SetTargetPos(transform.position + transform.forward * maxDistance)
@@ -98,10 +98,10 @@ public class PlayerAttack : MonoBehaviour
             case WeaponPart.M_01:
                 bullet = Instantiate(M_01_bulletPre, bulletPos.position, bulletPos.rotation);
                 bullet.GetComponent<MissileBullet>()
-                    .SetDamage(bulletDamaged)
+                    .SetDamage(20)
                     .SetSpeed(100)
                     .SetLifeTime(3f)
-                    .SetTarget(transform) // TODO 태훈이가 해주겠지
+                    .SetTarget(FindEnemy())
                     .SetTargetTag("Enemy")
                     .Fire(bulletPos);
                 SoundManager.Instance.PlaySound("Flare gun 5-2");
@@ -115,5 +115,28 @@ public class PlayerAttack : MonoBehaviour
         // GameObject bullet = Instantiate(bulletPre, bulletPos);
         // SoundManager.Instance.PlaySound("Hand Gun 1");
         // bullet.transform.SetParent(null);
+    }
+
+    private Transform FindEnemy()
+    {
+        List<GameObject> enemiesList = new List<GameObject>();
+        foreach (var enemy in GameObject.FindGameObjectsWithTag("Enemy"))
+        {
+            enemiesList.Add(enemy);
+        }
+        foreach (var enemy in GameObject.FindGameObjectsWithTag("Pursuit"))
+        {
+            enemiesList.Add(enemy);
+        }
+
+        foreach (var enemy in enemiesList)
+        {
+            if (Vector3.Distance(enemy.transform.position, transform.position) < maxDistance)
+            {
+                return enemy.transform;
+            }
+        }
+
+        return null;
     }
 }
