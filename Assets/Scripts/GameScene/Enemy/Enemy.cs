@@ -120,9 +120,6 @@ public abstract class Enemy : MonoBehaviour
         GameObject effect = Instantiate(explosionEffect, transform.position, Quaternion.identity);
         yield return new WaitForSeconds(2f);
         Destroy(effect);
-        Instantiate(explosionEffect, transform.position, Quaternion.identity);
-
-        //Destroy(gameObject);
     }
 
     private void OnTriggerEnter(Collider other)
@@ -130,7 +127,6 @@ public abstract class Enemy : MonoBehaviour
         if (other.gameObject.CompareTag("Player"))
         {
             LockOn.Instance.SetIsLockOn(false);
-            Debug.Log("Enemy 충돌");
             int damage = (int)((speed * 0.6f) + (other.GetComponent<GameScene.PlayerMove>().Speed * 0.6f));
             if (health < damage)
             {
@@ -139,7 +135,7 @@ public abstract class Enemy : MonoBehaviour
             else
             {
                 Damaged(damage);
-                other.GetComponent<Rigidbody>().AddForce(-transform.forward * 100f);
+                other.transform.Translate((Vector3.forward * -1 * damage).normalized);
             }
 
             GameScene.PlayerManager.Instance.Damaged(damage);

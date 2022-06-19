@@ -37,7 +37,7 @@ public class LockOn : MonoSingleton<LockOn>
                 transform.LookAt(pursuit.transform);
             }
         }
-        Debug.Log("isLockOn: " + isLockOn);
+        // Debug.Log("isLockOn: " + isLockOn);
     }
 
     void FindShortestPursuit()

@@ -155,7 +155,7 @@ public class PursuitController : MonoBehaviour
             else
             {
                 Damaged(damage);
-                other.GetComponent<Rigidbody>().AddForce(-transform.forward * 100f);
+                other.transform.Translate((Vector3.forward * -1 * damage).normalized);
             }
 
             GameScene.PlayerManager.Instance.Damaged(damage);
