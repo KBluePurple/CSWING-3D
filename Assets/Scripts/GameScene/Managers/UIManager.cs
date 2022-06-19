@@ -86,21 +86,18 @@ namespace GameScene
         {
             if (Mathf.Abs(playerMove.transform.position.x) >= 400f)
             {
-                Debug.Log(Mathf.Abs(playerMove.transform.position.x));
                 Color color = displaySafeZone.color;
                 color.a = (Mathf.Abs(playerMove.transform.position.x) - 400f) * 0.1f;
                 displaySafeZone.color = color;
             }
             if (Mathf.Abs(playerMove.transform.position.y) >= 400f)
             {
-                Debug.Log(Mathf.Abs(playerMove.transform.position.y));
                 Color color = displaySafeZone.color;
                 color.a = (Mathf.Abs(playerMove.transform.position.y) - 400f) * 0.1f;
                 displaySafeZone.color = color;
             }
             if (Mathf.Abs(playerMove.transform.position.z) >= 400f)
             {
-                Debug.Log(Mathf.Abs(playerMove.transform.position.z));
                 Color color = displaySafeZone.color;
                 color.a = (Mathf.Abs(playerMove.transform.position.z) - 400f) * 0.1f;
                 displaySafeZone.color = color;
