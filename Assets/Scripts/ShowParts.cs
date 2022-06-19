@@ -10,15 +10,15 @@ public class ShowParts : MonoBehaviour
     [SerializeField] TextMeshProUGUI stat;
     [SerializeField] TextMeshProUGUI weapon;
 
-    private void Update()
+    private void Start()
     {
-        body.sprite = BundleLoader.Instance.FindAsset(SaveManager.Instance.Parts.BodySprite);
-        stat.SetText($"Core\n[ {SaveManager.Instance.Parts.Core} ]\nEngine\n[ {SaveManager.Instance.Parts.Engine} ]");
-        weapon.SetText($"Weapon\n[ {SaveManager.Instance.Parts.Weapon} ]\nSWeapon\n[ {SaveManager.Instance.Parts.SpecialWeapon} ]");
+        ChangeSprite();   
     }
 
     public void ChangeSprite()
     {
-
+        body.sprite = BundleLoader.Instance.FindAsset(SaveManager.Instance.Parts.BodySprite);
+        stat.SetText($"Core\n[ {SaveManager.Instance.Parts.Core} ]\nEngine\n[ {SaveManager.Instance.Parts.Engine} ]");
+        weapon.SetText($"Weapon\n[ {SaveManager.Instance.Parts.Weapon} ]\nSWeapon\n[ {SaveManager.Instance.Parts.SpecialWeapon} ]");
     }
 }

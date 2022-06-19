@@ -12,13 +12,50 @@ public class SaveManager : MonoSingleton<SaveManager>
 
     private string SAVE_PATH = "";
     private string SAVE_FILENAME = "/SaveFile.txt";
-
+    private string default_save = @"{
+    ""Core"": 1,
+    ""CoreSprite"": """",
+    ""Engine"": 1,
+    ""EngineSprite"": """",
+    ""Body"": 1,
+    ""BodySprite"": ""body1"",
+    ""Weapon"": 1,
+    ""WeaponSprite"": ""weapon2.png"",
+    ""SpesialWeapon"": 1,
+    ""SpesialWeaponSprite"": """",
+    ""CORE"": [
+        true,
+        false,
+        false
+    ],
+    ""ENGINE"": [
+        true,
+        false,
+        false
+    ],
+    ""BODY"": [
+        true,
+        false,
+        false
+    ],
+    ""WEAPON"": [
+        true,
+        false,
+        false
+    ],
+    ""SWEAPON"": [
+        true,
+        false,
+        false
+    ]
+}";
     private void Awake()
     {
         SAVE_PATH = Application.dataPath + "/Json";
         if (!Directory.Exists(SAVE_PATH))
         {
             Directory.CreateDirectory(SAVE_PATH);
+            File.WriteAllText(SAVE_PATH + SAVE_FILENAME, default_save, System.Text.Encoding.UTF8);
         }
         LoadFromJson();
     }
