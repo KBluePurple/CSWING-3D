@@ -98,7 +98,7 @@ public class PlayerAttack : MonoBehaviour
             case WeaponPart.M_01:
                 bullet = Instantiate(M_01_bulletPre, bulletPos.position, bulletPos.rotation);
                 bullet.GetComponent<MissileBullet>()
-                    .SetDamage(20)
+                    .SetDamage(10)
                     .SetSpeed(50 + GameScene.PlayerMove.Instance.Speed)
                     .SetLifeTime(3f)
                     .SetTarget(FindEnemy())
