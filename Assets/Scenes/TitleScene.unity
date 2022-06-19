@@ -1762,6 +1762,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 52dd72388e94c5e4db5b946c90fde322, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  priviewImage: {fileID: 0}
   _image: {fileID: 1240865484}
   _bundleAdress: None
   _number: 0
@@ -2478,6 +2479,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e625d3d89248844083a648fe49f7788, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  priviewImage: {fileID: 0}
   _image: {fileID: 835269435}
   _bundleAdress: N
   _number: 0
@@ -4744,6 +4746,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 52dd72388e94c5e4db5b946c90fde322, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  priviewImage: {fileID: 0}
   _image: {fileID: 590232057}
   _bundleAdress: None
   _number: 1
@@ -6915,6 +6918,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0b1b8dd13bf0cfc4d8a6de5a588d1527, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  priviewImage: {fileID: 616842205}
   _image: {fileID: 379606753}
   _bundleAdress: body2
   _number: 2
@@ -10469,6 +10473,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6ed52817de57b6443be65e91ec7746b7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  priviewImage: {fileID: 0}
   _image: {fileID: 1462089988}
   _bundleAdress: None
   _number: 2
@@ -11071,6 +11076,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0b1b8dd13bf0cfc4d8a6de5a588d1527, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  priviewImage: {fileID: 616842205}
   _image: {fileID: 832330240}
   _bundleAdress: body1
   _number: 0
@@ -11349,6 +11355,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6ed52817de57b6443be65e91ec7746b7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  priviewImage: {fileID: 0}
   _image: {fileID: 662527630}
   _bundleAdress: None
   _number: 0
@@ -11409,6 +11416,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0b1b8dd13bf0cfc4d8a6de5a588d1527, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  priviewImage: {fileID: 616842205}
   _image: {fileID: 2095393961}
   _bundleAdress: body3
   _number: 1
@@ -11981,6 +11989,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e625d3d89248844083a648fe49f7788, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  priviewImage: {fileID: 0}
   _image: {fileID: 1373511323}
   _bundleAdress: N
   _number: 1
@@ -13324,6 +13333,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 52dd72388e94c5e4db5b946c90fde322, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  priviewImage: {fileID: 0}
   _image: {fileID: 1934424612}
   _bundleAdress: None
   _number: 2
@@ -13466,6 +13476,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e625d3d89248844083a648fe49f7788, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  priviewImage: {fileID: 0}
   _image: {fileID: 1105407878}
   _bundleAdress: N
   _number: 2
@@ -14520,6 +14531,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e0ddb6b0d6b3b5840a8de16cf542d967, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  priviewImage: {fileID: 0}
   _image: {fileID: 209366628}
   _bundleAdress: weapon4
   _number: 1
@@ -15346,6 +15358,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e0ddb6b0d6b3b5840a8de16cf542d967, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  priviewImage: {fileID: 0}
   _image: {fileID: 638056263}
   _bundleAdress: weapon1
   _number: 2
@@ -16029,6 +16042,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e0ddb6b0d6b3b5840a8de16cf542d967, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  priviewImage: {fileID: 0}
   _image: {fileID: 639807132}
   _bundleAdress: weapon2
   _number: 0
@@ -16569,6 +16583,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6ed52817de57b6443be65e91ec7746b7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  priviewImage: {fileID: 0}
   _image: {fileID: 1496708018}
   _bundleAdress: None
   _number: 1
@@ -17655,6 +17670,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
+  m_AnchoredPosition: {x: 0, y: 74.999985}
   m_AnchoredPosition: {x: 0, y: 475}
   m_SizeDelta: {x: 250, y: 110}
   m_Pivot: {x: 0.5, y: 0.5}

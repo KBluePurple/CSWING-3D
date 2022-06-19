@@ -19,7 +19,7 @@ public class RepairBody : RepairBase
 
     public override void PartsSet()
     {
-        base.PartsSet();
+        SaveManager.Instance.Parts.BodySprite = _image.sprite.name;
         Debug.Log($"{_part} 장비 설정!");
         SaveManager.Instance.Parts.Body = _part;
     }

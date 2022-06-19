@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class RepairBase : MonoBehaviour
 {
+    [SerializeField] protected Image priviewImage = null;
     [SerializeField] protected Image _image;
     [SerializeField] protected string _bundleAdress;
     [SerializeField] protected int _number;
