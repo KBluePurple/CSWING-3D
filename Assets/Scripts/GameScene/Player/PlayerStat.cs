@@ -20,15 +20,6 @@ namespace GameScene
         private int _energy;
         //최고속도
         private float maxSpeed;
-        //현재속도
-        private float curSpeed;
-        //가속도
-        private float playerAcceleration;
-        //감속도
-        private float deceleration;
-        //부스트 속도, 쿨타임
-        private float boostSpeed;
-        private float boostCooltime;
         private CorePart core;
         private BodyPart body;
         private EnginePart engine;
@@ -131,30 +122,14 @@ namespace GameScene
             switch (engine)
             {
                 case EnginePart.BU_01:
-                    maxSpeed = 50;
-                    playerAcceleration = 10;
-                    deceleration = 8;
-                    boostSpeed = 10;
-                    boostCooltime = 5;
                     break;
                 case EnginePart.BU_02:
-                    maxSpeed = 75;
-                    playerAcceleration = 15;
-                    deceleration = 10;
-                    boostSpeed = 20;
-                    boostCooltime = 10;
                     break;
                 case EnginePart.BU_03:
-                    maxSpeed = 35;
-                    playerAcceleration = 10;
-                    deceleration = 8;
-                    boostSpeed = 10;
-                    boostCooltime = 3;
                     break;
             }
             _shield = _maxShield;
             _hp = _maxHp;
-            curSpeed = 0;
         }
     }
 }

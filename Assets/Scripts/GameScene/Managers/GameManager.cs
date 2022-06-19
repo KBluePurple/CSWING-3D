@@ -12,12 +12,6 @@ namespace GameScene
         [SerializeField]
         private GameObject pausePanel = null;
         [SerializeField]
-        private GameObject resumeButton = null;
-        [SerializeField]
-        private GameObject settingButton = null;
-        [SerializeField]
-        private GameObject backToMainMenuButton = null;
-        [SerializeField]
         private GameObject settingPanel = null;
 
         public bool isActivePausePanel = false;
