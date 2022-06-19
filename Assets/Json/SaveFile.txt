@@ -11,27 +11,27 @@
     "SpesialWeaponSprite": "",
     "CORE": [
         true,
-        false,
-        false
+        true,
+        true
     ],
     "ENGINE": [
         true,
-        false,
-        false
+        true,
+        true
     ],
     "BODY": [
         true,
-        false,
-        false
+        true,
+        true
     ],
     "WEAPON": [
         true,
-        false,
-        false
+        true,
+        true
     ],
     "SWEAPON": [
         true,
-        false,
-        false
+        true,
+        true
     ]
 }
