@@ -15,8 +15,6 @@ public class SurvivorModeManager : MonoBehaviour
     [SerializeField]
     private GameObject bigPursuitPre;
 
-    private float spawnDelay = 5f;
-
     public int curPursuitSpawnCount = 0;
     public int curSmallPursuitSpawnCount = 0;
     public int curMiddlePursuitSpawnCount = 0;

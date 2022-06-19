@@ -5,7 +5,6 @@ public class SmallEnemy : Enemy
 {
     [Header("Parant")]
     [SerializeField] Transform parant;
-    private float baseSpeed = 10f;
     protected override void OnDetected()
     {
         targetPosition = target.position;

@@ -29,7 +29,6 @@ namespace GameScene
         [SerializeField] GameObject cameraPos = null;
         [SerializeField] CinemachineVirtualCamera virtualCamera;
 
-        private bool isSafeZone = false;
         private Rigidbody rigid;
         public bool isTimeStop = false;
 
@@ -147,7 +146,6 @@ namespace GameScene
 
             if (other.gameObject.CompareTag("SafeZone"))
             {
-                isSafeZone = true;
                 SafeZoneManager.Instance.OnEnterSafeZone();
                 UIManager.Instance.OnSafeZoneCounterUpdate(0);
             }
@@ -157,7 +155,6 @@ namespace GameScene
         {
             if (other.gameObject.CompareTag("SafeZone"))
             {
-                isSafeZone = false;
                 SafeZoneManager.Instance.OnExitSafeZone();
             }
         }
