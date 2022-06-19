@@ -18,7 +18,7 @@ namespace GameScene
         private int _hp;
         private int _shield;
         private int _energy;
-        //ÃÖ°í¼Óµµ
+        //ï¿½Ö°ï¿½ï¿½Óµï¿½
         private float maxSpeed;
         private CorePart core;
         private BodyPart body;
@@ -57,10 +57,6 @@ namespace GameScene
                 {
                     _shield = _maxShield;
                 }
-                else if (_shield < 0)
-                {
-                    _shield = 0;
-                }
                 UIManager.Instance.Shield.fillAmount = _shield / (float)_maxShield;
             }
         }
@@ -95,9 +91,9 @@ namespace GameScene
             core = SaveManager.Instance.Parts.Core;
             body = SaveManager.Instance.Parts.Body;
             engine = SaveManager.Instance.Parts.Engine;
-            switch(core)
+            switch (core)
             {
-                case CorePart.CORE_01 :
+                case CorePart.CORE_01:
                     _maxShield = 100;
                     break;
                 case CorePart.CORE_02:
