@@ -10,10 +10,11 @@ public class PlayerLoader : MonoBehaviour
 
     private void Start()
     {
-        for (int i = 0; i < bodyTransform.childCount; i++)
-        {
-            Destroy(bodyTransform.GetChild(i).gameObject);
-        }
-        var body = Instantiate(BodyPrefabs[(int)SaveManager.Instance.Parts.Body], bodyTransform);
+        // for (int i = 0; i < bodyTransform.childCount; i++)
+        // {
+        //     Destroy(bodyTransform.GetChild(i).gameObject);
+        // }
+        Destroy(bodyTransform.GetChild(0).gameObject);
+        var body = Instantiate(BodyPrefabs[(int)SaveManager.Instance.Parts.Body - 1], bodyTransform);
     }
 }
