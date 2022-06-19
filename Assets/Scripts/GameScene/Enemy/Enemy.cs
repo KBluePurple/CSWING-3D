@@ -39,6 +39,8 @@ public abstract class Enemy : MonoBehaviour
     {
         reconnaissancePosition = transform.position;
         target = GameObject.FindGameObjectWithTag("Player").transform;
+
+        GameScene.PlayerManager.Instance.EnemyList.Add(this);
     }
 
     protected virtual void Update()
@@ -102,6 +104,7 @@ public abstract class Enemy : MonoBehaviour
 
     protected virtual void Dead()
     {
+        GameScene.PlayerManager.Instance.EnemyList.Remove(this);
         Destroy(gameObject);
         Debug.Log("Enemy ���");
     }

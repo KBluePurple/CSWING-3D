@@ -26,6 +26,8 @@ namespace GameScene
 
         private UIManager uiManager;
 
+        public List<Enemy> EnemyList { get; internal set; } = new List<Enemy>();
+
         private void Start()
         {
             Stat = new PlayerStat();
