@@ -28,10 +28,12 @@ public class RepairBase : MonoBehaviour
         if (_canUse)
         {
             _button.onClick.AddListener(() => PartsSet());
+            _buttonImage.color = Color.white;
         }
         else
         {
             _button.onClick.AddListener(() => ShowAlarmPanel());
+            _buttonImage.color = Color.black;
         }
         _button.onClick.AddListener(() =>
         {
