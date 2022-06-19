@@ -164,9 +164,6 @@ namespace GameScene
             GameObject effect = Instantiate(explosionEffect, transform.position, Quaternion.identity);
             yield return new WaitForSeconds(2f);
             Destroy(effect);
-            PlayerManager.Instance.Damaged(10);
-
-            //Destroy(gameObject);
         }
     }
 }
