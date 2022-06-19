@@ -6,8 +6,8 @@ public class Level2 : SurvivorModeManager
 {
     private void OnEnable()
     {
-        FixedPursuitSpawnCount = 5;
-        smallPursuitSpawnCount = 5;
+        FixedPursuitSpawnCount = 10;
+        smallPursuitSpawnCount = 10;
     }
 
     protected override IEnumerator SpawnPurusit()

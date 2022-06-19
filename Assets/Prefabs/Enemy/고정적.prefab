@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 8473310387638772644}
   - component: {fileID: -1049917179397573790}
   m_Layer: 0
-  m_Name: Pursuit
+  m_Name: "\uACE0\uC815\uC801"
   m_TagString: Pursuit
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

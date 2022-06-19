@@ -94,7 +94,7 @@ GameObject:
   - component: {fileID: 8787907378311522003}
   - component: {fileID: 5422000327329814264}
   m_Layer: 0
-  m_Name: StarMarineTrooper
+  m_Name: "\uC911\uAC04\uBCF4\uC2A4"
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

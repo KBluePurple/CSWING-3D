@@ -96,7 +96,7 @@ GameObject:
   - component: {fileID: 3141044140636382572}
   - component: {fileID: 2745754741183370909}
   m_Layer: 0
-  m_Name: InfraredFurtive
+  m_Name: "\uC911\uD615\uC801"
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -229,7 +229,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   reconnaissancePosition: {x: 0, y: 0, z: 0}
   speed: 10
-  health: 100
+  health: 200
   damage: 10
   reconnaissanceRange: 10
   explosionEffect: {fileID: 142012, guid: 5534fe87bdddbbb44ab4dd43c16c1a1e, type: 3}

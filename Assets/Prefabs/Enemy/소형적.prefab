@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 4409407847696694322}
   - component: {fileID: 2761502305201545117}
   m_Layer: 0
-  m_Name: MicroRecon
+  m_Name: "\uC18C\uD615\uC801"
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
