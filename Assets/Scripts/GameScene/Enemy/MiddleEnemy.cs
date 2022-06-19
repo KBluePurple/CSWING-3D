@@ -10,8 +10,9 @@ public class MiddleEnemy : Enemy
 {
     [SerializeField] MiddlePattern pattern;
 
-    private void Start()
+    protected override void Start()
     {
+        base.Start();
         if (Random.Range(0, 2) == 0)
         {
             pattern = MiddlePattern.RoundPlayer;

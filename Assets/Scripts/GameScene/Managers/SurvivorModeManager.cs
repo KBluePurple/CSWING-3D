@@ -110,9 +110,9 @@ public class SurvivorModeManager : MonoBehaviour
 
     protected virtual void SpawnFixedPursuit()
     {
-        float spawnPosX = Random.Range(player.transform.position.x + 50f, player.transform.position.x + 450f);
-        float spawnPosY = Random.Range(player.transform.position.y + 50f, player.transform.position.y + 450f);
-        float spawnPosZ = Random.Range(player.transform.position.z + 50f, player.transform.position.z + 450f);
+        float spawnPosX = Mathf.Clamp(Random.Range(player.transform.position.x + 50f, player.transform.position.x + 450f), -450f, 450f);
+        float spawnPosY = Mathf.Clamp(Random.Range(player.transform.position.y + 50f, player.transform.position.y + 450f), -450f, 450f);
+        float spawnPosZ = Mathf.Clamp(Random.Range(player.transform.position.z + 50f, player.transform.position.z + 450f), -450f, 450f);
 
         Vector3 spawnPos = new Vector3(spawnPosX, spawnPosY, spawnPosZ);
 
@@ -122,9 +122,9 @@ public class SurvivorModeManager : MonoBehaviour
 
     protected virtual void SpawnMovedPursuit()
     {
-        float spawnPosX = Random.Range(player.transform.position.x - 50f, player.transform.position.x + 50f);
-        float spawnPosY = Random.Range(player.transform.position.y - 50f, player.transform.position.y + 450f);
-        float spawnPosZ = Random.Range(player.transform.position.z - 50f, player.transform.position.z + 450f);
+        float spawnPosX = Mathf.Clamp(Random.Range(player.transform.position.x - 50f, player.transform.position.x + 50f), -450f, 450f);
+        float spawnPosY = Mathf.Clamp(Random.Range(player.transform.position.y - 50f, player.transform.position.y + 450f), -450f, 450f);
+        float spawnPosZ = Mathf.Clamp(Random.Range(player.transform.position.z - 50f, player.transform.position.z + 450f), -450f, 450f);
 
         Vector3 spawnPos = new Vector3(spawnPosX, spawnPosY, spawnPosZ);
 
@@ -134,9 +134,9 @@ public class SurvivorModeManager : MonoBehaviour
 
     protected virtual void SpawnSmallPursuit()
     {
-        float spawnPosX = Random.Range(player.transform.position.x - 50f, player.transform.position.x + 50f);
-        float spawnPosY = Random.Range(player.transform.position.y - 50f, player.transform.position.y + 450f);
-        float spawnPosZ = Random.Range(player.transform.position.z - 50f, player.transform.position.z + 450f);
+        float spawnPosX = Mathf.Clamp(Random.Range(player.transform.position.x - 50f, player.transform.position.x + 50f), -450f, 450f);
+        float spawnPosY = Mathf.Clamp(Random.Range(player.transform.position.y - 50f, player.transform.position.y + 450f), -450f, 450f);
+        float spawnPosZ = Mathf.Clamp(Random.Range(player.transform.position.z - 50f, player.transform.position.z + 450f), -450f, 450f);
 
         Vector3 spawnPos = new Vector3(spawnPosX, spawnPosY, spawnPosZ);
 
@@ -146,9 +146,9 @@ public class SurvivorModeManager : MonoBehaviour
 
     protected virtual void SpawnMiddlePursuit()
     {
-        float spawnPosX = Random.Range(player.transform.position.x - 50f, player.transform.position.x + 50f);
-        float spawnPosY = Random.Range(player.transform.position.y - 50f, player.transform.position.y + 450f);
-        float spawnPosZ = Random.Range(player.transform.position.z - 50f, player.transform.position.z + 450f);
+        float spawnPosX = Mathf.Clamp(Random.Range(player.transform.position.x - 50f, player.transform.position.x + 50f), -450f, 450f);
+        float spawnPosY = Mathf.Clamp(Random.Range(player.transform.position.y - 50f, player.transform.position.y + 450f), -450f, 450f);
+        float spawnPosZ = Mathf.Clamp(Random.Range(player.transform.position.z - 50f, player.transform.position.z + 450f), -450f, 450f);
 
         Vector3 spawnPos = new Vector3(spawnPosX, spawnPosY, spawnPosZ);
 
@@ -158,9 +158,9 @@ public class SurvivorModeManager : MonoBehaviour
 
     protected virtual void SpawnBigPursuit()
     {
-        float spawnPosX = Random.Range(player.transform.position.x - 50f, player.transform.position.x + 50f);
-        float spawnPosY = Random.Range(player.transform.position.y - 50f, player.transform.position.y + 450f);
-        float spawnPosZ = Random.Range(player.transform.position.z - 50f, player.transform.position.z + 450f);
+        float spawnPosX = Mathf.Clamp(Random.Range(player.transform.position.x - 50f, player.transform.position.x + 50f), -450f, 450f);
+        float spawnPosY = Mathf.Clamp(Random.Range(player.transform.position.y - 50f, player.transform.position.y + 450f), -450f, 450f);
+        float spawnPosZ = Mathf.Clamp(Random.Range(player.transform.position.z - 50f, player.transform.position.z + 450f), -450f, 450f);
 
         Vector3 spawnPos = new Vector3(spawnPosX, spawnPosY, spawnPosZ);
 
