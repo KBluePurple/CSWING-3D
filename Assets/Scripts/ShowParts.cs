@@ -14,7 +14,7 @@ public class ShowParts : MonoBehaviour
     {
         body.sprite = BundleLoader.Instance.FindAsset(SaveManager.Instance.Parts.BodySprite);
         stat.SetText($"Core\n[ {SaveManager.Instance.Parts.Core} ]\nEngine\n[ {SaveManager.Instance.Parts.Engine} ]");
-        weapon.SetText($"Weapon\n[ {SaveManager.Instance.Parts.Weapon} ]\nSWeapon\n[ {SaveManager.Instance.Parts.SpesialWeapon} ]");
+        weapon.SetText($"Weapon\n[ {SaveManager.Instance.Parts.Weapon} ]\nSWeapon\n[ {SaveManager.Instance.Parts.SpecialWeapon} ]");
     }
 
     public void ChangeSprite()
