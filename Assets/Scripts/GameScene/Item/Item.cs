@@ -18,7 +18,8 @@ public class Item : MonoBehaviour
         {
             SoundManager.Instance.PlaySound("magic_02");
             Type = ItemType.WEAPON;
-            int item = Random.Range(0, 3);
+            int item = Random.Range(0, 4);
+            int parts = Random.Range(0, 3);
             // if (item == 0)
             // {
             //     SaveManager.Instance.Parts.Weapon = WeaponPart.G_01;
@@ -31,9 +32,25 @@ public class Item : MonoBehaviour
             // {
             //     SaveManager.Instance.Parts.Weapon = WeaponPart.M_01;
             // }
-            SaveManager.Instance.Parts.BODY[0] = true;
-            SaveManager.Instance.Parts.BODY[1] = true;
-            SaveManager.Instance.Parts.BODY[2] = true;
+            //SaveManager.Instance.Parts.BODY[0] = true;
+            //SaveManager.Instance.Parts.BODY[1] = true;
+            //SaveManager.Instance.Parts.BODY[2] = true;
+
+            switch (item)
+            {
+                case 0:
+                    SaveManager.Instance.Parts.WEAPON[parts] = true;
+                    break;
+                case 1:
+                    SaveManager.Instance.Parts.BODY[parts] = true;
+                    break;
+                case 2:
+                    SaveManager.Instance.Parts.CORE[parts] = true;
+                    break;
+                case 3:
+                    SaveManager.Instance.Parts.ENGINE[parts] = true;
+                    break;
+            }
 
             Destroy(gameObject);
         }
