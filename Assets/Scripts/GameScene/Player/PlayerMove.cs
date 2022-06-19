@@ -82,6 +82,11 @@ namespace GameScene
             }
 
             virtualCamera.m_Lens.FieldOfView = 50 + Mathf.Abs(Speed) / _maxSpeed * 10;
+
+            if (cameraPos.transform.parent == null)
+            {
+                cameraPos.transform.localPosition = transform.position + new Vector3(0, 6.5f, -15);
+            }
         }
 
         bool isPushedLeft = false;
