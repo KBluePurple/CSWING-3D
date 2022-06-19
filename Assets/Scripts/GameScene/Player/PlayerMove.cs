@@ -32,6 +32,9 @@ namespace GameScene
         private Rigidbody rigid;
         public bool isTimeStop = false;
 
+        bool isLeftDash = false;
+        bool isRightDash = false;
+
         private void Start()
         {
             rigid = GetComponent<Rigidbody>();
@@ -71,11 +74,11 @@ namespace GameScene
             // transform.Translate(transform.forward * _speed * Time.deltaTime);
             rigid.velocity = transform.forward * Speed;
 
-            if (Input.GetKeyDown(KeyCode.A))
+            if (Input.GetKeyDown(KeyCode.A) && !isLeftDash)
             {
                 StartCoroutine(LeftDash());
             }
-            if (Input.GetKeyDown(KeyCode.D))
+            if (Input.GetKeyDown(KeyCode.D) && !isRightDash)
             {
                 StartCoroutine(RightDash());
             }
@@ -93,14 +96,16 @@ namespace GameScene
         {
             if (isPushedLeft)
             {
+                isLeftDash = true;
                 Debug.Log("LeftDash");
                 SoundManager.Instance.PlaySound("Dodge");
                 transform.DOMove(transform.position + -transform.right * _dashSpeed + transform.forward * Speed, 1f);
                 transform.DORotate(new Vector3(0, 0, 360), 1f, RotateMode.LocalAxisAdd);
                 cameraPos.transform.SetParent(null);
                 yield return new WaitForSeconds(1f);
+                isLeftDash = false;
                 cameraPos.transform.SetParent(transform);
-                cameraPos.transform.localPosition = new Vector3(0, 6.5f, -15);
+                cameraPos.transform.localPosition = new Vector3(0, 3.5f, -15f);
             }
             else
             {
@@ -115,14 +120,16 @@ namespace GameScene
         {
             if (isPushedRight)
             {
+                isRightDash = true;
                 Debug.Log("RightDash");
                 SoundManager.Instance.PlaySound("Dodge");
                 transform.DOMove(transform.position + transform.right * _dashSpeed + transform.forward * Speed, 1f);
                 transform.DORotate(new Vector3(0, 0, -360), 1f, RotateMode.LocalAxisAdd);
                 cameraPos.transform.SetParent(null);
                 yield return new WaitForSeconds(1f);
+                isRightDash = false;
                 cameraPos.transform.SetParent(transform);
-                cameraPos.transform.localPosition = new Vector3(0, 6.5f, -15);
+                cameraPos.transform.localPosition = new Vector3(0, 3.5f, -15f);
             }
             else
             {
