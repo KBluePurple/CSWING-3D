@@ -5,11 +5,18 @@ using UnityEngine;
 
 public class UnBreakable : MonoBehaviour
 {
-    private static bool isGameOn = false; 
+    public static UnBreakable Instance = null;
 
     void Awake()
     {
-        DontDestroyOnLoad(gameObject);
+        if (Instance == null)
+        {
+            Instance = this;
+            DontDestroyOnLoad(this);
+        }
+        else if (Instance != this)
+        {
+            Destroy(gameObject);
+        }
     }
-
 }
