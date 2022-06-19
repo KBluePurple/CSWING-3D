@@ -11,6 +11,6 @@ public class ButtonSound : MonoBehaviour
     private void Start()
     {
         _button = GetComponent<Button>();
-        _button.onClick.AddListener(()=>SoundManager.Instance.PlaySound(_soundName));
+        //_button.onClick.AddListener(()=>SoundManager.Instance.PlaySound(_soundName));
     }
 }

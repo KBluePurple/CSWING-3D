@@ -24,9 +24,12 @@ public class LockOn : MonoBehaviour
             FindShortestPursuit();
         }
 
-        if (isLockOn)
+        if (pursuit != null)
         {
-            transform.LookAt(pursuit.transform);
+            if (isLockOn)
+            {
+                transform.LookAt(pursuit.transform);
+            }
         }
     }
 
@@ -35,7 +38,7 @@ public class LockOn : MonoBehaviour
 
         pursuitObjects = new List<GameObject>(GameObject.FindGameObjectsWithTag("Pursuit"));
         pursuitObjects.AddRange(GameObject.FindGameObjectsWithTag("Enemy"));
-        if(pursuitObjects.Count >= 1)
+        if (pursuitObjects.Count >= 1)
         {
 
             shortestDistance = Vector3.Distance(gameObject.transform.position, pursuitObjects[0].transform.position);

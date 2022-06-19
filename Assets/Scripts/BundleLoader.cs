@@ -19,12 +19,12 @@ public class BundleLoader : MonoSingleton<BundleLoader>
         _bundleRequest = UnityWebRequestAssetBundle.GetAssetBundle(_bundleAddress, 0);
         yield return _bundleRequest.SendWebRequest();
         _bundle = DownloadHandlerAssetBundle.GetContent(_bundleRequest);
-        Debug.Log("¹øµé ·Îµù ¿Ï·á!");
+        Debug.Log("ï¿½ï¿½ï¿½ï¿½ ï¿½Îµï¿½ ï¿½Ï·ï¿½!");
     }
 
     public Sprite FindAsset(string assetName)
     {
-        
+
         return _bundle.LoadAsset<Sprite>(assetName);
     }
 }

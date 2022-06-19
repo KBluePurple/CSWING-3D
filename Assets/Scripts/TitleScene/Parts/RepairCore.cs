@@ -17,7 +17,7 @@ public class RepairCore : RepairBase
         }
     }
 
-    protected override void PartsSet()
+    public override void PartsSet()
     {
         Debug.Log($"{_part} 장비 설정!");
         SaveManager.Instance.Parts.Core = _part;

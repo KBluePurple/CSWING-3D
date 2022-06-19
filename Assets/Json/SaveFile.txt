@@ -1,17 +1,37 @@
 ﻿{
-    "Core": 1,
+    "Core": 2,
     "CoreSprite": "",
-    "Engine": 1,
+    "Engine": 2,
     "EngineSprite": "",
     "Body": 1,
     "BodySprite": "body2.png",
     "Weapon": 1,
     "WeaponSprite": "weapon2.png",
-    "SpesialWeapon": 1,
+    "SpesialWeapon": 2,
     "SpesialWeaponSprite": "",
-    "CORE": [true, false, false],
-    "ENGINE": [true, false, false],
-    "BODY": [true, false, false],
-    "WEAPON": [true, false, false],
-    "SWEAPON": [true, false, false]
+    "CORE": [
+        true,
+        false,
+        false
+    ],
+    "ENGINE": [
+        true,
+        false,
+        false
+    ],
+    "BODY": [
+        true,
+        false,
+        false
+    ],
+    "WEAPON": [
+        true,
+        false,
+        false
+    ],
+    "SWEAPON": [
+        true,
+        false,
+        false
+    ]
 }

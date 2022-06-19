@@ -12,9 +12,9 @@ public class RepairBase : MonoBehaviour
     protected GameObject _alarmPanel;
     protected Image _buttonImage;
     protected Button _button;
-    protected Image _toggleImage;
-    protected bool _canUse = false; //ÇØ´ç ÆÄÃ÷¸¦ »ç¿ë°¡´ÉÇÑ°¡ ¿©ºÎ
-    protected bool _isActive = false;
+    public Image _toggleImage;
+    protected bool _canUse = false; //ï¿½Ø´ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ë°¡ï¿½ï¿½ï¿½Ñ°ï¿½ ï¿½ï¿½ï¿½ï¿½
+    public bool _isActive = false;
     protected void ChildrenStart()
     {
         _button = GetComponent<Button>();
@@ -26,7 +26,7 @@ public class RepairBase : MonoBehaviour
         _button.onClick.RemoveAllListeners();
         if (_canUse)
         {
-            _button.onClick.AddListener(()=>PartsSet());
+            _button.onClick.AddListener(() => PartsSet());
         }
         else
         {
@@ -34,7 +34,14 @@ public class RepairBase : MonoBehaviour
         }
         _button.onClick.AddListener(() =>
         {
-            SoundManager.Instance.PlaySound("Dock", SoundType.SE);
+            if (_canUse)
+            {
+                SoundManager.Instance.PlaySound("Dock", SoundType.SE);
+            }
+            else
+            {
+                SoundManager.Instance.PlaySound("UI_Beep", SoundType.SE);
+            }
         });
     }
 
@@ -43,7 +50,7 @@ public class RepairBase : MonoBehaviour
         _alarmPanel.SetActive(true);
     }
 
-    protected virtual void PartsSet()
+    public virtual void PartsSet()
     {
         if (!_isActive)
         {
@@ -55,12 +62,12 @@ public class RepairBase : MonoBehaviour
             _toggleImage.color = Color.gray;
             _isActive = false;
         }
-
-        //¼±¾ð¸¸ ÇØµÒ
+        SendMessageUpwards("ChangeValue", this);
+        //ï¿½ï¿½ï¿½ï¿½ ï¿½Øµï¿½
     }
 
     protected virtual void UseSet()
     {
-        //¾êµµ ¼±¾ð¸¸ ÇØµÒ
+        //ï¿½êµµ ï¿½ï¿½ï¿½ï¿½ ï¿½Øµï¿½
     }
 }
