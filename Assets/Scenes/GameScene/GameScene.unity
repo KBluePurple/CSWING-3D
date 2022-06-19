@@ -18715,7 +18715,7 @@ CapsuleCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 919132149040170661}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   m_Radius: 1.5
   m_Height: 1
@@ -18761,9 +18761,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   BodyPrefabs:
-  - {fileID: 919132149155446097, guid: ad423ecbd3f6c8d4693a4a513f1c3296, type: 3}
-  - {fileID: 919132149155446097, guid: 699af31992deccf41a87cbe3ffcfcb14, type: 3}
-  - {fileID: 919132149155446097, guid: d8bdba66acee59746a55fce1914d441f, type: 3}
+  - {fileID: 6628581097939043909, guid: 8e7df48cc10832846a78275934c71efb, type: 3}
+  - {fileID: 9113256089494419717, guid: fb85f81618492a447bf754de936c4fe1, type: 3}
+  - {fileID: 2251837012684059365, guid: c5cfd9b08d08d78419d017ccc16d4018, type: 3}
   bodyTransform: {fileID: 1754373909}
 --- !u!4 &1151388029233081671
 Transform:
