@@ -138,8 +138,9 @@ public class PlayerAttack : MonoBehaviour
         }
 
         RaycastHit hit;
-        if (Physics.Raycast(this.transform.Find("RayCastPosition").position, this.transform.forward, out hit, maxDistance))
+        if (Physics.Raycast(this.transform.Find("RayCastPosition").position, this.transform.forward, out hit, Mathf.Infinity))
         {
+            Debug.Log("RayCastHit : " + hit.transform);
             return hit.transform;
         }
         return null;
