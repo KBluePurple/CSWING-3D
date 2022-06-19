@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -26,7 +27,8 @@ namespace GameScene
 
         private UIManager uiManager;
 
-        public List<Enemy> EnemyList { get; internal set; } = new List<Enemy>();
+        public Action<Enemy> OnEnemyAdded;
+        public Action<Enemy> OnEnemyRemoved;
 
         private void Start()
         {

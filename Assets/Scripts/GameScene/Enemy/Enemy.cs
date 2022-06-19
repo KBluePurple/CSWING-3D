@@ -35,12 +35,12 @@ public abstract class Enemy : MonoBehaviour
         }
     }
 
-    protected virtual void Awake()
+    protected virtual void Start()
     {
         reconnaissancePosition = transform.position;
         target = GameObject.FindGameObjectWithTag("Player").transform;
 
-        GameScene.PlayerManager.Instance.EnemyList.Add(this);
+        GameScene.PlayerManager.Instance.OnEnemyAdded.Invoke(this);
     }
 
     protected virtual void Update()
@@ -104,7 +104,7 @@ public abstract class Enemy : MonoBehaviour
 
     protected virtual void Dead()
     {
-        GameScene.PlayerManager.Instance.EnemyList.Remove(this);
+        GameScene.PlayerManager.Instance.OnEnemyRemoved.Invoke(this);
         Destroy(gameObject);
         Debug.Log("Enemy ���");
     }
