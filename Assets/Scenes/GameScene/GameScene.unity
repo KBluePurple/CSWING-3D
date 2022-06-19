@@ -1105,6 +1105,8 @@ MonoBehaviour:
   Weapon2: {fileID: 1700866113}
   Skill1: {fileID: 0}
   Skill2: {fileID: 0}
+  WeaponText: {fileID: 665210569}
+  SWeaponText: {fileID: 859408635}
   shieldText: {fileID: 165460813}
   hpText: {fileID: 121261587}
   energyText: {fileID: 1685828194}

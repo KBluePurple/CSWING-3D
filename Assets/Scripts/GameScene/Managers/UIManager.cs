@@ -32,6 +32,10 @@ namespace GameScene
         public GameObject Skill1;
         [SerializeField]
         public GameObject Skill2;
+        [SerializeField]
+        public Text WeaponText;
+        [SerializeField]
+        public Text SWeaponText;
 
         [Header("PauseUI")]
         [SerializeField]
@@ -61,6 +65,8 @@ namespace GameScene
             SafeZoneManager.Instance.OnSafeZoneCountDown += OnSafeZoneCounterUpdate;
             playerMove = FindObjectOfType<PlayerMove>();
             gameManager = FindObjectOfType<GameManager>();
+
+            ChangeWeaponText();
         }
 
         private void Update()
@@ -78,26 +84,29 @@ namespace GameScene
 
         void DisplaySafeZone()
         {
-            if (playerMove.transform.position.x >= Mathf.Abs(400f))
+            if (Mathf.Abs(playerMove.transform.position.x) >= 400f)
             {
+                Debug.Log(Mathf.Abs(playerMove.transform.position.x));
                 Color color = displaySafeZone.color;
-                color.a = (Mathf.Abs(playerMove.transform.position.x) - 400f)/10f;
+                color.a = (Mathf.Abs(playerMove.transform.position.x) - 400f) * 0.1f;
                 displaySafeZone.color = color;
             }
-            if (playerMove.transform.position.y >= Mathf.Abs(400f))
+            if (Mathf.Abs(playerMove.transform.position.y) >= 400f)
             {
+                Debug.Log(Mathf.Abs(playerMove.transform.position.y));
                 Color color = displaySafeZone.color;
-                color.a = (Mathf.Abs(playerMove.transform.position.y) - 400f) / 10f;
+                color.a = (Mathf.Abs(playerMove.transform.position.y) - 400f) * 0.1f;
                 displaySafeZone.color = color;
             }
-            if (playerMove.transform.position.z >= Mathf.Abs(400f))
+            if (Mathf.Abs(playerMove.transform.position.z) >= 400f)
             {
+                Debug.Log(Mathf.Abs(playerMove.transform.position.z));
                 Color color = displaySafeZone.color;
-                color.a = (Mathf.Abs(playerMove.transform.position.z) - 400f) / 10f;
+                color.a = (Mathf.Abs(playerMove.transform.position.z) - 400f) * 0.1f;
                 displaySafeZone.color = color;
             }
 
-            if( (playerMove.transform.position.x <= Mathf.Abs(400f) && playerMove.transform.position.y <= Mathf.Abs(400f) && playerMove.transform.position.z <= Mathf.Abs(400f)))
+            if (Mathf.Abs(playerMove.transform.position.x) <= 400f && Mathf.Abs(playerMove.transform.position.y) <= 400f && Mathf.Abs(playerMove.transform.position.z) <= 400f)
             {
                 Color color = displaySafeZone.color;
                 color.a = 0;
@@ -131,5 +140,15 @@ namespace GameScene
             weaponText.text = "Player Weapon :\n" + SaveManager.Instance.Parts.Weapon.ToString();
             coreText.text = "Player Core :\n" + SaveManager.Instance.Parts.Core.ToString();
         }
+
+        public void ChangeWeaponText()
+        {
+            WeaponText.text = SaveManager.Instance.Parts.Weapon.ToString();
+        }
+
+        //public void ChangeSWeaponText()
+        //{
+        //    SWeaponText.text = SaveManager.Instance.Parts.SWEAPON.ToString();
+        //}
     }
 }
