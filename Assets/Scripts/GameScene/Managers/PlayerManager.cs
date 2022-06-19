@@ -60,7 +60,6 @@ namespace GameScene
             {
                 Stat.Hp += Stat.Shield;
                 Stat.Shield = 0;
-                Debug.LogError("Shield is 0");
                 SoundManager.Instance.PlaySound("Metal impact 5");
             }
             else
