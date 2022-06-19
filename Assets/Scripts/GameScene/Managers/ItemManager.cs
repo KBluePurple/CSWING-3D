@@ -24,15 +24,35 @@ public class ItemManager : MonoSingleton<ItemManager>
         switch (type)
         {
             case ItemType.CORE:
-                return Instantiate(_corePrefab, position, Quaternion.identity).GetComponent<Item>();
+            {
+                var gameObject = Instantiate(_corePrefab, position, Quaternion.identity).GetComponent<Item>();
+                gameObject.GetComponent<MeshRenderer>().material.color = new Color(Random.Range(0f, 1f), Random.Range(0f, 1f), Random.Range(0f, 1f));
+                return gameObject;
+            }
             case ItemType.ENGINE:
-                return Instantiate(_enginePrefab, position, Quaternion.identity).GetComponent<Item>();
+            {
+                var gameObject = Instantiate(_enginePrefab, position, Quaternion.identity).GetComponent<Item>();
+                gameObject.GetComponent<MeshRenderer>().material.color = new Color(Random.Range(0f, 1f), Random.Range(0f, 1f), Random.Range(0f, 1f));
+                return gameObject;
+            }
             case ItemType.BODY:
-                return Instantiate(_bodyPrefab, position, Quaternion.identity).GetComponent<Item>();
+            {
+                var gameObject = Instantiate(_bodyPrefab, position, Quaternion.identity).GetComponent<Item>();
+                gameObject.GetComponent<MeshRenderer>().material.color = new Color(Random.Range(0f, 1f), Random.Range(0f, 1f), Random.Range(0f, 1f));
+                return gameObject;
+            }
             case ItemType.WEAPON:
-                return Instantiate(_weaponPrefab, position, Quaternion.identity).GetComponent<Item>();
+            {
+                var gameObject = Instantiate(_weaponPrefab, position, Quaternion.identity).GetComponent<Item>();
+                gameObject.GetComponent<MeshRenderer>().material.color = new Color(Random.Range(0f, 1f), Random.Range(0f, 1f), Random.Range(0f, 1f));
+                return gameObject;
+            }
             case ItemType.SPESIAL_WEAPON:
-                return Instantiate(_spesialWeaponPrefab, position, Quaternion.identity).GetComponent<Item>();
+            {
+                var gameObject = Instantiate(_spesialWeaponPrefab, position, Quaternion.identity).GetComponent<Item>();
+                gameObject.GetComponent<MeshRenderer>().material.color = new Color(Random.Range(0f, 1f), Random.Range(0f, 1f), Random.Range(0f, 1f));
+                return gameObject;
+            }
             default:
                 return null;
         }
