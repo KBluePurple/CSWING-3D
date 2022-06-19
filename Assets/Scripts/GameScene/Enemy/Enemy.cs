@@ -129,6 +129,7 @@ public abstract class Enemy : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player"))
         {
+            LockOn.Instance.SetIsLockOn(false);
             Debug.Log("Enemy 충돌");
             int damage = (int)((speed * 0.6f) + (other.GetComponent<GameScene.PlayerMove>().Speed * 0.6f));
             if (health < damage)
@@ -137,7 +138,7 @@ public abstract class Enemy : MonoBehaviour
             }
             else
             {
-                health -= damage;
+                Damaged(damage);
                 other.GetComponent<Rigidbody>().AddForce(-transform.forward * 100f);
             }
 

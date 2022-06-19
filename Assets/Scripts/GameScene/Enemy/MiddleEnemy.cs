@@ -40,11 +40,6 @@ public class MiddleEnemy : Enemy
         StartCoroutine(SetRandomReconnaissancePosition());
     }
 
-    private void OnTriggerEnter(Collider other)
-    {
-        //OnCTriggerEnter(other);
-    }
-
     protected override void Dead()
     {
         base.Dead();

@@ -175,7 +175,6 @@ public class HugeEnemy : MonoBehaviour
 
     private void Dead()
     {
-        // TODO : 사망 처리
         if (hp <= 0)
         {
             Destroy(gameObject);

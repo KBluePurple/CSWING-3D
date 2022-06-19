@@ -33,9 +33,4 @@ public class SmallEnemy : Enemy
         this.target = target;
         return this;
     }
-
-    private void OnTriggerEnter(Collider other)
-    {
-        //OnCTriggerEnter(other);
-    }
 }

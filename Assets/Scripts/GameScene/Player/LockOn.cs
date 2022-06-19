@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class LockOn : MonoBehaviour
+public class LockOn : MonoSingleton<LockOn>
 {
     private List<GameObject> pursuitObjects;
     [SerializeField]
@@ -11,6 +11,12 @@ public class LockOn : MonoBehaviour
 
     private GameObject pursuit;
     private bool isLockOn = false;
+
+    public void SetIsLockOn(bool _isLockOn)
+    {
+        isLockOn = _isLockOn;
+        lockOnTarget.SetActive(_isLockOn);
+    }
 
     [SerializeField]
     private GameObject lockOnTarget;
@@ -31,6 +37,7 @@ public class LockOn : MonoBehaviour
                 transform.LookAt(pursuit.transform);
             }
         }
+        Debug.Log("isLockOn: " + isLockOn);
     }
 
     void FindShortestPursuit()
