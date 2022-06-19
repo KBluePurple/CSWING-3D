@@ -11,7 +11,7 @@ public class SaveManager : MonoSingleton<SaveManager>
     public PlayerParts Parts { get { return parts; } }
 
     private string SAVE_PATH = "";
-    private string SAVE_FILENAME = "/SaveFile.txt";
+    private string SAVE_FILENAME = "/SaveFile.json";
     private string default_save = @"{
     ""Core"": 1,
     ""CoreSprite"": """",

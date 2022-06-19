@@ -37,6 +37,6 @@ public enum SpecialWeaponPart
     NONE,
     GA_00,
     LO_VE,
-    BU_03,
+    CU_03,
 }
 #endregion
