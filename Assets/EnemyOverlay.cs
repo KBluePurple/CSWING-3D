@@ -40,6 +40,10 @@ public class EnemyOverlay : MonoBehaviour
             {
                 enemyOverlay.Value.GetComponent<Image>().enabled = false;
             }
+            else
+            {
+                enemyOverlay.Value.GetComponent<Image>().enabled = true;
+            }
 
             var localPoint = enemyOverlay.Value.transform.parent.InverseTransformPoint(screenPoint);
             enemyOverlay.Value.localPosition = localPoint;
