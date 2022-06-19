@@ -76,7 +76,7 @@ public class PlayerAttack : MonoBehaviour
                 bullet = Instantiate(G_01_bulletPre, bulletPos.position, bulletPos.rotation);
                 bullet.GetComponent<NormalBullet>()
                     .SetDamage(15)
-                    .SetSpeed(100)
+                    .SetSpeed(100 + GameScene.PlayerMove.Instance.Speed)
                     .SetDistance(maxDistance)
                     .SetTargetPos(transform.position + transform.forward * maxDistance)
                     .SetTargetTag("Enemy")
@@ -99,7 +99,7 @@ public class PlayerAttack : MonoBehaviour
                 bullet = Instantiate(M_01_bulletPre, bulletPos.position, bulletPos.rotation);
                 bullet.GetComponent<MissileBullet>()
                     .SetDamage(20)
-                    .SetSpeed(100)
+                    .SetSpeed(50 + GameScene.PlayerMove.Instance.Speed)
                     .SetLifeTime(3f)
                     .SetTarget(FindEnemy())
                     .SetTargetTag("Enemy")
