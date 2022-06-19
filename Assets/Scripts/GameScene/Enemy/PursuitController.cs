@@ -134,4 +134,24 @@ public class PursuitController : MonoBehaviour
         SoundManager.Instance.PlaySound("Heavy Object Impact 4");
         Debug.Log("Pursuit ���");
     }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.CompareTag("Player"))
+        {
+            Debug.Log("Enemy 충돌");
+            int damage = (int)(other.GetComponent<GameScene.PlayerMove>().Speed * 0.6f);
+            if (pursuitLife < damage)
+            {
+                Damaged(pursuitLife);
+            }
+            else
+            {
+                Damaged(damage);
+                other.GetComponent<Rigidbody>().AddForce(-transform.forward * 100f);
+            }
+
+            GameScene.PlayerManager.Instance.Damaged(damage);
+        }
+    }
 }
