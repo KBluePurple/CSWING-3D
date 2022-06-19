@@ -137,6 +137,11 @@ public class PlayerAttack : MonoBehaviour
             }
         }
 
+        RaycastHit hit;
+        if (Physics.Raycast(this.transform.Find("RayCastPosition").position, this.transform.forward, out hit, maxDistance))
+        {
+            return hit.transform;
+        }
         return null;
     }
 }

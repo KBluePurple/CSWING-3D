@@ -32,6 +32,7 @@ public abstract class Bullet : MonoBehaviour
                     enemy.Damaged(damage);
                 }
             }
+            Destroy(gameObject);
         }
         else if (other.CompareTag("Pursuit"))
         {
@@ -43,8 +44,9 @@ public abstract class Bullet : MonoBehaviour
                     enemy.Damaged(damage);
                 }
             }
+
+            Destroy(gameObject);
         }
-        Destroy(gameObject);
     }
 
     public abstract void Fire(Transform bulletPos);
