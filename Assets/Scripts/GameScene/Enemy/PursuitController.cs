@@ -32,7 +32,12 @@ public class PursuitController : MonoBehaviour
         lineRenderer = GetComponent<LineRenderer>();
         lineRenderer.startWidth = 0.1f;
         lineRenderer.endWidth = 0.1f;
-        lineRenderer.material.color = Color.white;
+        lineRenderer.material.color = Color.red;
+    }
+
+    private void Start()
+    {
+        GameScene.PlayerManager.Instance.OnEnemyAdded.Invoke(transform);
     }
 
     void Update()
@@ -41,7 +46,7 @@ public class PursuitController : MonoBehaviour
         {
             if (this.gameObject.CompareTag("Pursuit"))
             {
-                if (Vector3.Distance(target.transform.position, transform.position) <= 30f)
+                if (Vector3.Distance(target.transform.position, transform.position) <= 90f)
                 {
                     lineRenderer.enabled = true;
 
@@ -129,6 +134,7 @@ public class PursuitController : MonoBehaviour
     public void PursuitDead()
     {
         Destroy(gameObject);
+        PlayerManager.Instance.OnEnemyRemoved.Invoke(transform);
         // survivorModeManager.curPursuitSpawnCount--;
         ItemManager.Instance.SpawnItem(ItemType.CORE, transform.position);
         SoundManager.Instance.PlaySound("Heavy Object Impact 4");

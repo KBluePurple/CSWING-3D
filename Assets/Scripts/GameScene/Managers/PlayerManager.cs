@@ -27,8 +27,8 @@ namespace GameScene
 
         private UIManager uiManager;
 
-        public Action<Enemy> OnEnemyAdded;
-        public Action<Enemy> OnEnemyRemoved;
+        public Action<Transform> OnEnemyAdded;
+        public Action<Transform> OnEnemyRemoved;
 
         private void Start()
         {

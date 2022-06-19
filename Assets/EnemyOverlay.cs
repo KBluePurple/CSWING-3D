@@ -7,7 +7,7 @@ using UnityEngine.UI;
 public class EnemyOverlay : MonoBehaviour
 {
     [SerializeField] GameObject enemyOverlayPrefab;
-    Dictionary<Enemy, RectTransform> enemyOverlays = new Dictionary<Enemy, RectTransform>();
+    Dictionary<Transform, RectTransform> enemyOverlays = new Dictionary<Transform, RectTransform>();
 
     private void Awake()
     {
@@ -15,15 +15,15 @@ public class EnemyOverlay : MonoBehaviour
         GameScene.PlayerManager.Instance.OnEnemyRemoved += OnEnemyRemoved;
     }
 
-    private void OnEnemyAdded(Enemy enemy)
+    private void OnEnemyAdded(Transform enemy)
     {
         Debug.Log($"Enemy added: {enemy.name}");
         RectTransform enemyOverlay = Instantiate(enemyOverlayPrefab, transform).GetComponent<RectTransform>();
-        enemyOverlay.anchoredPosition = RectTransformUtility.WorldToScreenPoint(Camera.main, enemy.transform.position);
+        enemyOverlay.anchoredPosition = RectTransformUtility.WorldToScreenPoint(Camera.main, transform.position);
         enemyOverlays.Add(enemy, enemyOverlay);
     }
 
-    private void OnEnemyRemoved(Enemy enemy)
+    private void OnEnemyRemoved(Transform enemy)
     {
         Debug.Log($"Enemy removed: {enemy.name}");
         Destroy(enemyOverlays[enemy].gameObject);
@@ -32,9 +32,9 @@ public class EnemyOverlay : MonoBehaviour
 
     void Update()
     {
-        foreach (KeyValuePair<Enemy, RectTransform> enemyOverlay in enemyOverlays)
+        foreach (KeyValuePair<Transform, RectTransform> enemyOverlay in enemyOverlays)
         {
-            Vector3 screenPoint = Camera.main.WorldToScreenPoint(enemyOverlay.Key.transform.position);
+            Vector3 screenPoint = Camera.main.WorldToScreenPoint(enemyOverlay.Key.position);
 
             if (screenPoint.z < 0)
             {
