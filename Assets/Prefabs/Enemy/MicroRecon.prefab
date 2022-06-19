@@ -53,7 +53,7 @@ MonoBehaviour:
   reconnaissanceRange: 10
   explosionEffect: {fileID: 142012, guid: 5534fe87bdddbbb44ab4dd43c16c1a1e, type: 3}
   detectionRange: 10
-  parant: {fileID: 0}
+  parant: {fileID: 3029075979542562074}
 --- !u!65 &4409407847696694322
 BoxCollider:
   m_ObjectHideFlags: 0
