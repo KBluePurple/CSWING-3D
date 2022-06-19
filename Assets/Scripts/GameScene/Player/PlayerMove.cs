@@ -91,7 +91,7 @@ namespace GameScene
             {
                 Debug.Log("LeftDash");
                 SoundManager.Instance.PlaySound("Dodge");
-                transform.DOMove(transform.position + -transform.right * _dashSpeed, 1f);
+                transform.DOMove(transform.position + -transform.right * _dashSpeed + transform.forward * Speed, 1f);
                 transform.DORotate(new Vector3(0, 0, 360), 1f, RotateMode.LocalAxisAdd);
                 cameraPos.transform.SetParent(null);
                 yield return new WaitForSeconds(1f);
@@ -113,7 +113,7 @@ namespace GameScene
             {
                 Debug.Log("RightDash");
                 SoundManager.Instance.PlaySound("Dodge");
-                transform.DOMove(transform.position + transform.right * _dashSpeed, 1f);
+                transform.DOMove(transform.position + transform.right * _dashSpeed + transform.forward * Speed, 1f);
                 transform.DORotate(new Vector3(0, 0, -360), 1f, RotateMode.LocalAxisAdd);
                 cameraPos.transform.SetParent(null);
                 yield return new WaitForSeconds(1f);
