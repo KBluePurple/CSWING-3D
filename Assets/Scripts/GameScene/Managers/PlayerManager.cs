@@ -56,7 +56,7 @@ namespace GameScene
         {
             curShieldRecoverydelay = 0f;
             Stat.Shield -= damage;
-            if (Stat.Shield < 0)
+            if (Stat.Shield <= 0)
             {
                 Stat.Hp += Stat.Shield;
                 Stat.Shield = 0;
