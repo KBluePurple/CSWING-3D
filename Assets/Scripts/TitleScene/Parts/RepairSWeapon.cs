@@ -10,7 +10,7 @@ public class RepairSWeapon : RepairBase
     private void Start()
     {
         ChildrenStart();
-        if (SaveManager.Instance.Parts.SpesialWeapon == _part)
+        if (SaveManager.Instance.Parts.SpecialWeapon == _part)
         {
             _toggleImage.color = Color.yellow;
             _isActive = true;
@@ -20,7 +20,7 @@ public class RepairSWeapon : RepairBase
     public override void PartsSet()
     {
         Debug.Log($"{_part} 장비 설정!");
-        SaveManager.Instance.Parts.SpesialWeapon = _part;
+        SaveManager.Instance.Parts.SpecialWeapon = _part;
         base.PartsSet();
     }
 
