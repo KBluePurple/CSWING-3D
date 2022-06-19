@@ -6,7 +6,7 @@ using UnityEngine;
 public class PlayerAttack : MonoBehaviour
 {
     [SerializeField]
-    private float maxDistance = 100f;
+    private float maxDistance = 300f;
     [SerializeField]
     private Transform rayTransform;
     // Shot Bullet
@@ -87,7 +87,7 @@ public class PlayerAttack : MonoBehaviour
                 bullet = Instantiate(L_01_bulletPre, bulletPos.position, bulletPos.rotation);
                 bullet.GetComponent<LaserBullet>()
                     .SetDamage(50)
-                    .SetLifeTime(2f)
+                    .SetLifeTime(0.4f)
                     .SetDistance(maxDistance)
                     .SetTargetPos(transform.position + transform.forward * maxDistance)
                     .SetTargetTag("Enemy")
@@ -98,9 +98,9 @@ public class PlayerAttack : MonoBehaviour
             case WeaponPart.M_01:
                 bullet = Instantiate(M_01_bulletPre, bulletPos.position, bulletPos.rotation);
                 bullet.GetComponent<MissileBullet>()
-                    .SetDamage(20)
+                    .SetDamage(10)
                     .SetSpeed(50 + GameScene.PlayerMove.Instance.Speed)
-                    .SetLifeTime(3f)
+                    .SetLifeTime(4f)
                     .SetTarget(FindEnemy())
                     .SetTargetTag("Enemy")
                     .Fire(bulletPos);
