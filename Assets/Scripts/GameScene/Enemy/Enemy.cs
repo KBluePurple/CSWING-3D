@@ -105,6 +105,8 @@ public abstract class Enemy : MonoBehaviour
     protected virtual void Dead()
     {
         GameScene.PlayerManager.Instance.OnEnemyRemoved.Invoke(transform);
+        if (Random.Range(1, 10) == 2)
+            ItemManager.Instance.SpawnItem(ItemType.CORE, transform.position);
         Destroy(gameObject);
         Debug.Log("Enemy ���");
     }
