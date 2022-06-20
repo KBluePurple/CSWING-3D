@@ -69,6 +69,7 @@ namespace GameScene
 
             if (Stat.Hp <= 0)
             {
+                Time.timeScale = 0f;
                 uiManager.Dead();
             }
         }
