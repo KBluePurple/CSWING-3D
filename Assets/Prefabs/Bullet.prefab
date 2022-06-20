@@ -60,7 +60,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetTag: Player
-  damage: 0
+  damage: 4
   speed: 10
   maxDistance: 30
 --- !u!1 &6303966891632542021

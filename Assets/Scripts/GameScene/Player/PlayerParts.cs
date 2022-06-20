@@ -9,7 +9,7 @@ public class PlayerParts
     public string BodySprite = "";
     public WeaponPart Weapon = WeaponPart.G_01;
     public string WeaponSprite = "";
-    public SpecialWeaponPart SpecialWeapon = SpecialWeaponPart.CU_03;
+    public SpecialWeaponPart SpecialWeapon = SpecialWeaponPart.GA_00;
     public string SpecialWeaponSprite = "";
 
     public bool[] CORE = new bool[3];

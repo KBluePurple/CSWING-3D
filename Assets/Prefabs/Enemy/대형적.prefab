@@ -159,6 +159,6 @@ MonoBehaviour:
   ditectionRange: 30
   maxHp: 500
   hp: 500
-  speed: 10
+  speed: 8
   laserPrefab: {fileID: 0}
   smallEnemyPrefab: {fileID: 0}
