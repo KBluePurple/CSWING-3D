@@ -59,6 +59,8 @@ namespace GameScene
 
         private PlayerMove playerMove;
         private GameManager gameManager;
+        [SerializeField]
+        private TextMeshProUGUI _scoreText;
 
         private void Start()
         {
@@ -73,7 +75,7 @@ namespace GameScene
         {
             Speed.fillAmount = playerMove.Speed / playerMove.MaxSpeed;
             BackSpeed.fillAmount = -playerMove.Speed / playerMove.MaxSpeed;
-
+            _scoreText.text = $"{gameManager.score}";
             if (gameManager.isActivePausePanel)
             {
                 ShowPlayerStat();

@@ -18,7 +18,7 @@ namespace GameScene
 
         private PlayerMove playerMove = null;
 
-        private int score = 0;
+        public int score = 0;
 
         void Start()
         {
