@@ -20,6 +20,7 @@ public class SmallEnemy : Enemy
     {
         base.Dead();
         SoundManager.Instance.PlaySound("Heavy Object Impact 4");
+        GameScene.GameManager.Instance.AddScore(150);
     }
 
     public SmallEnemy SetParant(Transform parant)

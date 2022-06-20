@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 namespace GameScene
 {
-    public class GameManager : MonoBehaviour
+    public class GameManager : MonoSingleton<GameManager>
     {
         [SerializeField]
         private GameObject pausePanelBackground = null;
@@ -18,12 +18,24 @@ namespace GameScene
 
         private PlayerMove playerMove = null;
 
+        private int score = 0;
+
         void Start()
         {
             MouseManager.Show(false);
             MouseManager.Lock(true);
             SoundManager.Instance.PlaySound("StreetLove", SoundType.BGM);
             playerMove = FindObjectOfType<PlayerMove>();
+            score = 0;
+        }
+
+        public void AddScore(int score)
+        {
+            this.score += score;
+            if (PlayerPrefs.GetInt("BestScore") < this.score)
+            {
+                PlayerPrefs.SetInt("BestScore", this.score);
+            }
         }
 
         private void Update()

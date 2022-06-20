@@ -178,6 +178,7 @@ public class HugeEnemy : MonoBehaviour
         if (hp <= 0)
         {
             Destroy(gameObject);
+            GameScene.GameManager.Instance.AddScore(300);
             SoundManager.Instance.PlaySound("Explosion 1");
         }
     }

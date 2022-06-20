@@ -138,6 +138,7 @@ public class PursuitController : MonoBehaviour
         // survivorModeManager.curPursuitSpawnCount--;
         ItemManager.Instance.SpawnItem(ItemType.CORE, transform.position);
         SoundManager.Instance.PlaySound("Heavy Object Impact 4");
+        GameScene.GameManager.Instance.AddScore(100);
         Debug.Log("Pursuit ���");
     }
 

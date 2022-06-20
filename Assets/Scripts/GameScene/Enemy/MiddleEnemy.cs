@@ -43,6 +43,7 @@ public class MiddleEnemy : Enemy
     protected override void Dead()
     {
         base.Dead();
+        GameScene.GameManager.Instance.AddScore(200);
         SoundManager.Instance.PlaySound("Railgun - Shot 6");
     }
 }
