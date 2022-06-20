@@ -74,11 +74,11 @@ namespace GameScene
             // transform.Translate(transform.forward * _speed * Time.deltaTime);
             rigid.velocity = transform.forward * Speed;
 
-            if (Input.GetKeyDown(KeyCode.A) && !isLeftDash)
+            if (Input.GetKeyDown(KeyCode.A) && !isLeftDash && !isRightDash)
             {
                 StartCoroutine(LeftDash());
             }
-            if (Input.GetKeyDown(KeyCode.D) && !isRightDash)
+            if (Input.GetKeyDown(KeyCode.D) && !isRightDash && !isLeftDash)
             {
                 StartCoroutine(RightDash());
             }
