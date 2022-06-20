@@ -18557,7 +18557,6 @@ GameObject:
   - component: {fileID: 543450652775160863}
   - component: {fileID: 919132149040170662}
   - component: {fileID: 919132149040170663}
-  - component: {fileID: 919132149040170664}
   - component: {fileID: 919132149040170665}
   - component: {fileID: 919132149040170666}
   - component: {fileID: 919132149040170667}
@@ -18606,25 +18605,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 46b0a5efa8b51b74ba90f2a6516b349f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxDistance: 100
+  maxDistance: 1000
   rayTransform: {fileID: 1855989032}
   G_01_bulletPre: {fileID: 4848083708199283256, guid: 6c31c2c036529464695166638d205993, type: 3}
   L_01_bulletPre: {fileID: 549486428017323360, guid: a3c8dee95f3458b4eb074ca2330ea2a1, type: 3}
   M_01_bulletPre: {fileID: 7898407388880706741, guid: d84a7e49d12faae409924c4ceb35a3e0, type: 3}
   bulletPos: {fileID: 504114993}
   bulletMaterial: {fileID: 2100000, guid: 61dbb9f698d88be49adcd52bbfd90302, type: 2}
---- !u!114 &919132149040170664
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 919132149040170661}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2d6b2813bd709a14eb9ecc2e49a37bb5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!54 &919132149040170665
 Rigidbody:
   m_ObjectHideFlags: 0

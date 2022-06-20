@@ -6,7 +6,7 @@ using UnityEngine;
 public class PlayerAttack : MonoBehaviour
 {
     [SerializeField]
-    private float maxDistance = 300f;
+    private float maxDistance = 1000f;
     [SerializeField]
     private Transform rayTransform;
     // Shot Bullet
