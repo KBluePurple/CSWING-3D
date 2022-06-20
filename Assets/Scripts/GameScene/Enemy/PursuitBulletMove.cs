@@ -22,7 +22,7 @@ public class PursuitBulletMove : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player"))
         {
-            GameScene.PlayerManager.Instance.Damaged(1);
+            GameScene.PlayerManager.Instance.Damaged(30);
         }
     }
 }

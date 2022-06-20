@@ -147,7 +147,6 @@ public class PursuitController : MonoBehaviour
         if (other.gameObject.CompareTag("Player"))
         {
             LockOn.Instance.SetIsLockOn(false);
-            Debug.Log("Enemy 충돌");
             int damage = (int)(other.GetComponent<GameScene.PlayerMove>().Speed * 0.6f);
             if (pursuitLife < damage)
             {

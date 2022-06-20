@@ -86,7 +86,7 @@ public class PlayerAttack : MonoBehaviour
             case WeaponPart.L_01:
                 bullet = Instantiate(L_01_bulletPre, bulletPos.position, bulletPos.rotation);
                 bullet.GetComponent<LaserBullet>()
-                    .SetDamage(50)
+                    .SetDamage(30)
                     .SetLifeTime(0.4f)
                     .SetDistance(maxDistance)
                     .SetTargetPos(transform.position + transform.forward * maxDistance)
