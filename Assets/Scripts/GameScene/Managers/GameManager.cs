@@ -49,8 +49,17 @@ namespace GameScene
 
         void TogglePausePanel()
         {
-            MouseManager.Show(true);
-            MouseManager.Lock(false);
+            isActivePausePanel = !isActivePausePanel;
+            if (isActivePausePanel)
+            {
+                MouseManager.Show(true);
+                MouseManager.Lock(false);
+            }
+            else if (!isActivePausePanel)
+            {
+                MouseManager.Show(false);
+                MouseManager.Lock(true);
+            }
             pausePanelBackground.SetActive(!pausePanelBackground.activeSelf);
             pausePanel.SetActive(true);
             settingPanel.SetActive(false);
