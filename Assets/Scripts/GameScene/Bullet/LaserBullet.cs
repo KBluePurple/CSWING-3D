@@ -39,6 +39,8 @@ public class LaserBullet : Bullet
         laser.LookAt(targetPos);
         laser.transform.position = Vector3.Lerp(transform.position, targetPos, 0.5f);
         laser.transform.localScale = new Vector3(laser.transform.localScale.x, laser.transform.localScale.y, distance);
+        GetComponent<BoxCollider>().size = new Vector3(GetComponent<BoxCollider>().size.x, GetComponent<BoxCollider>().size.y, distance);
+
         Debug.DrawRay(laser.transform.position, laser.transform.forward * distance, Color.white, 5f);
     }
 
