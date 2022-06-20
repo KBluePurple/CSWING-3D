@@ -75,7 +75,7 @@ namespace GameScene
         {
             Speed.fillAmount = playerMove.Speed / playerMove.MaxSpeed;
             BackSpeed.fillAmount = -playerMove.Speed / playerMove.MaxSpeed;
-            _scoreText.text = $"{gameManager.score}";
+            _scoreText.text = $"Total Score : {gameManager.score}";
             if (gameManager.isActivePausePanel)
             {
                 ShowPlayerStat();
