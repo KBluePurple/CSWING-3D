@@ -6,7 +6,7 @@ public class LaserBullet : Bullet
     [SerializeField] float lifeTime = 1f;
     [SerializeField] float distance = 30f;
     [SerializeField] Transform laser;
-    
+
     private Vector3 targetPos;
 
     public LaserBullet SetDamage(int bulletDamaged)
@@ -23,7 +23,7 @@ public class LaserBullet : Bullet
 
     public LaserBullet SetDistance(float distance)
     {
-        this.distance = distance;
+        this.distance = distance * 2;
         return this;
     }
 

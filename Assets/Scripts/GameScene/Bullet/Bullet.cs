@@ -44,7 +44,6 @@ public abstract class Bullet : MonoBehaviour
                     enemy.Damaged(damage);
                 }
             }
-
             Destroy(gameObject);
         }
     }
