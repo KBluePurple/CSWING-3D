@@ -38,7 +38,7 @@ public class Item : MonoBehaviour
                     SaveManager.Instance.Parts.ENGINE[parts] = true;
                     break;
             }
-
+            SaveManager.Instance.SaveParts();
             Destroy(gameObject);
         }
     }
