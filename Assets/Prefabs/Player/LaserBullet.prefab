@@ -140,7 +140,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetTag: 
-  damage: 2
+  damage: 30
   lifeTime: 1
   distance: 30
   laser: {fileID: 549486427707897598}
