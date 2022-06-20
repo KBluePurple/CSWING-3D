@@ -139,7 +139,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3233def211c0aa14da89e0300fd2884c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 1
+  targetTag: 
+  damage: 2
   lifeTime: 1
   distance: 30
   laser: {fileID: 549486427707897598}

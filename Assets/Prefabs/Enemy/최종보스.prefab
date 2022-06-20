@@ -157,7 +157,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hp: 1000
-  speed: 10
+  speed: 11
   missilePrefab: {fileID: 0}
   missileSpeed: 10
   target: {fileID: 0}

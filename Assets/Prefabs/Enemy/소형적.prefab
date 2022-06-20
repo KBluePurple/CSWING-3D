@@ -47,9 +47,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   reconnaissancePosition: {x: 0, y: 0, z: 0}
-  speed: 10
+  speed: 15
   health: 100
-  damage: 10
+  damage: 8
   reconnaissanceRange: 10
   explosionEffect: {fileID: 142012, guid: 5534fe87bdddbbb44ab4dd43c16c1a1e, type: 3}
   detectionRange: 10
