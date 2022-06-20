@@ -11,6 +11,6 @@ public class TitleManager : MonoBehaviour
     void Start()
     {
         SoundManager.Instance.PlaySound("Epic Backing Track", SoundType.BGM);
-        _bestScoreText.text = $"Best Score : {PlayerPrefs.GetInt("BestScore")}";
+        _bestScoreText.text = $"{PlayerPrefs.GetInt("BestScore")}";
     }
 }
