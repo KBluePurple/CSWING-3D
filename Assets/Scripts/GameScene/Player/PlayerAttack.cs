@@ -92,7 +92,7 @@ public class PlayerAttack : MonoBehaviour
                     .SetTargetPos(transform.position + transform.forward * maxDistance)
                     .SetTargetTag("Enemy")
                     .Fire(bulletPos);
-                shotDelay = 3f;
+                shotDelay = 0.7f;
                 SoundManager.Instance.PlaySound("laser_01");
                 break;
             case WeaponPart.M_01:
